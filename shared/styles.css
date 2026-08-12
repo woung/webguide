@@ -1,0 +1,95 @@
+/* Abbreviations / glossary definition grid */
+.abbr-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: 1.25rem;
+  row-gap: 0.65rem;
+  margin: 1.5rem 0;
+}
+
+.abbr-grid dt {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+  color: #0B6E4F;
+  background: #E4F1EA;
+  border-radius: 5px;
+  padding: 0.1rem 0.5rem;
+  align-self: start;
+  white-space: nowrap;
+}
+
+.abbr-grid dd {
+  margin: 0;
+  color: #16241F;
+}
+
+/* Language picker cards on landing pages */
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.lang-card {
+  display: block;
+  border: 1px solid #E1E4DE;
+  border-radius: 10px;
+  padding: 1.1rem 1.3rem;
+  text-decoration: none !important;
+  background: #FFFFFF;
+  transition: border-color .15s ease, transform .15s ease;
+}
+
+.lang-card:hover {
+  border-color: #0B6E4F;
+  transform: translateY(-2px);
+}
+
+.lang-card .lang-name {
+  display: block;
+  font-family: "Newsreader", serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0B3D3A;
+}
+
+.lang-card .lang-native {
+  display: block;
+  font-size: 0.85rem;
+  color: #6b7a72;
+  margin-top: 0.15rem;
+}
+
+.lang-card .lang-status {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.lang-status.ready { background: #E4F1EA; color: #0B6E4F; }
+.lang-status.pending { background: #FBF3E8; color: #C2823C; }
+
+/* RTL support for the Arabic edition */
+html[dir="rtl"] .abbr-grid {
+  grid-template-columns: 1fr max-content;
+  direction: rtl;
+}
+
+html[dir="rtl"] .sidebar-navigation .sidebar-item.active > a,
+html[dir="rtl"] .sidebar-navigation .sidebar-item a.active {
+  border-left: none;
+  border-right: 3px solid #0B6E4F;
+  padding-left: 0.5rem;
+  padding-right: calc(0.5rem - 3px);
+}
+
+html[dir="rtl"] blockquote {
+  border-left: none;
+  border-right: 4px solid #C2823C;
+  border-radius: 6px 0 0 6px;
+}

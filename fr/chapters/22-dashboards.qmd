@@ -1,0 +1,3 @@
+# Chapitre 19. Tableaux de bord
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 19. Dashboards](../../en/chapters/22-dashboards.qmd).

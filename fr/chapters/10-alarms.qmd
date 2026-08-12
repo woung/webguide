@@ -1,0 +1,3 @@
+# Chapitre 7. Alarmes
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 7. Alarms](../../en/chapters/10-alarms.qmd).

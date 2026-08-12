@@ -1,0 +1,3 @@
+# Chapitre 18. Carnets
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 18. Notebooks](../../en/chapters/21-notebooks.qmd).

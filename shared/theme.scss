@@ -1,0 +1,158 @@
+/*-- scss:defaults --*/
+
+// ---- Palette ----------------------------------------------------------
+// Deep teal + emerald: signals "health data / early warning" without
+// reaching for generic SaaS blue or the cliché warm-cream/terracotta combo.
+$who-ink:        #16241F;   // near-black, warm-green cast
+$who-teal-900:   #0B3D3A;   // deep teal — headers, sidebar active
+$who-teal-700:   #12534E;
+$who-emerald:    #0B6E4F;   // primary accent — links, active states
+$who-emerald-100:#E4F1EA;   // soft tint for callouts / hovers
+$who-amber:      #C2823C;   // sparing use — warnings, "note" callouts
+$who-bg:         #FAF9F6;   // warm off-white page background
+$who-card:       #FFFFFF;
+$who-border:     #E1E4DE;
+
+$primary:       $who-emerald;
+$body-bg:       $who-bg;
+$body-color:    $who-ink;
+$link-color:    $who-emerald;
+
+// ---- Type ---------------------------------------------------------------
+$font-family-sans-serif: "Inter", -apple-system, "Segoe UI", sans-serif;
+$font-family-monospace:  "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+$headings-font-family:   "Newsreader", Georgia, "Times New Roman", serif;
+$headings-font-weight:   600;
+$headings-color:         $who-teal-900;
+
+$toc-font-size: 0.82rem;
+$sidebar-font-size: 0.88rem;
+
+$navbar-bg: $who-teal-900;
+$navbar-fg: #F4F6F4;
+$navbar-hl: #ffffff;
+
+$code-bg: #F0EFEA;
+$code-color: #1E5C46;
+
+/*-- scss:rules --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+// Chapter titles: numeral treated as a real structural device (this is a
+// numbered technical manual — chapter order is information the reader uses).
+h1.title {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border-bottom: 3px solid $who-emerald;
+  padding-bottom: 0.5rem;
+}
+
+#title-block-header .subtitle {
+  font-family: $font-family-sans-serif;
+  color: $who-teal-700;
+  font-weight: 500;
+}
+
+h2 {
+  margin-top: 2.6rem;
+  padding-top: 0.2rem;
+  border-top: 1px solid $who-border;
+}
+
+h2, h3, h4 {
+  letter-spacing: -0.005em;
+}
+
+// Sidebar TOC ---------------------------------------------------------
+.sidebar-navigation .sidebar-item-container {
+  font-family: $font-family-sans-serif;
+}
+
+.sidebar-navigation .sidebar-item a {
+  border-radius: 6px;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.sidebar-navigation .sidebar-item a:hover {
+  background-color: $who-emerald-100;
+  color: $who-teal-900;
+}
+
+.sidebar-navigation .sidebar-item.active > a,
+.sidebar-navigation .sidebar-item a.active {
+  color: $who-emerald;
+  font-weight: 600;
+  border-left: 3px solid $who-emerald;
+  padding-left: calc(0.5rem - 3px);
+  background-color: $who-emerald-100;
+}
+
+.sidebar-part > .sidebar-item-container > a {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: $who-teal-700;
+  opacity: 0.85;
+}
+
+// Navbar ----------------------------------------------------------------
+.navbar {
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+.navbar-title {
+  font-family: $headings-font-family;
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+// Images: always responsive; give figures a quiet card treatment ---------
+img {
+  max-width: 100%;
+  height: auto !important;
+  border: 1px solid $who-border;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(11,61,58,0.08);
+}
+
+figcaption, .figure-caption {
+  font-size: 0.85rem;
+  color: $who-teal-700;
+  text-align: left !important;
+  margin-top: 0.4rem;
+}
+
+// Tables (converted from Word grid tables) --------------------------------
+table {
+  font-size: 0.92rem;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: $who-teal-900;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: $who-emerald-100;
+}
+
+// Code ---------------------------------------------------------------
+code {
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+// Blockquotes as gentle callouts -----------------------------------------
+blockquote {
+  border-left: 4px solid $who-amber;
+  background: #FBF3E8;
+  padding: 0.75rem 1.1rem;
+  border-radius: 0 6px 6px 0;
+}

@@ -1,0 +1,3 @@
+# Chapitre 21. Documents et modèles de documents
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 21. Documents and Document Templates](../../en/chapters/24-documents-and-document-templates.qmd).

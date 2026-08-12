@@ -1,0 +1,3 @@
+# Chapitre 8. Utilisateurs et leurs affectations
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 8. Users and their assignments](../../en/chapters/11-users-and-their-assignments.qmd).

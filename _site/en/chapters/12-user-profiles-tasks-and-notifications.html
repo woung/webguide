@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Chapter 9. User profiles, tasks and notifications – EWARS Mobile</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/13-ewars-account-settings.html" rel="next">
+<link href="../chapters/11-users-and-their-assignments.html" rel="prev">
+<link href=".././media/image1.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d60a5906468b64742e20e52e09f920c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cb29c9f9deed8f7c023d39522d0343d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../shared/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">EWARS Mobile</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-language" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🌐 Language</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-language">    
+        <li>
+    <a class="dropdown-item" href="../index.html">
+ <span class="dropdown-text">English</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../fr/index.qmd">
+ <span class="dropdown-text">Français</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../es/index.qmd">
+ <span class="dropdown-text">Español</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../ar/index.qmd">
+ <span class="dropdown-text">العربية</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-locations.html">Setting up your EWARS account</a></li><li class="breadcrumb-item"><a href="../chapters/12-user-profiles-tasks-and-notifications.html"><span class="chapter-title">Chapter 9. User profiles, tasks and notifications</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EWARS Mobile</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-acknowledgments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-abbreviations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abbreviations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-executive-summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Executive summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-overview-of-ewars-in-a-box.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1. Overview of EWARS in a box</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2. Getting started</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Setting up your EWARS account</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-locations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3. Locations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-configuration-transfer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4. Configuration Transfer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5. Indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-forms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6. Forms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-alarms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7. Alarms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-users-and-their-assignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8. Users and their assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-user-profiles-tasks-and-notifications.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 9. User profiles, tasks and notifications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-ewars-account-settings.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10. EWARS account settings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data Collection and Monitoring</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-report-manager.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11. Report manager</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-m-e-auditor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 12. M&amp;E Auditor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-alert-log.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 13. Alert log</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-data-import.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 14. Data Import</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data analysis, visualization and dissemination</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-plot.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 15. Plot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/19-mapping.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 16. Mapping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/20-widgets-and-their-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 17. Widgets and their configuration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/21-notebooks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 18. Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/22-dashboards.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 19. Dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/23-outbreaks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 20. Outbreaks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/24-documents-and-document-templates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 21. Documents and Document Templates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/25-website-builder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 22. Website Builder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/26-export.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 23. Export</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/27-sms-reporting-and-teams.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 24. SMS reporting and teams</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/28-ewars-stand-alone.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 25. EWARS Stand-alone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/29-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 26. Glossary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/30-help-and-support.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 27. Help and support</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#editing-a-user-profile" id="toc-editing-a-user-profile" class="nav-link active" data-scroll-target="#editing-a-user-profile">9.1 Editing a user profile</a></li>
+  <li><a href="#changing-your-password" id="toc-changing-your-password" class="nav-link" data-scroll-target="#changing-your-password">9.2 Changing your password</a></li>
+  <li><a href="#changing-the-ewars-display-to-your-preferred-language" id="toc-changing-the-ewars-display-to-your-preferred-language" class="nav-link" data-scroll-target="#changing-the-ewars-display-to-your-preferred-language">9.3 Changing the EWARS display to your preferred language</a></li>
+  <li><a href="#enabling-two-factor-authentication-for-login" id="toc-enabling-two-factor-authentication-for-login" class="nav-link" data-scroll-target="#enabling-two-factor-authentication-for-login">9.4 Enabling two-factor authentication for login</a></li>
+  <li><a href="#assigned-tasks-under-your-role" id="toc-assigned-tasks-under-your-role" class="nav-link" data-scroll-target="#assigned-tasks-under-your-role">9.5 Assigned tasks under your role</a>
+  <ul class="collapse">
+  <li><a href="#viewing-assigned-tasks" id="toc-viewing-assigned-tasks" class="nav-link" data-scroll-target="#viewing-assigned-tasks">9.5.1 Viewing assigned tasks</a></li>
+  <li><a href="#performing-user-registration-requests" id="toc-performing-user-registration-requests" class="nav-link" data-scroll-target="#performing-user-registration-requests">9.5.2 Performing user registration requests</a></li>
+  <li><a href="#performing-assignment-requests" id="toc-performing-assignment-requests" class="nav-link" data-scroll-target="#performing-assignment-requests">9.5.3 Performing assignment requests</a></li>
+  <li><a href="#performing-amendment-requests" id="toc-performing-amendment-requests" class="nav-link" data-scroll-target="#performing-amendment-requests">9.5.4 Performing amendment requests</a></li>
+  <li><a href="#performing-record-deletion-requests" id="toc-performing-record-deletion-requests" class="nav-link" data-scroll-target="#performing-record-deletion-requests">9.5.5 Performing record deletion requests</a></li>
+  </ul></li>
+  <li><a href="#notifications" id="toc-notifications" class="nav-link" data-scroll-target="#notifications">9.6 Notifications</a>
+  <ul class="collapse">
+  <li><a href="#subscribing-to-notifications" id="toc-subscribing-to-notifications" class="nav-link" data-scroll-target="#subscribing-to-notifications">9.6.1 Subscribing to notifications</a></li>
+  <li><a href="#viewing-and-managing-system-notifications" id="toc-viewing-and-managing-system-notifications" class="nav-link" data-scroll-target="#viewing-and-managing-system-notifications">9.6.2 Viewing and managing system notifications</a></li>
+  <li><a href="#receiving-email-notifications-in-plain-text-format" id="toc-receiving-email-notifications-in-plain-text-format" class="nav-link" data-scroll-target="#receiving-email-notifications-in-plain-text-format">9.6.3 Receiving email notifications in plain text format</a></li>
+  <li><a href="#disabling-email-notifications" id="toc-disabling-email-notifications" class="nav-link" data-scroll-target="#disabling-email-notifications">9.6.4 Disabling email notifications</a></li>
+  </ul></li>
+  <li><a href="#viewing-activities" id="toc-viewing-activities" class="nav-link" data-scroll-target="#viewing-activities">9.7 Viewing activities</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-locations.html">Setting up your EWARS account</a></li><li class="breadcrumb-item"><a href="../chapters/12-user-profiles-tasks-and-notifications.html"><span class="chapter-title">Chapter 9. User profiles, tasks and notifications</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 9. User profiles, tasks and notifications</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter will help you configure user profile details, view and act upon assigned tasks, manage notifications, and view activities based on time and date of occurrence. These essential actions will help you administer the varied responsibilities defined by your role effectively, in line with the aims of the Early Warning, Alert and Response System (EWARS) in various settings.</p>
+<section id="editing-a-user-profile" class="level2">
+<h2 class="anchored" data-anchor-id="editing-a-user-profile">9.1 Editing a user profile</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 58%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> An Acc</td>
+<td style="text-align: left;">ount Administrator or a Geographical Administrator in EWARS can edit their profiles, tasks and notifications.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Click on the <strong>profile</strong> <img src="../media/image251.png" style="width:0.23333in;height:0.24167in"> icon at the top right-hand corner, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image252.png" style="width:5.76666in;height:3.09167in"></p>
+<ul>
+<li>Edit the relevant fields (such as name, email, role, organization, phone, occupation and bio) &gt; click on the <strong>save</strong> <img src="../media/image253.png" style="width:0.28333in;height:0.21667in"> icon to save the changes or click on the <strong>close</strong> <img src="../media/image254.png" style="width:0.28125in;height:0.22917in"> icon to revert to the original text.</li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> Geographical Administrators are able to see the location along with the fields shown above.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="changing-your-password" class="level2">
+<h2 class="anchored" data-anchor-id="changing-your-password">9.2 Changing your password</h2>
+<p>If you want to change your password for security reasons, sign into the system and follow the steps below.</p>
+<p>You can customize your password as there are no set rules for it.</p>
+<ul>
+<li>Click on the <strong>profile</strong> <img src="../media/image251.png" style="width:0.23333in;height:0.24167in"> icon &gt; click on <img src="../media/image255.png" style="width:1.38542in;height:0.22917in"> at the top right-hand corner, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image256.png" style="width:5.675in;height:1.61667in"></p>
+<ul>
+<li>Enter a <strong>New Password</strong> &gt; re-enter the password in the <strong>Confirm New Password</strong> box &gt; click on <strong>Submit</strong>. The password is changed.</li>
+</ul>
+</section>
+<section id="changing-the-ewars-display-to-your-preferred-language" class="level2">
+<h2 class="anchored" data-anchor-id="changing-the-ewars-display-to-your-preferred-language">9.3 Changing the EWARS display to your preferred language</h2>
+<p>EWARS provides multilanguage support. By default, the application is set as English. You can choose a different language from your profile and view the application according to your preferences.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 75%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> EWARS</td>
+<td style="text-align: left;">helps you change the default language to your preferred language; you can thereby interact with the system in your selected language. For example, all notifications and tasks, and the entire interface can be viewed in the preferred language.</td>
+</tr>
+</tbody>
+</table>
+<p>Follow the steps below to change your preferred language.</p>
+<ul>
+<li>Click on the <strong>profile</strong> <img src="../media/image251.png" style="width:0.23333in;height:0.24167in"> icon &gt; click on <strong>Settings</strong>. By default, this is English, as shown below:</li>
+</ul>
+<p><img src="../media/image257.png" style="width:6.16119in;height:1.81771in"></p>
+<ul>
+<li>Select <strong>French</strong> from the <strong>Language</strong> drop-down menu, and your EWARS display screen is visible in French, as shown below:</li>
+</ul>
+<p><img src="../media/image258.png" style="width:6.1875in;height:1.89583in"></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> if you do not see the desired language in the <strong>Language</strong> drop-down menu, the language needs to be added to the account. To find out more about adding languages, refer to <strong>Chapter 10. EWARS account settings</strong>, topic <strong>10.6.4 Adding a new language to your</strong> <strong>account</strong>.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="enabling-two-factor-authentication-for-login" class="level2">
+<h2 class="anchored" data-anchor-id="enabling-two-factor-authentication-for-login">9.4 Enabling two-factor authentication for login</h2>
+<p>Two-factor authentication is a two-step security process. Users need to verify first by entering their credentials, and then by entering the security code sent to their email address to log into the account. This provides higher security and access control than a login based on email and password alone.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> this feature is not available for users whose accounts are created with system-generated email addresses (ending in @ewars.ws) or for EWARS users working offline.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>To enable two-factor authentication, follow the steps below.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Users &gt;</strong> click on the <strong>edit</strong> <img src="../media/image240.png" style="width:0.29167in;height:0.275in">icon of the relevant user. Under <strong>Account Security</strong>, in the <strong>Two-factor authentication</strong> field, select <strong>Active</strong> from the drop-down menu.</li>
+</ul>
+</section>
+<section id="assigned-tasks-under-your-role" class="level2">
+<h2 class="anchored" data-anchor-id="assigned-tasks-under-your-role">9.5 Assigned tasks under your role</h2>
+<p>In EWARS, new user registration, reporting assignments, amendments to reports and deletion of reports happen through a systematic approval process. As an administrative user (Account Administrator or Geographical Administrator), you have to manage these tasks if they fall under your geographical administrative area.</p>
+<p>A task is created for the Geographical Administrator/Account Administrator whenever a Reporting User requests any of the following:</p>
+<ul>
+<li><p>registration of requests</p></li>
+<li><p>approval of assignment requests</p></li>
+<li><p>approval of amendment requests</p></li>
+<li><p>approval of record deletion requests.</p></li>
+</ul>
+<p>The sections below explain how each task is managed.</p>
+<section id="viewing-assigned-tasks" class="level3">
+<h3 class="anchored" data-anchor-id="viewing-assigned-tasks">9.5.1 Viewing assigned tasks</h3>
+<p>As an administrative user, the tasks listed above are in your account. Follow the steps below to see what tasks are assigned to you, needing your approval. For EWARS to function successfully, an administrative user should check tasks on a daily basis.</p>
+<ul>
+<li>Click on the <img src="../media/image259.png" style="width:0.7in;height:0.25in"> icon at the top left-hand corner &gt; click on <img src="../media/image260.png" style="width:0.59167in;height:0.24167in">, and all tasks are visible as shown below:</li>
+</ul>
+<p><img src="../media/image261.png" style="width:5.80833in;height:2.85833in"></p>
+</section>
+<section id="performing-user-registration-requests" class="level3">
+<h3 class="anchored" data-anchor-id="performing-user-registration-requests">9.5.2 Performing user registration requests</h3>
+<ul>
+<li>Click on <img src="../media/image260.png" style="width:0.59167in;height:0.24167in"> at the left-hand side of the EWARS home screen &gt; click on <strong>Registration requests</strong> under <strong>ADMIN TASKS</strong> &gt; click on any of the <strong>Registration requests</strong>, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image262.png" style="width:4.43333in;height:3.125in"></p>
+<p>EWARS allows access to the system via an approval process. Any user who needs access is required to request approval, unless the user is created by the Account Administrator (refer to <strong>Chapter 8. Users and their assignments</strong> for more information).</p>
+<p>Read through the request, and review the role of the user. Approve or reject it, according to your needs.</p>
+<ul>
+<li><p><strong>Either</strong> click on <img src="../media/image263.png" style="width:0.79167in;height:0.23333in"> to register the user, and a notification email is sent to the user</p></li>
+<li><p><strong>Or</strong> click on <img src="../media/image264.png" style="width:0.73333in;height:0.20833in">, and the <strong>Registration requests</strong> dialogue box opens, as shown below:</p></li>
+</ul>
+<p><img src="../media/image265.png" style="width:4.43333in;height:2.425in"></p>
+<ul>
+<li>Provide a <strong>reason for rejection</strong> &gt; click on <img src="../media/image266.png" style="width:0.74167in;height:0.2in">, and a notification email is sent to the user.</li>
+</ul>
+</section>
+<section id="performing-assignment-requests" class="level3">
+<h3 class="anchored" data-anchor-id="performing-assignment-requests">9.5.3 Performing assignment requests</h3>
+<p>This function is used when an assignment is requested by a Reporting User. Assignments for any form require the approval of an Account Administrator.</p>
+<ul>
+<li>Click on <img src="../media/image260.png" style="width:0.59167in;height:0.24167in"> at the left-hand side of the EWARS home screen &gt; click on <strong>Assignment requests</strong> under <strong>ADMIN TASKS</strong> &gt; click on any of the <strong>Assignment requests</strong>, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image267.png" style="width:4.5in;height:2.59167in"></p>
+<ul>
+<li><p><strong>Either</strong> click on <img src="../media/image263.png" style="width:0.79167in;height:0.23333in"> to approve the request, and a notification email is sent to the user</p></li>
+<li><p><strong>Or</strong> click on <img src="../media/image264.png" style="width:0.73333in;height:0.20833in"> &gt; provide a reason for rejection &gt; click on <img src="../media/image266.png" style="width:0.74167in;height:0.2in"> , and a notification email is sent to the user.</p></li>
+</ul>
+</section>
+<section id="performing-amendment-requests" class="level3">
+<h3 class="anchored" data-anchor-id="performing-amendment-requests">9.5.4 Performing amendment requests</h3>
+<p>This function is used when an amendment of a report is requested by a Reporting User. Amendment of any previously submitted report requires the Account Administrator’s approval only if the approval requirement for amendments is enabled. To enable it, refer to <strong>Chapter 6. Forms</strong>, topic <strong>6.8.5 Enabling approval requirement for amendments</strong>.</p>
+<ul>
+<li>Click on <img src="../media/image260.png" style="width:0.59167in;height:0.24167in"> at the left-hand side of the EWARS home screen &gt; click on <strong>Amendment requests</strong> under <strong>ADMIN TASKS</strong> &gt; click on any of the <strong>Amendment requests</strong>, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image268.png" style="width:4.475in;height:3.29167in"></p>
+<p>You can view the changes proposed for amendment under the <strong>Proposed Changes</strong> section.</p>
+<ul>
+<li><p><strong>Either</strong> click on <img src="../media/image263.png" style="width:0.79167in;height:0.23333in"> to approve the amendment, and a notification email is sent to the user</p></li>
+<li><p><strong>Or</strong> click on <img src="../media/image264.png" style="width:0.73333in;height:0.20833in"> &gt; provide a reason for rejection &gt; click on <img src="../media/image266.png" style="width:0.74167in;height:0.2in">, and a notification email is sent to the user.</p></li>
+</ul>
+</section>
+<section id="performing-record-deletion-requests" class="level3">
+<h3 class="anchored" data-anchor-id="performing-record-deletion-requests">9.5.5 Performing record deletion requests</h3>
+<p>This function can be requested by the Reporting User when he/she has submitted a report that is entirely invalid or incorrect.</p>
+<ul>
+<li>Click on <img src="../media/image260.png" style="width:0.59167in;height:0.24167in"> at the left-hand side of the EWARS home screen &gt; click on <strong>Record deletion requests</strong> under <strong>ADMIN TASKS</strong> &gt; click on any of the <strong>Record deletion requests</strong>, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image269.png" style="width:5.66667in;height:2.625in"></p>
+<p>To view the submitted report, follow the steps below.</p>
+<ul>
+<li>Click on <img src="../media/image270.png" style="width:0.88333in;height:0.20833in">, and the report opens in the <strong>Report manager</strong> menu, as shown below:</li>
+</ul>
+<p><img src="../media/image271.png" style="width:5.675in;height:3.175in"></p>
+<ul>
+<li><strong>Either</strong> click on <img src="../media/image263.png" style="width:0.79167in;height:0.23333in"> to approve the request, and a notification email is sent to the user</li>
+</ul>
+<!-- -->
+<ul>
+<li><strong>Or</strong> click on <img src="../media/image264.png" style="width:0.73333in;height:0.20833in"> &gt; provide a reason for rejection &gt; click on <img src="../media/image266.png" style="width:0.74167in;height:0.2in">, and a notification email is sent to the user.</li>
+</ul>
+</section>
+</section>
+<section id="notifications" class="level2">
+<h2 class="anchored" data-anchor-id="notifications">9.6 Notifications</h2>
+<p>EWARS can send notifications of alerts and other tasks to administrative users. You can receive notifications when an alert is triggered, an alert is reopened, someone comments on an alert, and an alert is automatically closed due to expiration.</p>
+<section id="subscribing-to-notifications" class="level3">
+<h3 class="anchored" data-anchor-id="subscribing-to-notifications">9.6.1 Subscribing to notifications</h3>
+<p>You can subscribe to receive notifications based on set preferences. Follow the steps below to set the preferences for subscribing to notifications.</p>
+<ul>
+<li>Click on the <strong>profile</strong> <img src="../media/image251.png" style="width:0.23333in;height:0.24167in"> icon &gt; click on the <strong>Notification Settings</strong> tab, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image272.png" style="width:5.4375in;height:4.92708in"></p>
+<ul>
+<li><p>To subscribe to notifications as emails, select <strong>Email</strong> from the drop-down menu.</p></li>
+<li><p>To view the notifications in your account, select <strong>Notify</strong> from the drop-down menu.</p></li>
+<li><p>To ignore notifications, select <strong>Ignore</strong> from the drop-down menu.</p></li>
+</ul>
+<p>For demonstration purposes, this guide uses the following two examples.</p>
+<p><strong>Example 1.</strong> Notify via email whenever any alert is triggered.</p>
+<ul>
+<li>Click on the <strong>profile</strong> <img src="../media/image251.png" style="width:0.23333in;height:0.24167in"> icon &gt; click on the <strong>Notification Settings</strong> tab &gt; select <strong>Email</strong> as shown below:</li>
+</ul>
+<p><img src="../media/image273.png" style="width:3.70833in;height:0.38333in"></p>
+<ul>
+<li>Whenever an alert is triggered, you will receive an email notification, as shown below:</li>
+</ul>
+<p><img src="../media/image274.png" style="width:4.36667in;height:2.85833in"></p>
+<p><strong>Example 2.</strong> View the notification in your account whenever an alert is reopened.</p>
+<ul>
+<li>Click on the <strong>profile</strong> <img src="../media/image251.png" style="width:0.23333in;height:0.24167in"> icon &gt; click on the <strong>Notification Settings</strong> tab &gt; select <strong>Notify</strong> as shown below:</li>
+</ul>
+<p><img src="../media/image275.png" style="width:3.75in;height:0.38333in"></p>
+<p>Whenever an alert is reopened, you will receive a system notification in your account. Refer to the following topic for more information.</p>
+</section>
+<section id="viewing-and-managing-system-notifications" class="level3">
+<h3 class="anchored" data-anchor-id="viewing-and-managing-system-notifications">9.6.2 Viewing and managing system notifications</h3>
+<p>You can view notifications in EWARS and manage them accordingly. As an administrative user, it is recommended that you check notifications frequently.</p>
+<p>To view notifications, follow the steps below.</p>
+<ul>
+<li>Click on the <img src="../media/image276.png" style="width:0.61667in;height:0.25in"> icon at the top left-hand corner &gt; click on <img src="../media/image277.png" style="width:0.59375in;height:0.22917in"> , and the screen below appears:</li>
+</ul>
+<p><img src="../media/image278.png" style="width:5.675in;height:2.15in"></p>
+<ul>
+<li>Click on a notification (e.g.&nbsp;<strong>Alert re-opened</strong>), and a screen opens with the notification details, as shown below:</li>
+</ul>
+<p><img src="../media/image279.png" style="width:5.675in;height:2.30833in"></p>
+<p>You can also open the alert by clicking on the <strong>here</strong> link as highlighted in the screenshot above.</p>
+<p>To manage notifications, follow the steps below.</p>
+<ul>
+<li><p>To clear a notification, click on the <strong>delete</strong> <img src="../media/image280.png" style="width:0.21875in;height:0.20833in" alt="Inserting image..."> icon at the right-hand side of the notification, and the notification is deleted.</p></li>
+<li><p>To clear all notifications, click on <img src="../media/image281.png" style="width:0.92708in;height:0.21875in"> at the top right-hand corner, and all notifications are deleted.</p></li>
+</ul>
+</section>
+<section id="receiving-email-notifications-in-plain-text-format" class="level3">
+<h3 class="anchored" data-anchor-id="receiving-email-notifications-in-plain-text-format">9.6.3 Receiving email notifications in plain text format</h3>
+<p>By default, you will receive email notifications in HyperText Markup Language (HTML) format, as shown below:</p>
+<p><img src="../media/image282.png" style="width:5in;height:3.61458in"></p>
+<p>To change the <strong>Email Format</strong> to plain text, follow the steps below.</p>
+<ul>
+<li>Click on the <strong>profile</strong> <img src="../media/image251.png" style="width:0.23333in;height:0.24167in"> icon &gt; click on the <strong>Notification Settings</strong> tab. Look for the <strong>Email Format</strong> field, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image283.png" style="width:5.65in;height:1.50833in"></p>
+<ul>
+<li>Select <strong>Send plain text email</strong> from the drop-down menu. You will see email notifications in a plain text format, as shown below:</li>
+</ul>
+<p><img src="../media/image284.png" style="width:5.725in;height:1.68333in"></p>
+</section>
+<section id="disabling-email-notifications" class="level3">
+<h3 class="anchored" data-anchor-id="disabling-email-notifications">9.6.4 Disabling email notifications</h3>
+<p>By default, email notifications is enabled. If you disable the function, you will not receive any notification via email, even if you have subscribed to them. However, you will continue to receive administrative emails, such as password reset emails and other task-oriented emails.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 64%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Email</td>
+<td style="text-align: left;">notifications should be kept enabled for alerts and administrative tasks so that you are made aware rapidly of disease threats requiring a response.</td>
+</tr>
+</tbody>
+</table>
+<p>To disable email notifications, follow the steps below:</p>
+<ul>
+<li>Click on the <strong>profile</strong> <img src="../media/image251.png" style="width:0.23333in;height:0.24167in"> icon &gt; click on the <strong>Notification Settings</strong> tab &gt; look for the <strong>Email Notifications</strong> field. By default, <strong>Email Notifications</strong> is enabled, as shown below:</li>
+</ul>
+<p><img src="../media/image285.png" style="width:5.78333in;height:1.4in"></p>
+<ul>
+<li>To disable it, select <strong>Disable Email Notifications</strong> from the drop-down menu.</li>
+</ul>
+</section>
+</section>
+<section id="viewing-activities" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-activities">9.7 Viewing activities</h2>
+<p>EWARS keeps track of two types of activities:</p>
+<ul>
+<li><p>new report submissions</p></li>
+<li><p>new user registrations</p></li>
+</ul>
+<p>You can view these activities along with their date and time of occurrence as follows.</p>
+<ul>
+<li>Click on the <img src="../media/image276.png" style="width:0.7in;height:0.26667in"> icon &gt; click on <img src="../media/image286.png" style="width:0.69792in;height:0.22917in"> at the left-hand side, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image287.png" style="width:5.76667in;height:2.93333in"></p>
+<p>To view submitted reports via the activity feature, follow the steps below.</p>
+<ul>
+<li>Look for a new report submission activity &gt; click on it, and the report opens in the <strong>Report manager</strong> menu, as shown below:</li>
+</ul>
+<p><img src="../media/image288.png" style="width:5.69167in;height:3.14167in"></p>
+<p>You can view the name of the user and the date of submission.</p>
+<p>To view details of a newly joined user in the activity list, follow the steps below.</p>
+<ul>
+<li>Look for new user registration activity &gt; click on it, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image289.png" style="width:5.675in;height:2.69167in"></p>
+<p>You can view the name of the user, his/her organization, role, date and time of joining, activities and assignments.</p>
+<p>The following chapter explains how the Account Administrator helps to manage the EWARS account settings for users.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/11-users-and-their-assignments.html" class="pagination-link" aria-label="Chapter 8. Users and their assignments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 8. Users and their assignments</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/13-ewars-account-settings.html" class="pagination-link" aria-label="Chapter 10. EWARS account settings">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 10. EWARS account settings</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© World Health Organization, 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

@@ -1,0 +1,3 @@
+# Chapitre 15. Graphique
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 15. Plot](../../en/chapters/18-plot.qmd).

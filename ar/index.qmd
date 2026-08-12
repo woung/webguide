@@ -1,0 +1,19 @@
+---
+title: "EWARS in a Box"
+subtitle: "دليل استخدام الويب"
+---
+
+## حول هذا الدليل
+
+> **الترجمة قيد التنفيذ.** هذه النسخة العربية قيد الإعداد. يعكس المحتوى أدناه الهيكل الكامل للدليل، وستتم ترجمة كل فصل تدريجيًا. في هذه الأثناء، يُرجى الاطلاع على [النسخة الإنجليزية الكاملة](../en/index.qmd).
+
+يدعم هذا الدليل تنفيذ **EWARS in a box**، نظام منظمة الصحة العالمية الإلكتروني للإنذار المبكر والتنبيه والاستجابة في حالات الطوارئ.
+
+## اللغات المتاحة
+
+::: {.lang-grid}
+[<span class="lang-name">English</span><span class="lang-native">Original edition</span><span class="lang-status ready">مكتمل</span>](../en/index.qmd){.lang-card}
+[<span class="lang-name">Français</span><span class="lang-native">Édition française</span><span class="lang-status pending">الترجمة قيد التنفيذ</span>](../fr/index.qmd){.lang-card}
+[<span class="lang-name">Español</span><span class="lang-native">Edición en español</span><span class="lang-status pending">الترجمة قيد التنفيذ</span>](../es/index.qmd){.lang-card}
+[<span class="lang-name">العربية</span><span class="lang-native">النسخة العربية</span><span class="lang-status pending">الترجمة قيد التنفيذ</span>](index.qmd){.lang-card}
+:::

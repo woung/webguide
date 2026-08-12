@@ -1,0 +1,3 @@
+# الفصل 1. نظرة عامة على EWARS in a box
+
+> **الترجمة قيد التنفيذ.** بانتظار ترجمة هذه الصفحة إلى العربية. يُرجى الرجوع إلى النسخة الإنجليزية في الوقت الحالي — انظر [Chapter 1. Overview of EWARS in a box](../../en/chapters/04-overview-of-ewars-in-a-box.qmd).

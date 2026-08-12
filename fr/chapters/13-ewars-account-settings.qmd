@@ -1,0 +1,3 @@
+# Chapitre 10. Paramètres du compte EWARS
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 10. EWARS account settings](../../en/chapters/13-ewars-account-settings.qmd).

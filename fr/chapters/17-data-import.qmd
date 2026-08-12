@@ -1,0 +1,3 @@
+# Chapitre 14. Importation de données
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 14. Data Import](../../en/chapters/17-data-import.qmd).

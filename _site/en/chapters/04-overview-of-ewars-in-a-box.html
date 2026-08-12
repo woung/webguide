@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Chapter 1. Overview of EWARS in a box – EWARS Mobile</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/05-getting-started.html" rel="next">
+<link href="../chapters/03-executive-summary.html" rel="prev">
+<link href=".././media/image1.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d60a5906468b64742e20e52e09f920c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cb29c9f9deed8f7c023d39522d0343d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../shared/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">EWARS Mobile</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-language" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🌐 Language</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-language">    
+        <li>
+    <a class="dropdown-item" href="../index.html">
+ <span class="dropdown-text">English</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../fr/index.qmd">
+ <span class="dropdown-text">Français</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../es/index.qmd">
+ <span class="dropdown-text">Español</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../ar/index.qmd">
+ <span class="dropdown-text">العربية</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-overview-of-ewars-in-a-box.html">Introduction</a></li><li class="breadcrumb-item"><a href="../chapters/04-overview-of-ewars-in-a-box.html"><span class="chapter-title">Chapter 1. Overview of EWARS in a box</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EWARS Mobile</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-acknowledgments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-abbreviations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abbreviations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-executive-summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Executive summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-overview-of-ewars-in-a-box.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 1. Overview of EWARS in a box</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2. Getting started</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Setting up your EWARS account</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-locations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3. Locations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-configuration-transfer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4. Configuration Transfer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5. Indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-forms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6. Forms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-alarms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7. Alarms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-users-and-their-assignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8. Users and their assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-user-profiles-tasks-and-notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9. User profiles, tasks and notifications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-ewars-account-settings.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10. EWARS account settings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data Collection and Monitoring</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-report-manager.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11. Report manager</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-m-e-auditor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 12. M&amp;E Auditor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-alert-log.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 13. Alert log</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-data-import.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 14. Data Import</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data analysis, visualization and dissemination</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-plot.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 15. Plot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/19-mapping.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 16. Mapping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/20-widgets-and-their-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 17. Widgets and their configuration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/21-notebooks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 18. Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/22-dashboards.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 19. Dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/23-outbreaks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 20. Outbreaks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/24-documents-and-document-templates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 21. Documents and Document Templates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/25-website-builder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 22. Website Builder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/26-export.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 23. Export</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/27-sms-reporting-and-teams.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 24. SMS reporting and teams</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/28-ewars-stand-alone.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 25. EWARS Stand-alone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/29-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 26. Glossary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/30-help-and-support.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 27. Help and support</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#ewars-components" id="toc-ewars-components" class="nav-link active" data-scroll-target="#ewars-components">1.1 EWARS components</a></li>
+  <li><a href="#ewars-components-and-their-deployment-in-various-scenarios" id="toc-ewars-components-and-their-deployment-in-various-scenarios" class="nav-link" data-scroll-target="#ewars-components-and-their-deployment-in-various-scenarios">1.2 EWARS components and their deployment in various scenarios</a></li>
+  <li><a href="#key-modules" id="toc-key-modules" class="nav-link" data-scroll-target="#key-modules">1.3 Key modules</a></li>
+  <li><a href="#types-of-users" id="toc-types-of-users" class="nav-link" data-scroll-target="#types-of-users">1.4 Types of users</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/04-overview-of-ewars-in-a-box.html">Introduction</a></li><li class="breadcrumb-item"><a href="../chapters/04-overview-of-ewars-in-a-box.html"><span class="chapter-title">Chapter 1. Overview of EWARS in a box</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 1. Overview of EWARS in a box</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>WHO’s <a href="https://apps.who.int/iris/handle/10665/258604">Emergency Response Framework</a> (ERF)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> highlights the Early Warning, Alert and Response System (EWARS) as one of the priority emergency interventions to be implemented within the first two weeks of an emergency response operation. The aim of ensuring early detection and prompt response is to mitigate the impact of communicable diseases among crisis-affected populations.</p>
+<p>EWARS in a box brings novel technology to early warning in emergencies and is supported by the Health Emergencies Programme at WHO headquarters. Strategic use of technology and innovation makes disease detection in emergencies easier and more effective, saving lives in the process.</p>
+<p>EWARS in a box is an innovative and effective tool designed to detect disease outbreaks quickly in emergency, conflict and vulnerable settings. It can be deployed in humanitarian emergencies such as:</p>
+<ul>
+<li><p>war or civil strife, affecting large civilian populations and causing displacement;</p></li>
+<li><p>natural disasters, such as floods, tsunamis, volcanic eruptions and earthquakes;</p></li>
+<li><p>food insecurity and famine;</p></li>
+<li><p>large-scale disease outbreaks that overwhelm national capacity;</p></li>
+<li><p>food, chemical or radio-nuclear spills, and public health emergencies due to other hazards.</p></li>
+</ul>
+<p>EWARS in a box is mainly used by front-line workers; it consists of manuals, mobile phones and laptops to capture and submit key data, thereby facilitating multifaceted, in-depth analysis and monitoring/tracking. The EWARS in a box kit contains the items depicted in Fig. 1.1.</p>
+<p>Fig. 1.1. EWARS in a box kit contents</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image3.png" style="width:5.73958in;height:2.94889in" class="figure-img"></p>
+<figcaption>A picture containing text, indoor, computer, computer Description automatically generated</figcaption>
+</figure>
+</div>
+<p>EWARS in a box is designed with the needs of front-line users in mind. It is a simple, rapidly deployable and flexible tool (Fig. 1.2).</p>
+<p>Fig. 1.2. EWARS in a box as a simple, rapidly deployable and flexible tool</p>
+<p><img src="../media/image4.png" style="width:4.93262in;height:2.78593in"></p>
+<p>For ease of use and brevity, this guide will refer to the EWARS in a box tool as “EWARS” throughout. Subsequent sections address the different EWARS components, its key modules, EWARS environments and deployment.</p>
+<section id="ewars-components" class="level2">
+<h2 class="anchored" data-anchor-id="ewars-components">1.1 EWARS components</h2>
+<p>EWARS comprises several components, including WHO EWARS/EWARS Web, EWARS Country, EWARS Stand-alone, EWARS Mobile and Short Message Service (SMS) Gateway, as shown in Fig. 1.3.</p>
+<p>Fig. 1.3. EWARS components</p>
+<p><img src="../media/image5.png" style="width:5.77084in;height:5.77084in"></p>
+<ul>
+<li><p><strong>WHO EWARS/EWARS Web</strong> refers to the EWARS web version, which is accessible via the internet. It contains all EWARS accounts across regions and countries.</p></li>
+<li><p><strong>EWARS Country</strong> is a local copy of EWARS running on a country server that may be accessible via the internet or open to a private network only. It is not connected to WHO EWARS: it is an entirely separate server, containing all the EWARS components and roles, but the data and components are only accessible by the authorized users of that country.</p></li>
+<li><p><strong>EWARS Stand-alone</strong> is a local EWARS developed for settings without reliable internet connections, which connects to either WHO EWARS or an EWARS Country server when connection is established.</p></li>
+<li><p><strong>EWARS Mobile</strong> is the mobile application running on Android, which is used for reporting data from the field to WHO EWARS.</p></li>
+<li><p><strong>SMS Gateway</strong> is the EWARS Mobile application on Android developed to facilitate SMS reporting in settings with unreliable internet connection.</p></li>
+</ul>
+</section>
+<section id="ewars-components-and-their-deployment-in-various-scenarios" class="level2">
+<h2 class="anchored" data-anchor-id="ewars-components-and-their-deployment-in-various-scenarios">1.2 EWARS components and their deployment in various scenarios</h2>
+<p>EWARS can be deployed easily under various scenarios in different countries or contexts, even where there is unreliable or no internet connectivity. A few key scenarios are described below, depicting practical situations in which EWARS is deployed.</p>
+<p>In <strong>Scenario A</strong>, there is reliable internet connectivity. Field workers such as nurses, surveillance officers and community health workers throughout the country are equipped with mobile phones and can submit reports directly to WHO EWARS (Fig. 1.4).</p>
+<p>Fig. 1.4. EWARS reporting with reliable internet connectivity</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image6.png" style="width:5.82292in;height:1.41667in" class="figure-img"></p>
+<figcaption>A picture containing text, screenshot Description automatically generated</figcaption>
+</figure>
+</div>
+<p>In this instance, the EWARS Mobile application is installed on the EWARS phones of field workers for reporting purposes. The field workers, Reporting Users of primary health-care centres (PHCCs), laboratory workers, mobile clinics and field hospital workers capture data on the mobile application and submit it directly to WHO EWARS using an internet connection (Fig. 1.5).</p>
+<p>Fig. 1.5. Scenario A: reporting with reliable internet connectivity</p>
+<p><img src="../media/image7.png" style="width:6.34028in;height:4.47361in"></p>
+<p>In <strong>Scenario B</strong>, the internet connection is unreliable – for example, in the case of those in remote islands and rural areas, where Reporting Users visit the local surveillance office on a regular basis (such as daily or weekly) to submit reports. Possible deployments for this scenario are outlined below.</p>
+<p>EWARS Stand-alone functions as an intermediary medium, facilitating reporting between EWARS Mobile and WHO EWARS in scenarios that are offline or that lack access to reliable internet connections (Fig. 1.6). Reporting Users can input data in offline mode using EWARS Mobile. All Reporting Users visit the local surveillance office, where EWARS Stand-alone is set up, regularly. They submit the entered data to EWARS Stand-alone through quick response (QR) code sharing, using a local hotspot.</p>
+<p>Fig. 1.6. EWARS reporting with unreliable internet connectivity</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image8.jpg" style="width:6.15104in;height:1.10403in" class="figure-img"></p>
+<figcaption>Text Description automatically generated with low confidence</figcaption>
+</figure>
+</div>
+<p>The data in EWARS Stand-alone are submitted to WHO EWARS using an internet connection (Fig. 1.7). For detailed information, refer to <strong>Chapter 25. EWARS</strong> <strong>Stand-alone</strong>.</p>
+<p>Fig. 1.7. Scenario B: reporting via EWARS Stand-alone overview</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image9.png" style="width:6.27084in;height:4.40625in" class="figure-img"></p>
+<figcaption>Diagram Description automatically generated</figcaption>
+</figure>
+</div>
+<p>In deployment using the internet connection of the surveillance office, Reporting Users collect the data in offline mode and submit it from their EWARS Mobile application to WHO EWARS, using the office internet connection (Fig. 1.8). These submitted reports are saved as “queued” reports.</p>
+<p>Fig. 1.8. EWARS reporting using office internet connection</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image10.png" style="width:6.27084in;height:1.23958in" class="figure-img"></p>
+<figcaption>Text Description automatically generated</figcaption>
+</figure>
+</div>
+<p>Reporting Users visit the surveillance office and submit the queued reports to WHO EWARS through the office internet connection (Fig. 1.9).</p>
+<p>Fig. 1.9. Scenario B: reporting via queued reports overview</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image11.png" style="width:6.27084in;height:4.40625in" class="figure-img"></p>
+<figcaption>Diagram Description automatically generated</figcaption>
+</figure>
+</div>
+<p>In <strong>Scenario C</strong>, all Reporting Users are equipped with mobile phones but are not able to visit the surveillance office regularly, or the office is not in the near vicinity – for example, those in remote areas, conflict-affected areas or areas with poor infrastructure support. These users can access the SMS Gateway. The Reporting Users collect their reports in their EWARS Mobile application and submit them to WHO EWARS via SMS (Fig. 1.10).</p>
+<p>Fig. 1.10. EWARS reporting using SMS Gateway connection</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image12.png" style="width:6.23884in;height:1.11979in" class="figure-img"></p>
+<figcaption>Graphical user interface Description automatically generated with low confidence</figcaption>
+</figure>
+</div>
+<p>These reports are received by the SMS Gateway phone. This is a dedicated Android phone with the EWARS SMS Gateway application activated. It relays the reports received as SMSs to the WHO EWARS server, using an internet connection (Fig. 1.11). For detailed information, refer to <strong>Chapter 24.</strong> <strong>SMS</strong> <strong>reporting</strong> <strong>and</strong> <strong>teams</strong>.</p>
+<p>Fig. 1.11. Scenario C reporting overview</p>
+<p><img src="../media/image13.jpg" style="width:5.93561in;height:4.1673in"></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> all the above scenarios use the WHO EWARS server. If you want to run EWARS on your own server, follow the steps below.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>In an EWARS Country scenario, the country wants to host its server locally. This is an entirely separate server that contains all the EWARS components and roles, but the data and components are accessible only by the authorized users of that EWARS Country server. All the information given above for <strong>Scenarios A, B</strong> and <strong>C</strong> is also applicable, but the server used is an EWARS Country one.</p>
+<p>In EWARS deployment as in <strong>Scenario A</strong>, with stable internet connection, the field workers can submit the report directly to the EWARS Country server using the internet connection (Fig. 1.12).</p>
+<p>Fig. 1.12. EWARS reporting using EWARS Country server</p>
+<p><img src="../media/image15.png" style="width:5.82292in;height:1.41667in"></p>
+</section>
+<section id="key-modules" class="level2">
+<h2 class="anchored" data-anchor-id="key-modules">1.3 Key modules</h2>
+<p>Fig. 1.13 and Table 1.1 set out the four key EWARS modules.</p>
+<p>Fig. 1.13. Key EWARS modules</p>
+<p><img src="../media/image16.png" style="width:6.22967in;height:2.66059in"></p>
+<p>Table 1.1. Details of the key EWARS modules</p>
+<p>+===============================================================================+==================================================================+ | <strong>Module</strong> | <strong>Description</strong> | +===============================================================================+==================================================================+ | <strong>Reporting</strong> <img src="../media/image17.png" class="img-fluid"> | EWARS facilitates data collection and reporting in both offline and online modes. With the Reporting module, users can report from different geographical locations, such as the community, temporary establishments, emergency shelters, internally displaced person (IDP) or refugee camps and mobile clinics. Reporting can happen from fixed locations too, such as PHCCs or field hospitals.| +——————————————————————————-+——————————————————————+ | <strong>Alert management</strong> <img src="../media/image18.png" class="img-fluid">. | EWARS has a dedicated Alert management module that aims to detect potential disease threats at the earliest possible opportunity. This module facilitates tracking of disease threats, verification of alerts, risk assessment and determination of the risks involved. Furthermore, timely resolution of alerts helps improve disease outbreak detection in humanitarian emergencies, saving lives and arresting potential spreads before they become hard to control. | +——————————————————————————-+——————————————————————+ | <strong>Data analysis</strong> <img src="../media/image19.png" class="img-fluid"> | EWARS analyses data with automated novel techniques. The Data analysis module supports simple to complex analyses and interactive data explorations online and offline. EWARS data visualizations via graphs, charts and tables enable accurate data interpretation for rapid response. The system also facilitates creation of maps. EWARS systematically logs data and facilitates filtering and downloading in different formats.| +——————————————————————————-+——————————————————————+ | <strong>Dissemination</strong> <img src="../media/image20.png" class="img-fluid"> | The Dissemination module provides various ways to disseminate information to users, emergency responders and the public. This is done through configurable dynamic Dashboards, a public-facing EWARS website and automated bulletins. These bulletins are created at regular intervals, such as on a weekly or monthly basis. For example, this module includes a weekly epidemiological bulletin in the majority of EWARS deployments.| +——————————————————————————-+——————————————————————+</p>
+</section>
+<section id="types-of-users" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-users">1.4 Types of users</h2>
+<p>EWARS supports different types of users (Fig. 1.14), providing to different levels of functionality and permissions for the application. The users supported by EWARS are:</p>
+<ul>
+<li><p>Super Administrators</p></li>
+<li><p>Account Administrators</p></li>
+<li><p>Geographical Administrators</p></li>
+<li><p>Reporting Users.</p></li>
+</ul>
+<p>Fig. 1.14. Types of EWARS users</p>
+<p><img src="../media/image21.png" style="width:6.55518in;height:5.05295in"></p>
+<ul>
+<li><p>A <strong>Super Administrator</strong> is usually a member of the EWARS core team at the central level. Super Administrators look after EWARS management across all accounts. They can create and delete EWARS Country accounts according to the needs and requests of country emergency responders or the surveillance team.</p></li>
+<li><p>An <strong>Account Administrator</strong> manages the individual country/context account, including alerts, bulletins, dashboards and the EWARS website.</p></li>
+<li><p>A <strong>Geographical Administrator</strong> manages EWARS in specific geographical areas, or areas in a country/context. Geographical Administrators are responsible for managing alerts, dashboards, bulletins and data analysis for that area.</p></li>
+<li><p>A <strong>Reporting User</strong> reports data to EWARS from specific locations. Reporting Users have a very specific set of account permissions that facilitate submission of particular reports from particular locations. Locations can range from PHCCs, mobile clinics and field hospitals to the community. A Reporting User could be a nurse; a medical officer in a PHCC, health post or mobile clinic; a surveillance officer in a district office; or a community health worker/volunteer from the community. Most EWARS Reporting Users use EWARS Mobile for reporting; however, if logistics allow, Reporting Users can use tablets, desktops and laptops as well. In remote locations where there is no internet connection, Reporting Users can still create reports and synchronize them later when they have internet access. These accounts may be generic and linked to a health facility (rather than a specific individual).</p></li>
+</ul>
+<p>This web user guide provides in-depth knowledge about the various features and users of EWARS Mobile. It is intended to assist web users only. The web user could be an Account Administrator or a Geographical Administrator; a mobile user guide is available for Reporting Users. He/she can access the system through an internet browser such as Google Chrome or Microsoft Firefox. All the permissions can be configured in the system but new roles cannot be created.</p>
+<p>Chapter 2 covers all aspects of the registration process for EWARS web users in detail.</p>
+
+
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Emergency response framework (ERF), second edition. Geneva: World Health Organization; 2017 (https://apps.who.int/iris/handle/10665/258604, accessed 4 April 2022).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/03-executive-summary.html" class="pagination-link" aria-label="Executive summary">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Executive summary</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/05-getting-started.html" class="pagination-link" aria-label="Chapter 2. Getting started">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 2. Getting started</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© World Health Organization, 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

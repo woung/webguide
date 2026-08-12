@@ -1,0 +1,3 @@
+# Chapitre 16. Cartographie
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 16. Mapping](../../en/chapters/19-mapping.qmd).

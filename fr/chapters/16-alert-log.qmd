@@ -1,0 +1,3 @@
+# Chapitre 13. Journal des alertes
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 13. Alert log](../../en/chapters/16-alert-log.qmd).

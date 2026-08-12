@@ -1,0 +1,3 @@
+# Chapitre 2. Prise en main
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 2. Getting started](../../en/chapters/05-getting-started.qmd).

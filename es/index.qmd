@@ -1,0 +1,19 @@
+---
+title: "EWARS in a Box"
+subtitle: "Guía de uso web"
+---
+
+## Acerca de esta guía
+
+> **Traducción en curso.** Esta edición en español está en preparación. El contenido a continuación refleja la estructura completa de la guía; cada capítulo se traducirá progresivamente. Mientras tanto, consulte la [versión completa en inglés](../en/index.qmd).
+
+Esta guía apoya la implementación de **EWARS in a box**, el sistema electrónico de alerta temprana, alarma y respuesta de la OMS para emergencias.
+
+## Idiomas disponibles
+
+::: {.lang-grid}
+[<span class="lang-name">English</span><span class="lang-native">Original edition</span><span class="lang-status ready">Completo</span>](../en/index.qmd){.lang-card}
+[<span class="lang-name">Français</span><span class="lang-native">Édition française</span><span class="lang-status pending">Traduction en cours</span>](../fr/index.qmd){.lang-card}
+[<span class="lang-name">Español</span><span class="lang-native">Edición en español</span><span class="lang-status pending">Traducción en curso</span>](index.qmd){.lang-card}
+[<span class="lang-name">العربية</span><span class="lang-native">النسخة العربية</span><span class="lang-status pending">الترجمة قيد التنفيذ</span>](../ar/index.qmd){.lang-card}
+:::

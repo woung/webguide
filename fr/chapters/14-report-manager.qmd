@@ -1,0 +1,3 @@
+# Chapitre 11. Gestionnaire de rapports
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 11. Report manager](../../en/chapters/14-report-manager.qmd).

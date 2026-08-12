@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Chapter 25. EWARS Stand-alone – EWARS Mobile</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/29-glossary.html" rel="next">
+<link href="../chapters/27-sms-reporting-and-teams.html" rel="prev">
+<link href=".././media/image1.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d60a5906468b64742e20e52e09f920c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cb29c9f9deed8f7c023d39522d0343d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../shared/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">EWARS Mobile</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-language" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🌐 Language</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-language">    
+        <li>
+    <a class="dropdown-item" href="../index.html">
+ <span class="dropdown-text">English</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../fr/index.qmd">
+ <span class="dropdown-text">Français</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../es/index.qmd">
+ <span class="dropdown-text">Español</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../ar/index.qmd">
+ <span class="dropdown-text">العربية</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/18-plot.html">Data analysis, visualization and dissemination</a></li><li class="breadcrumb-item"><a href="../chapters/28-ewars-stand-alone.html"><span class="chapter-title">Chapter 25. EWARS Stand-alone</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EWARS Mobile</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-acknowledgments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-abbreviations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abbreviations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-executive-summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Executive summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-overview-of-ewars-in-a-box.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1. Overview of EWARS in a box</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2. Getting started</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Setting up your EWARS account</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-locations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3. Locations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-configuration-transfer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4. Configuration Transfer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5. Indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-forms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6. Forms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-alarms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7. Alarms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-users-and-their-assignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8. Users and their assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-user-profiles-tasks-and-notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9. User profiles, tasks and notifications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-ewars-account-settings.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10. EWARS account settings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data Collection and Monitoring</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-report-manager.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11. Report manager</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-m-e-auditor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 12. M&amp;E Auditor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-alert-log.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 13. Alert log</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-data-import.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 14. Data Import</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Data analysis, visualization and dissemination</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-plot.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 15. Plot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/19-mapping.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 16. Mapping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/20-widgets-and-their-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 17. Widgets and their configuration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/21-notebooks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 18. Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/22-dashboards.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 19. Dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/23-outbreaks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 20. Outbreaks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/24-documents-and-document-templates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 21. Documents and Document Templates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/25-website-builder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 22. Website Builder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/26-export.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 23. Export</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/27-sms-reporting-and-teams.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 24. SMS reporting and teams</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/28-ewars-stand-alone.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 25. EWARS Stand-alone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/29-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 26. Glossary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/30-help-and-support.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 27. Help and support</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#setting-up-ewars-stand-alone" id="toc-setting-up-ewars-stand-alone" class="nav-link active" data-scroll-target="#setting-up-ewars-stand-alone">25.1 Setting up EWARS Stand-alone</a></li>
+  <li><a href="#syncing-your-account-for-the-first-time" id="toc-syncing-your-account-for-the-first-time" class="nav-link" data-scroll-target="#syncing-your-account-for-the-first-time">25.2 Syncing your account for the first time</a>
+  <ul class="collapse">
+  <li><a href="#syncing-with-who-ewars" id="toc-syncing-with-who-ewars" class="nav-link" data-scroll-target="#syncing-with-who-ewars">25.2.1 Syncing with WHO EWARS</a></li>
+  <li><a href="#syncing-with-the-nearest-hub" id="toc-syncing-with-the-nearest-hub" class="nav-link" data-scroll-target="#syncing-with-the-nearest-hub">25.2.2 Syncing with the nearest hub</a></li>
+  </ul></li>
+  <li><a href="#sending-reports-from-one-ewars-mobile-account-to-another" id="toc-sending-reports-from-one-ewars-mobile-account-to-another" class="nav-link" data-scroll-target="#sending-reports-from-one-ewars-mobile-account-to-another">25.3 Sending reports from one EWARS Mobile account to another</a></li>
+  <li><a href="#sending-reports-from-ewars-mobile-to-ewars-stand-alone" id="toc-sending-reports-from-ewars-mobile-to-ewars-stand-alone" class="nav-link" data-scroll-target="#sending-reports-from-ewars-mobile-to-ewars-stand-alone">25.4 Sending reports from EWARS Mobile to EWARS Stand-alone</a></li>
+  <li><a href="#subsequent-syncing" id="toc-subsequent-syncing" class="nav-link" data-scroll-target="#subsequent-syncing">25.5 Subsequent syncing</a>
+  <ul class="collapse">
+  <li><a href="#identifying-conflicts" id="toc-identifying-conflicts" class="nav-link" data-scroll-target="#identifying-conflicts">25.5.1 Identifying conflicts</a></li>
+  <li><a href="#resolving-conflicts" id="toc-resolving-conflicts" class="nav-link" data-scroll-target="#resolving-conflicts">25.5.2 Resolving conflicts</a></li>
+  </ul></li>
+  <li><a href="#identifying-onlineoffline-features-through-icons" id="toc-identifying-onlineoffline-features-through-icons" class="nav-link" data-scroll-target="#identifying-onlineoffline-features-through-icons">25.6 Identifying online/offline features through icons</a></li>
+  <li><a href="#viewing-time-left-to-sync-the-account" id="toc-viewing-time-left-to-sync-the-account" class="nav-link" data-scroll-target="#viewing-time-left-to-sync-the-account">25.7 Viewing time left to sync the account</a></li>
+  <li><a href="#unsyncing-an-account-from-the-ewars-stand-alone-app" id="toc-unsyncing-an-account-from-the-ewars-stand-alone-app" class="nav-link" data-scroll-target="#unsyncing-an-account-from-the-ewars-stand-alone-app">25.8 Unsyncing an account from the EWARS Stand-alone app</a></li>
+  <li><a href="#troubleshooting-the-ewars-stand-alone-app" id="toc-troubleshooting-the-ewars-stand-alone-app" class="nav-link" data-scroll-target="#troubleshooting-the-ewars-stand-alone-app">25.9 Troubleshooting the EWARS Stand-alone app</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/18-plot.html">Data analysis, visualization and dissemination</a></li><li class="breadcrumb-item"><a href="../chapters/28-ewars-stand-alone.html"><span class="chapter-title">Chapter 25. EWARS Stand-alone</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 25. EWARS Stand-alone</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The Early Warning, Alert and Response System (EWARS) Stand-alone application (app) facilitates mobile reporting in environments that are offline or lack access to reliable internet connections. It is set up on a dedicated laptop or desktop (with Windows operating system), ideally situated at a central surveillance office of the concerned area. The app helps capture the data from EWARS Mobile users in such environments and then synchronizes (syncs) it with WHO EWARS. In such instances, EWARS Stand-alone acts as the <strong>receiver</strong> and EWARS Mobile acts as a <strong>sender</strong>. EWARS Stand-alone is similar to EWARS Web in terms of the interface, but it is equipped with additional data collection and synchronization features. Through this, field data can be collected and reported seamlessly in difficult environments, facilitating uninterrupted analysis and monitoring/tracking.</p>
+<p>EWARS Stand-alone functions as an intermediary medium, facilitating reporting between EWARS Mobile and WHO EWARS in environments that are offline or that lack access to reliable internet connections. Fig. 25.1 illustrates the process of data capture and submission to WHO EWARS via EWARS Stand-alone in such environments . Refer to <strong>Chapter 1. Overview of EWARS in a box</strong> for more scenarios.</p>
+<p>Fig. 25.1. Data capture and submission using EWARS Stand-alone</p>
+<p><img src="../media/image813.png" style="width:5.5625in;height:4.47318in"></p>
+<p>EWARS Stand-alone allows Geographical Administrators and Account Administrators to work while they are not connected to the internet.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 78%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> This a</td>
+<td style="text-align: left;">pp will not replace the interactive environment that normal EWARS provides. This chapter is written assuming you have an EWARS Country account that runs using reliable internet in other parts of the country. EWARS Stand-alone is used only in localized and remote areas with unreliable internet connectivity.</td>
+</tr>
+</tbody>
+</table>
+<p>The topics below set out how to set up EWARS Stand-alone. After the initial setup, it is mandatory to sync your account with WHO EWARS. During the synchronization, your account data and configurations are copied to the EWARS Stand-alone app storage, facilitating use of the app while you are offline.</p>
+<section id="setting-up-ewars-stand-alone" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-ewars-stand-alone">25.1 Setting up EWARS Stand-alone</h2>
+<p>The setup process involves procuring a laptop or desktop, downloading the app and installing it on the machine.</p>
+<p><strong>Step 1.</strong> You need a dedicated laptop or desktop to run the EWARS Stand-alone app. Ideally, this should be a machine at a central surveillance office in the area where you want to set up the EWARS Stand-alone operation.</p>
+<p>Minimum hardware requirements to set up EWARS Stand-alone are:</p>
+<ul>
+<li><p>a processor operating at 2.0&nbsp;GHz or more</p></li>
+<li><p>8&nbsp;GB or more RAM</p></li>
+<li><p>40&nbsp;GB or more available hard disk space</p></li>
+<li><p>a Windows 8 32-bit/64-bit or more operating system</p></li>
+<li><p>3G/4G network coverage (the app can work in 2G but 3G/4G is recommended for smooth running).</p></li>
+</ul>
+<p><strong>Step 2.</strong> Download the EWARS Stand-alone app onto your computer.</p>
+<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"><strong>Note:</strong> the following initial steps of installation need to be completed in an environment with an internet connection.</p>
+<ul>
+<li>Type the link to access the setup file of the EWARS Stand-alone app into an internet browser:</li>
+</ul>
+<p><a href="https://ewars.ws/static/apps/ewars_setup.exe">https://ewars.ws/static/apps/ewars_setup.exe</a></p>
+<ul>
+<li>When you click on the link, the setup file should begin to download automatically. You can view the progress of the download at the bottom right-hand corner of the browser:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image814.png" style="width:2.25521in;height:0.58333in" class="figure-img"></p>
+<figcaption>Text Description automatically generated with medium confidence</figcaption>
+</figure>
+</div>
+<ul>
+<li>After the download is complete, the <strong>ewars_setup.exe</strong> file appears in the progress bar:</li>
+</ul>
+<p><img src="../media/image815.png" style="width:2.30208in;height:0.41667in"></p>
+<p><strong>Step 3.</strong> Install the EWARS Stand-alone app on your computer.</p>
+<ul>
+<li>Double-click on the downloaded file. A dialogue box appears saying “Windows protected your PC”, as shown below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image816.png" style="width:4.78566in;height:2.78646in" class="figure-img"></p>
+<figcaption>Graphical user interface, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Click on <strong>More info</strong>, and the screen below appears:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image817.png" style="width:4.77604in;height:3.16955in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Click on <strong>Run anyway</strong>, and the app starts installation. Check the progress bar of the installation process:</li>
+</ul>
+<blockquote class="blockquote">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image818.png" style="width:3.96875in;height:1.57292in" class="figure-img"></p>
+<figcaption>Graphical user interface Description automatically generated with medium confidence</figcaption>
+</figure>
+</div>
+</blockquote>
+<ul>
+<li>After installation, the desktop app opens automatically, as shown below:</li>
+</ul>
+<blockquote class="blockquote">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image819.png" style="width:4.31526in;height:2.12707in" class="figure-img"></p>
+<figcaption>Graphical user interface, application Description automatically generated</figcaption>
+</figure>
+</div>
+</blockquote>
+<p>You now have a working version of EWARS Stand-alone installed on your machine.</p>
+</section>
+<section id="syncing-your-account-for-the-first-time" class="level2">
+<h2 class="anchored" data-anchor-id="syncing-your-account-for-the-first-time">25.2 Syncing your account for the first time</h2>
+<p>Synchronization of an account is the process of fetching data such as forms, alarms, users and so on from WHO EWARS to your EWARS Stand-alone account and of sending submitted reports and triggered alerts from your EWARS Stand-alone app to the WHO EWARS server.</p>
+<p>The sync feature is available only for users using EWARS Stand-alone and EWARS Mobile apps.</p>
+<p>After installation, it is important to sync your account before using the EWARS Stand-alone account. When you sync your account for the first time, all the forms, alarms, users, dashboards, bulletins and similar of your account on the WHO EWARS server also become available in the EWARS Stand-alone app.</p>
+<p>You can sync your account using one of the following two options (see Fig. 25.2).</p>
+<ul>
+<li><p>You can sync directly with <strong>WHO EWARS</strong>. This requires a reliable internet connection.</p></li>
+<li><p>You can sync with the <strong>nearest hub</strong>. This does not require an internet connection. The nearest hub is another EWARS Stand-alone account connected to the same network.</p></li>
+</ul>
+<p>Fig 25.2. Syncing your account with WHO EWARS or the nearest hub</p>
+<p><img src="../media/image820.jpg" style="width:6.55208in;height:0.99646in"></p>
+<p>These options are detailed in the following sections.</p>
+<section id="syncing-with-who-ewars" class="level3">
+<h3 class="anchored" data-anchor-id="syncing-with-who-ewars">25.2.1 Syncing with WHO EWARS</h3>
+<p>WHO EWARS is a WHO-controlled server accessible via the internet. To sync your data with it, you require an active data connection.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> if you are already a registered user, use your EWARS credentials. If you are not a registered user, you need to create an account or request an Account Administrator to create one for you.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>Before you sync your account, ensure that your laptop/desktop is connected to the internet.</p>
+<ul>
+<li>Click on the <strong>EWARS</strong> <img src="../media/image821.png" style="width:0.20833in;height:0.26042in"> icon on your desktop, and the screen below appears:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image819.png" style="width:5.16379in;height:2.54478in" class="figure-img"></p>
+<figcaption>Graphical user interface, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Enter your EWARS account details to sign in – i.e.&nbsp;your <strong>Email</strong> (e.g.&nbsp;“countryxadmin@gmail.com”) &gt; enter your <strong>Password</strong> (e.g.&nbsp;“afv52@127”) &gt; click on <strong>Login</strong>. The <strong>Sync Account</strong> dialogue box appears, as shown below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image822.png" style="width:3.70833in;height:1.13542in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Click on <strong>Sync now</strong>, and the following screen appears:</li>
+</ul>
+<p><img src="../media/image823.png" style="width:5.58333in;height:1.48889in"></p>
+<ul>
+<li>Select <strong>Global EWARS (ewars.ws)</strong> from the <strong>Syncing with</strong> drop-down menu &gt; click on <img src="../media/image824.png" style="width:0.65625in;height:0.26042in"> in your account (Country X). The synchronization process starts, and the progress bar below appears:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image825.png" style="width:6.39583in;height:2.07859in" class="figure-img"></p>
+<figcaption>Graphical user interface, application Description automatically generated</figcaption>
+</figure>
+</div>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> if the internet connection is lost during the synchronization process, a notification appears, as shown below:</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><img src="../media/image826.png" style="width:3.54167in;height:1.01042in"></p>
+<p>Once the internet connection is re-established, you need to sync again.</p>
+<ul>
+<li>Once the synchronization process is completed, a notification appears, and the account is synced. The country name appears in blue with a <strong>last synced on</strong> message, as shown below:</li>
+</ul>
+<p><img src="../media/image827.png" style="width:6.00321in;height:1.66339in"></p>
+<ul>
+<li>Click on the name of the account (e.g.&nbsp;Country X). You will be logged in to your EWARS Stand-alone account and should be able to view a screen like the one below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image828.png" style="width:6.40625in;height:3.27021in" class="figure-img"></p>
+<figcaption>Treemap chart Description automatically generated with medium confidence</figcaption>
+</figure>
+</div>
+</section>
+<section id="syncing-with-the-nearest-hub" class="level3">
+<h3 class="anchored" data-anchor-id="syncing-with-the-nearest-hub">25.2.2 Syncing with the nearest hub</h3>
+<p>A hub is another EWARS Stand-alone account. Your nearest hub may be an account managing data for the nearest province or district. Neighbouring hubs can sync data if the two Stand-alone accounts (i.e.&nbsp;laptops) are connected to the same Wi-Fi or the same local area network.</p>
+<p>To sync your EWARS Stand-alone app with the nearest hub, follow the steps below.</p>
+<p><strong>Step 1.</strong> Obtain the internet protocol (IP) address of the nearest hub.</p>
+<ul>
+<li><p>Start the EWARS Stand-alone app by clicking on the <strong>EWARS</strong> <img src="../media/image821.png" style="width:0.20833in;height:0.26042in"> icon on the desktop of the nearest hub.</p></li>
+<li><p>Click on the <img src="../media/image829.png" style="width:0.31064in;height:0.26357in"> icon on the dashboard screen and the <strong>My IP Addresses</strong> dialogue box below appears:</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image830.png" style="width:6.42708in;height:2.48438in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Note down the IP address in the screenshot as it will be needed for syncing.</li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> an IP address is the unique number given to your computer when it is connected to a network. This can change each time you reconnect, so you should not omit this step of checking your IP address when syncing, to ensure that you have the correct up-to-date address.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Step 2.</strong> Sync your account.</p>
+<ul>
+<li>Click on the <strong>EWARS</strong> <img src="../media/image821.png" style="width:0.20833in;height:0.26042in"> icon on your desktop. The screen below appears:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image819.png" style="width:4.98438in;height:2.45836in" class="figure-img"></p>
+<figcaption>Graphical user interface, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Enter your <strong>Email</strong> &gt; enter your <strong>Password</strong> &gt; click on <strong>Login</strong>. The <strong>Sync Account</strong> dialogue box below appears:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image822.png" style="width:3.70833in;height:1.13542in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Click on <strong>Sync now</strong>, and your accounts are listed, as shown below:</li>
+</ul>
+<p><img src="../media/image823.png" style="width:5.58334in;height:1.48889in"></p>
+<ul>
+<li>Select <strong>Nearest Hub</strong> from the <strong>Syncing with</strong> drop-down menu, as in the following screenshot:</li>
+</ul>
+<p><img src="../media/image831.png" style="width:5.63542in;height:2.34809in"></p>
+<ul>
+<li>Enter the IP address of the nearest hub in the textbox, as shown below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image832.png" style="width:6.27083in;height:1.76437in" class="figure-img"></p>
+<figcaption>Graphical user interface, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Click on <img src="../media/image833.png" style="width:1.17171in;height:0.21054in"> and the following screen appears:</li>
+</ul>
+<p><img src="../media/image834.png" style="width:5.85034in;height:2.65703in"></p>
+<p>All the accounts available in the nearest hub are listed. You can now sync your account.</p>
+<ul>
+<li>Click on <img src="../media/image824.png" style="width:0.65625in;height:0.26042in"> next to Country X, and the screen below appears:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image835.png" style="width:6.35417in;height:2.36979in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application, email Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Once you click on <img src="../media/image824.png" style="width:0.65625in;height:0.26042in">, a confirmation request is sent to the nearest hub.</li>
+</ul>
+<p><img src="../media/image836.png" style="width:4.51042in;height:1.66635in"></p>
+<p>If confirmation of the request is not received within 15 seconds, you will have to repeat the request and start the process again from the beginning.</p>
+<ul>
+<li>Click on <strong>Yes</strong> and the account is synced with the nearest hub. The synchronization process starts, and a progress bar appears, as shown below:</li>
+</ul>
+<p><img src="../media/image837.png" style="width:5.61073in;height:2.84043in"></p>
+<ul>
+<li>Once the synchronization process is complete, a notification appears, confirming that the account is synced with the nearest hub.</li>
+</ul>
+</section>
+</section>
+<section id="sending-reports-from-one-ewars-mobile-account-to-another" class="level2">
+<h2 class="anchored" data-anchor-id="sending-reports-from-one-ewars-mobile-account-to-another">25.3 Sending reports from one EWARS Mobile account to another</h2>
+<p>After you have synced your EWARS Stand-alone account successfully, the next step is to receive reports from EWARS Mobile users. This data transfer does not require reliable internet connectivity: it can take place using a local hotspot created by the mobile phone, and the connection is established with the help of a quick response (QR) code.</p>
+<p>In a context with no internet connectivity, the mobile phone may not even have a SIM card, but you should be able to share data from an EWARS Mobile to an EWARS Stand-alone account. The most convenient way to share EWARS Mobile data is to sync your data with another EWARS Mobile account, which acts as a data receiver. In field settings, a surveillance officer may travel to remote reporting centres with an EWARS Mobile account, where he/she can sync data from reporting centres to EWARS mobile. On return to the surveillance hub, the surveillance officer can sync the collected data with the Stand-alone account.</p>
+<p>EWARS Mobile data transfer happens via a hotspot. For the hotspot to work, all equipment should be in close proximity to each other and on the same local area network.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> your mobile phone should be equipped with a camera in order to scan the QR code.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 82%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Mobile</td>
+<td style="text-align: center;">users can report and save data (e.g.&nbsp;in a weekly forms) in EWARS Mobile and take the mobile phone to sync with the local hub at the surveillance office on a specified day of the week. Syncing via a hotspot takes only a few seconds. Alternatively, they can sync data with another EWARS Mobile account at the health facility. The second mobile phone will ultimately sync the data with the local hub.</td>
+</tr>
+</tbody>
+</table>
+<p>The steps below set out the process of submitting reports between EWARS Mobile accounts from both the <strong>sender</strong> perspective and the <strong>receiver</strong> perspective.</p>
+<p>At the <strong>sender’s</strong> end, follow the steps below.</p>
+<ul>
+<li><p>Tap on the <strong>sync</strong> <img src="../media/image838.png" style="width:0.34375in;height:0.30208in"> icon at the top right-hand corner of the home screen on your EWARS Mobile app.</p></li>
+<li><p>Tap on <img src="../media/image839.png" style="width:0.73958in;height:0.28125in">.</p></li>
+<li><p>Tap on <img src="../media/image840.png" style="width:1.3125in;height:0.34375in">. A hotspot is created on your mobile phone and a QR code is generated (Fig. 25.2).</p></li>
+</ul>
+<p>Fig. 25.2. Sending reports from one EWARS Mobile account to another</p>
+<p><img src="../media/image841.png" style="width:6.46094in;height:7.11979in"></p>
+<p>At the <strong>receiver’s</strong> end, follow the steps below.</p>
+<ul>
+<li>Tap on the <strong>sync</strong> <img src="../media/image838.png" style="width:0.34375in;height:0.30208in"> icon at the top right-hand corner of the home screen on your EWARS Mobile app.</li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Tap on <img src="../media/image839.png" style="width:0.73958in;height:0.28125in">.</p></li>
+<li><p>Tap on <img src="../media/image842.png" style="width:1.54167in;height:0.3125in"> while your Wi-Fi service is enabled, and a QR code scanner is opened to scan the code.</p></li>
+<li><p>Point the device’s camera at the QR code so that it is clearly visible within your mobile phone’s screen. The phone automatically scans the code (Fig. 25.3).</p></li>
+</ul>
+<p>Fig. 25.3. Receiving reports in one EWARS Mobile account from another</p>
+<p><img src="../media/image843.png" style="width:5.74479in;height:6.30801in"></p>
+<p>Once the scan is successful, the sender gets a notification confirming the data transfer. The sender confirms, and the data are transferred. The receiver can view the submitted report(s) in the queue.</p>
+</section>
+<section id="sending-reports-from-ewars-mobile-to-ewars-stand-alone" class="level2">
+<h2 class="anchored" data-anchor-id="sending-reports-from-ewars-mobile-to-ewars-stand-alone">25.4 Sending reports from EWARS Mobile to EWARS Stand-alone</h2>
+<p>This feature enables Reporting Users to share reports from EWARS Mobile to the EWARS Stand-alone app without internet connectivity. In this activity, EWARS Stand-alone acts as a <strong>receiver</strong> and EWARS Mobile acts as a <strong>sender</strong>. The data transfer takes place using a local hotspot created by the mobile phone, and the connection is established with the help of QR code.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> your laptop/desktop needs to be equipped with a camera in order to scan the QR code.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>The steps below set out the process of submitting reports, from both the EWARS Stand-alone (<strong>receiver</strong>) perspective and the EWARS Mobile (<strong>sender</strong>) perspective.</p>
+<p><strong>Step 1.</strong> Initiate the process of receiving reports on the EWARS Stand-alone app.</p>
+<ul>
+<li>Start the EWARS Stand-alone app by clicking on the <strong>EWARS</strong> <img src="../media/image821.png" style="width:0.20833in;height:0.26042in"> icon on your desktop. The screen below appears:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image844.png" style="width:6.40625in;height:2.36979in" class="figure-img"></p>
+<figcaption>Graphical user interface, application, Word Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Click on the <strong>receive reports</strong> <img src="../media/image845.png" style="width:0.26042in;height:0.24706in"> icon highlighted in the screenshot above. The QR code scanner screen below appears:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image846.png" style="width:6.34896in;height:3.53064in" class="figure-img"></p>
+<figcaption>A picture containing shape Description automatically generated</figcaption>
+</figure>
+</div>
+<p>The QR code reader/scanner is now online on EWARS Stand-alone.</p>
+<p><strong>Step 2.</strong> Send reports from the EWARS Mobile app.</p>
+<ul>
+<li><p>Start the EWARS Mobile app by tapping on the <strong>EWARS</strong> <img src="../media/image847.png" style="width:0.39583in;height:0.40625in"> icon on the home screen of your Mobile phone.</p></li>
+<li><p>Tap on the <strong>sync</strong> <img src="../media/image848.png" style="width:0.28125in;height:0.23958in"> icon visible at the top right-hand corner of the home screen.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image849.png" style="width:3.14583in;height:3.25521in" class="figure-img"></p>
+<figcaption>Table Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>The sync options screen appears, as shown below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image850.png" style="width:2.98958in;height:3.08854in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application, chat or text message Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Tap on <img src="../media/image851.png" style="width:1.04997in;height:0.26017in">, and the Local EWARS selection screen appears. Tap on <img src="../media/image852.png" style="width:2.22917in;height:0.21875in">, as shown below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image853.png" style="width:3.04167in;height:4.48438in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>A screen saying <strong>Creating hotspot</strong> appears. Stay on the screen for a few seconds and the EWARS Mobile app starts a mobile hotspot and generates a QR code, as shown below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image854.png" style="width:2.875in;height:3.77604in" class="figure-img"></p>
+<figcaption>Qr code Description automatically generated</figcaption>
+</figure>
+</div>
+<p>This QR code generated on EWARS Mobile needs to be scanned using a camera available on the laptop or desktop with the EWARS Stand-alone app installed.</p>
+<p><strong>Step 3.</strong> Scan the QR code via the EWARS Stand-alone app.</p>
+<ul>
+<li>Hold the mobile phone so that the QR code is clearly visible within the camera on your laptop or desktop, as shown below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image855.png" style="width:6.31771in;height:3.52083in" class="figure-img"></p>
+<figcaption>Qr code Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Once the QR code is scanned successfully, EWARS Stand-alone connects to an AndroidShare mobile hotspot that is created automatically by the system, as shown in the image below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image856.png" style="width:6.38542in;height:2.95313in" class="figure-img"></p>
+<figcaption>A screenshot of a computer Description automatically generated with medium confidence</figcaption>
+</figure>
+</div>
+<ul>
+<li>Once connected, the confirmation notification to sync data appears on EWARS Mobile. Tap on <strong>Yes</strong>, as shown below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image857.png" style="width:2.58333in;height:3.03125in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>The synchronization process starts, and a notification appears on the EWARS Stand-alone app. Once the account is synced, the following notification appears:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image858.png" style="width:3.76042in;height:1.08333in" class="figure-img"></p>
+<figcaption>Graphical user interface, application Description automatically generated</figcaption>
+</figure>
+</div>
+<p>All the collected reporting data are available under the Report manager menu in EWARS Stand-alone.</p>
+<p>Once an internet connection is available, you can submit all the data from EWARS Stand-alone to the WHO EWARS server. The following topic addresses this in greater detail.</p>
+</section>
+<section id="subsequent-syncing" class="level2">
+<h2 class="anchored" data-anchor-id="subsequent-syncing">25.5 Subsequent syncing</h2>
+<p>Once the reports are received from EWARS Mobile, the next step is to submit the data from EWARS Stand-alone to WHO EWARS. This is achieved using subsequent syncing. Alongside submitting the data, subsequent syncing ensures that all the newly configured items (e.g.&nbsp;forms, bulletins and dashboards) on WHO EWARS are now also available in your EWARS Stand-alone app.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 66%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> It is</td>
+<td style="text-align: left;">recommended that you sync your EWARS Stand-alone account with the WHO EWARS server from time to time, to send and receive the latest data generated in both apps.</td>
+</tr>
+</tbody>
+</table>
+<p>To sync your account, follow the steps below.</p>
+<ul>
+<li><p>Start the EWARS Stand-alone app by clicking on the <strong>EWARS</strong> <img src="../media/image821.png" style="width:0.20833in;height:0.26042in"> icon on your desktop.</p></li>
+<li><p>Click on the <strong>sync</strong> <img src="../media/image859.png" style="width:0.36458in;height:0.32292in"> icon at the top right-hand corner of your dashboard screen, and the screen below appears:</p></li>
+</ul>
+<p><img src="../media/image860.png" style="width:5.48958in;height:1.47533in"></p>
+<ul>
+<li>Select an appropriate option from the <strong>Syncing with</strong> drop-down menu. The options are:</li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Global EWARS (dev.ewars.ws)</p></li>
+<li><p>Nearest Hub.</p></li>
+</ul>
+<p>For more information about these options, refer to topic <strong>25.2 Synchronizing your account for the first time</strong>.</p>
+<ul>
+<li>Once the synchronization process is complete, a notification appears, and the account is synced. The country name appears in blue, and the <strong>last synced on</strong> message is shown below it.</li>
+</ul>
+<p>When syncing the account, conflicts might arise if parallel edits are made in the same report across local installations. In such a scenario, you need to resolve the conflicts in order to sync successfully with the WHO EWARS server.</p>
+<p>The following topic provides detailed information about identifying and resolving such conflicts.</p>
+<section id="identifying-conflicts" class="level3">
+<h3 class="anchored" data-anchor-id="identifying-conflicts">25.5.1 Identifying conflicts</h3>
+<p>A conflict can occur when WHO EWARS has received an updated copy of a report and a user attempts to update an earlier version of the same report.</p>
+<p>For demonstration purposes, this guide uses the following example of how a conflict might arise.</p>
+<p><strong>Example 1.</strong> Let’s assume that two users – User A and User B – are assigned to submit using Report 1.</p>
+<ul>
+<li>User A submits Report 1, as shown below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image861.png" style="width:6.41667in;height:2.27081in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>User A syncs with the WHO EWARS server (refer to topic <strong>25.2.1 Syncing with WHO EWARS</strong> for more information).</p></li>
+<li><p>User B syncs with the WHO EWARS server, and Report 1 is now available in the EWARS Stand-alone app, as shown below:</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image862.png" style="width:5.94792in;height:2.03509in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>User A and User B both amend Report 1 from their EWARS Stand-alone apps simultaneously.</p></li>
+<li><p>User B syncs the amended Report 1 with the WHO EWARS server. Once the synchronization is performed, the amended report is available in WHO EWARS.</p></li>
+<li><p>When User A attempts to sync their amended Report 1 with the WHO EWARS server afterwards, a conflict is reported in the EWARS Stand-alone app.</p></li>
+</ul>
+<p>User A sees the following screen on the EWARS Stand-alone app:</p>
+<p><img src="../media/image863.png" style="width:6.45002in;height:2.59345in"></p>
+<p>The conflict arises because User A is trying to submit an earlier version of Report 1 to the WHO EWARS server. WHO EWARS has an updated copy of the report, as a result of the synchronization performed by User B.</p>
+</section>
+<section id="resolving-conflicts" class="level3">
+<h3 class="anchored" data-anchor-id="resolving-conflicts">25.5.2 Resolving conflicts</h3>
+<p>Once the conflict is generated, it can be resolved as outlined below.</p>
+<ul>
+<li><p>To view the conflict, click on <strong>Go to Conflicts</strong>, and the Report manager screen appears.</p></li>
+<li><p>Click on <img src="../media/image864.png" style="width:1.0625in;height:0.3125in"> and the following screen appears:</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image865.png" style="width:6.06771in;height:1.85726in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application Description automatically generated</figcaption>
+</figure>
+</div>
+<p>The conflict is listed at the right-hand side, as shown above.</p>
+<ul>
+<li>To <strong>resolve</strong> the conflict, click on the <strong>edit</strong> <img src="../media/image866.png" style="width:0.21739in;height:0.20833in"> icon, and the following screen appears:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image867.png" style="width:5.57813in;height:3.11748in" class="figure-img"></p>
+<figcaption>Graphical user interface, application Description automatically generated</figcaption>
+</figure>
+</div>
+<p>As seen in the screenshot above, the difference between the field values present in the EWARS Stand-alone app report version and the WHO EWARS server report version is identified. You can choose to keep the local changes made in your EWARS Stand-alone app or to keep the global changes available in the WHO EWARS server.</p>
+<ul>
+<li><p><strong>Either</strong> c<strong>lick</strong> on <img src="../media/image868.png" style="width:0.96875in;height:0.19792in"> to keep the local changes made in your EWARS Stand-alone app</p></li>
+<li><p><strong>Or</strong> click on <img src="../media/image869.png" style="width:1.1875in;height:0.19792in"> to keep the global changes.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li>A confirmation box appears, as shown below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image870.png" style="width:5.86458in;height:3.11979in" class="figure-img"></p>
+<figcaption>Graphical user interface, text, application Description automatically generated</figcaption>
+</figure>
+</div>
+<ul>
+<li>Click on <strong>Confirm</strong> to resolve the conflict.</li>
+</ul>
+</section>
+</section>
+<section id="identifying-onlineoffline-features-through-icons" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-onlineoffline-features-through-icons">25.6 Identifying online/offline features through icons</h2>
+<p>You can identify the online and offline features in the menu through green and grey dot icons. Online features can be accessed only if you have an active internet connection. Offline features can be accessed even if you do not have internet access. All the features are available to users with reliable internet connectivity. EWARS Stand-alone users can only access offline features due to unreliable internet connectivity.</p>
+<ul>
+<li><p>Features with a green dot <img src="../media/image871.png" style="width:0.13542in;height:0.14583in"> can be accessed when you have an active data connection.</p></li>
+<li><p>Features with a grey dot <img src="../media/image872.png" style="width:0.15625in;height:0.17708in"> can only be accessed without an active data connection.</p></li>
+</ul>
+<p>You can identify which features are available online or offline as follows.</p>
+<ul>
+<li>Start the EWARS Stand-alone app by clicking on the <strong>EWARS</strong> <img src="../media/image821.png" style="width:0.20833in;height:0.26042in"> icon on your desktop. Select <strong>Menu</strong>, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image873.png" style="width:6.30853in;height:2.2737in"></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> if you try to access a feature that is only available online without an active data connection, you will see the following notification:</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><img src="../media/image874.png" style="width:3.75in;height:1.29167in"></p>
+</section>
+<section id="viewing-time-left-to-sync-the-account" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-time-left-to-sync-the-account">25.7 Viewing time left to sync the account</h2>
+<p>EWARS Stand-alone continuously displays the time (in days) left to sync at the top of your dashboard screen. If the account is not synced within the specified time frame, the account is locked and you are redirected to the sync screen.</p>
+<p>To view the time left to sync your account, follow the steps below.</p>
+<ul>
+<li>Start the EWARS Stand-alone app by clicking on the <strong>EWARS</strong> <img src="../media/image821.png" style="width:0.20833in;height:0.26042in"> icon on your desktop, and the following screen appears:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image875.png" style="width:6.01042in;height:2.15104in" class="figure-img"></p>
+<figcaption>Graphical user interface, application Description automatically generated</figcaption>
+</figure>
+</div>
+<p>At the top of the dashboard screen, you can view the days left to sync your account.</p>
+<ul>
+<li>Once the expiry time is reached, the account is locked. You are redirected to the sync screen, and the following dialogue box appears:</li>
+</ul>
+<p><img src="../media/image876.png" style="width:3.71875in;height:1.02083in"></p>
+</section>
+<section id="unsyncing-an-account-from-the-ewars-stand-alone-app" class="level2">
+<h2 class="anchored" data-anchor-id="unsyncing-an-account-from-the-ewars-stand-alone-app">25.8 Unsyncing an account from the EWARS Stand-alone app</h2>
+<p>When you unsync an account, it does not delete the data from the WHO EWARS server but only removes it from the EWARS Stand-alone app installed on your local desktop or laptop. Thus, an EWARS Stand-alone account can be removed from a machine with confidence that the data it handled have also been removed locally, but are still available in WHO EWARS.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 42%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> When a</td>
+<td style="text-align: left;">n account is no longer in use, you should unsync it.</td>
+</tr>
+</tbody>
+</table>
+<p>To unsync an EWARS Stand-alone account, follow the steps below.</p>
+<ul>
+<li>Start the EWARS Stand-alone app by clicking on the <strong>EWARS</strong> <img src="../media/image821.png" style="width:0.20833in;height:0.26042in"> icon on your desktop &gt; click on the <strong>sync</strong> <img src="../media/image877.png" style="width:0.32292in;height:0.26042in"> icon, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image878.png" style="width:5.55208in;height:2.22083in"></p>
+<ul>
+<li><p>To unsync the Country X account, click on <img src="../media/image879.png" style="width:0.69792in;height:0.19792in">, and a confirmation box appears.</p></li>
+<li><p>Click on <strong>Confirm</strong>, and the account and its data are deleted.</p></li>
+</ul>
+</section>
+<section id="troubleshooting-the-ewars-stand-alone-app" class="level2">
+<h2 class="anchored" data-anchor-id="troubleshooting-the-ewars-stand-alone-app">25.9 Troubleshooting the EWARS Stand-alone app</h2>
+<p>If you experience either of the following scenarios, you can troubleshoot your EWARS Stand-alone app using the options below.</p>
+<p><strong>Scenario 1.</strong> New changes made in the EWARS Stand-alone app are not visible to you.</p>
+<ul>
+<li><p>Click on <strong>F5</strong> – this reloads the app page.</p></li>
+<li><p>If the problem persists, log out of your EWARS Stand-alone app and log in again.</p></li>
+<li><p>If the problem still persists, click on <strong>Ctrl + F5</strong> – this forces the app to reload the latest version.</p></li>
+<li><p>If the problem continues to persist, you can try uninstalling the EWARS Stand-alone app and reinstalling it.</p></li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image211.png" style="width:0.41061in;height:0.3875in" alt="Icon Description automatically generated"><strong>WARNING:</strong> If you uninstall the app<strong>,</strong> all your data (synced and unsynced) are deleted from your EWARS Stand-alone account. (Unsynced data include the data available only in your EWARS Stand-alone app, which are yet to be submitted to WHO EWARS).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li>For any other technical problems, contact the Account Administrator or write to <strong><a href="mailto:ewars@who.int" class="email">ewars@who.int</a></strong> for EWARS support.</li>
+</ul>
+<p><strong>Scenario 2.</strong> The app freezes, or you are getting error messages while using it.</p>
+<ul>
+<li><p>Click on <strong>Ctrl + F5</strong> – this forces the app to reload the latest version.</p></li>
+<li><p>For any other technical problems, contact the Account Administrator or EWARS support.</p></li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image211.png" style="width:0.41061in;height:0.3875in" alt="Icon Description automatically generated"><strong>WARNING:</strong> If you click on <strong>Ctrl + Shift + Z</strong>, all your data (synced and unsynced) are deleted from your EWARS Stand-alone account. (Unsynced data include the data available only in your EWARS Stand-alone app, which are yet to be submitted to WHO EWARS).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/27-sms-reporting-and-teams.html" class="pagination-link" aria-label="Chapter 24. SMS reporting and teams">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 24. SMS reporting and teams</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/29-glossary.html" class="pagination-link" aria-label="Chapter 26. Glossary">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 26. Glossary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© World Health Organization, 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

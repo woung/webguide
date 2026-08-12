@@ -1,0 +1,168 @@
+[
+  {
+    "type": "chapter",
+    "file": "chapters/01-acknowledgments.qmd",
+    "title": "Acknowledgments"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/02-abbreviations.qmd",
+    "title": "Abbreviations"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/03-executive-summary.qmd",
+    "title": "Executive summary"
+  },
+  {
+    "type": "part",
+    "title": "Introduction"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/04-overview-of-ewars-in-a-box.qmd",
+    "title": "Chapter 1. Overview of EWARS in a box"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/05-getting-started.qmd",
+    "title": "Chapter 2. Getting started"
+  },
+  {
+    "type": "part",
+    "title": "Setting up your EWARS account"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/06-locations.qmd",
+    "title": "Chapter 3. Locations"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/07-configuration-transfer.qmd",
+    "title": "Chapter 4. Configuration Transfer"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/08-indicators.qmd",
+    "title": "Chapter 5. Indicators"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/09-forms.qmd",
+    "title": "Chapter 6. Forms"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/10-alarms.qmd",
+    "title": "Chapter 7. Alarms"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/11-users-and-their-assignments.qmd",
+    "title": "Chapter 8. Users and their assignments"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/12-user-profiles-tasks-and-notifications.qmd",
+    "title": "Chapter 9. User profiles, tasks and notifications"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/13-ewars-account-settings.qmd",
+    "title": "Chapter 10. EWARS account settings"
+  },
+  {
+    "type": "part",
+    "title": "Data Collection and Monitoring"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/14-report-manager.qmd",
+    "title": "Chapter 11. Report manager"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/15-m-e-auditor.qmd",
+    "title": "Chapter 12. M&E Auditor"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/16-alert-log.qmd",
+    "title": "Chapter 13. Alert log"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/17-data-import.qmd",
+    "title": "Chapter 14. Data Import"
+  },
+  {
+    "type": "part",
+    "title": "Data analysis, visualization and dissemination"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/18-plot.qmd",
+    "title": "Chapter 15. Plot"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/19-mapping.qmd",
+    "title": "Chapter 16. Mapping"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/20-widgets-and-their-configuration.qmd",
+    "title": "Chapter 17. Widgets and their configuration"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/21-notebooks.qmd",
+    "title": "Chapter 18. Notebooks"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/22-dashboards.qmd",
+    "title": "Chapter 19. Dashboards"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/23-outbreaks.qmd",
+    "title": "Chapter 20. Outbreaks"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/24-documents-and-document-templates.qmd",
+    "title": "Chapter 21. Documents and Document Templates"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/25-website-builder.qmd",
+    "title": "Chapter 22. Website Builder"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/26-export.qmd",
+    "title": "Chapter 23. Export"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/27-sms-reporting-and-teams.qmd",
+    "title": "Chapter 24. SMS reporting and teams"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/28-ewars-stand-alone.qmd",
+    "title": "Chapter 25. EWARS Stand-alone"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/29-glossary.qmd",
+    "title": "Chapter 26. Glossary"
+  },
+  {
+    "type": "chapter",
+    "file": "chapters/30-help-and-support.qmd",
+    "title": "Chapter 27. Help and support"
+  }
+]

@@ -1,0 +1,3 @@
+# الفصل 9. ملفات تعريف المستخدمين والمهام والإشعارات
+
+> **الترجمة قيد التنفيذ.** بانتظار ترجمة هذه الصفحة إلى العربية. يُرجى الرجوع إلى النسخة الإنجليزية في الوقت الحالي — انظر [Chapter 9. User profiles, tasks and notifications](../../en/chapters/12-user-profiles-tasks-and-notifications.qmd).

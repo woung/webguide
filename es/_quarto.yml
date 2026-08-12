@@ -1,0 +1,97 @@
+project:
+  type: book
+  output-dir: ../_site/es
+
+lang: es
+dir: ltr
+
+book:
+  title: "EWARS in a Box"
+  subtitle: "Guía de uso web"
+  author: "WHO Health Emergencies Programme"
+  date: last-modified
+  page-footer:
+    left: "© World Health Organization, 2026"
+    right: "Built with Quarto"
+  favicon: ../en/media/image1.png
+  search: true
+  page-navigation: true
+  back-to-top-navigation: true
+  sidebar:
+    style: floating
+    collapse-level: 1
+    pinned: true
+  navbar:
+    left: []
+    right:
+      - text: "🌐 Idioma"
+        menu:
+          - text: "English"
+            file: ../en/index.qmd
+          - text: "Français"
+            file: ../fr/index.qmd
+          - text: "Español"
+            file: ../es/index.qmd
+          - text: "العربية"
+            file: ../ar/index.qmd
+  chapters:
+    - index.qmd
+    - chapters/01-acknowledgments.qmd
+    - chapters/02-abbreviations.qmd
+    - chapters/03-executive-summary.qmd
+    - part: "Introducción"
+      chapters:
+        - chapters/04-overview-of-ewars-in-a-box.qmd
+        - chapters/05-getting-started.qmd
+    - part: "Configuración de su cuenta EWARS"
+      chapters:
+        - chapters/06-locations.qmd
+        - chapters/07-configuration-transfer.qmd
+        - chapters/08-indicators.qmd
+        - chapters/09-forms.qmd
+        - chapters/10-alarms.qmd
+        - chapters/11-users-and-their-assignments.qmd
+        - chapters/12-user-profiles-tasks-and-notifications.qmd
+        - chapters/13-ewars-account-settings.qmd
+    - part: "Recopilación y monitoreo de datos"
+      chapters:
+        - chapters/14-report-manager.qmd
+        - chapters/15-m-e-auditor.qmd
+        - chapters/16-alert-log.qmd
+        - chapters/17-data-import.qmd
+    - part: "Análisis, visualización y difusión de datos"
+      chapters:
+        - chapters/18-plot.qmd
+        - chapters/19-mapping.qmd
+        - chapters/20-widgets-and-their-configuration.qmd
+        - chapters/21-notebooks.qmd
+        - chapters/22-dashboards.qmd
+        - chapters/23-outbreaks.qmd
+        - chapters/24-documents-and-document-templates.qmd
+        - chapters/25-website-builder.qmd
+        - chapters/26-export.qmd
+        - chapters/27-sms-reporting-and-teams.qmd
+        - chapters/28-ewars-stand-alone.qmd
+        - chapters/29-glossary.qmd
+        - chapters/30-help-and-support.qmd
+
+format:
+  html:
+    theme:
+      light: [cosmo, ../shared/theme.scss]
+    css: ../shared/styles.css
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    number-depth: 2
+    code-copy: true
+    smooth-scroll: true
+    highlight-style: github
+    mainfont: "Inter"
+    monofont: "JetBrains Mono"
+    fontsize: 1rem
+    linkcolor: "#0B6E4F"
+    grid:
+      sidebar-width: 300px
+      body-width: 850px
+      margin-width: 250px

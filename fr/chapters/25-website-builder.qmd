@@ -1,0 +1,3 @@
+# Chapitre 22. Générateur de site web
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 22. Website Builder](../../en/chapters/25-website-builder.qmd).

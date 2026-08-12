@@ -1,0 +1,3 @@
+# Chapitre 25. EWARS Autonome
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 25. EWARS Stand-alone](../../en/chapters/28-ewars-stand-alone.qmd).

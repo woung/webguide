@@ -1,0 +1,3 @@
+# Chapitre 12. Auditeur S&E
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 12. M&E Auditor](../../en/chapters/15-m-e-auditor.qmd).

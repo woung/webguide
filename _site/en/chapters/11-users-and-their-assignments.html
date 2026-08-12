@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Chapter 8. Users and their assignments – EWARS Mobile</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/12-user-profiles-tasks-and-notifications.html" rel="next">
+<link href="../chapters/10-alarms.html" rel="prev">
+<link href=".././media/image1.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d60a5906468b64742e20e52e09f920c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cb29c9f9deed8f7c023d39522d0343d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../shared/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">EWARS Mobile</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-language" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🌐 Language</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-language">    
+        <li>
+    <a class="dropdown-item" href="../index.html">
+ <span class="dropdown-text">English</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../fr/index.qmd">
+ <span class="dropdown-text">Français</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../es/index.qmd">
+ <span class="dropdown-text">Español</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../ar/index.qmd">
+ <span class="dropdown-text">العربية</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-locations.html">Setting up your EWARS account</a></li><li class="breadcrumb-item"><a href="../chapters/11-users-and-their-assignments.html"><span class="chapter-title">Chapter 8. Users and their assignments</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EWARS Mobile</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-acknowledgments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-abbreviations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abbreviations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-executive-summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Executive summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-overview-of-ewars-in-a-box.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1. Overview of EWARS in a box</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2. Getting started</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Setting up your EWARS account</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-locations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3. Locations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-configuration-transfer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4. Configuration Transfer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5. Indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-forms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6. Forms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-alarms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7. Alarms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-users-and-their-assignments.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 8. Users and their assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-user-profiles-tasks-and-notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9. User profiles, tasks and notifications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-ewars-account-settings.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10. EWARS account settings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data Collection and Monitoring</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-report-manager.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11. Report manager</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-m-e-auditor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 12. M&amp;E Auditor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-alert-log.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 13. Alert log</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-data-import.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 14. Data Import</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data analysis, visualization and dissemination</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-plot.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 15. Plot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/19-mapping.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 16. Mapping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/20-widgets-and-their-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 17. Widgets and their configuration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/21-notebooks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 18. Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/22-dashboards.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 19. Dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/23-outbreaks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 20. Outbreaks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/24-documents-and-document-templates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 21. Documents and Document Templates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/25-website-builder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 22. Website Builder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/26-export.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 23. Export</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/27-sms-reporting-and-teams.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 24. SMS reporting and teams</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/28-ewars-stand-alone.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 25. EWARS Stand-alone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/29-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 26. Glossary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/30-help-and-support.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 27. Help and support</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#types-of-user-profiles-in-ewars" id="toc-types-of-user-profiles-in-ewars" class="nav-link active" data-scroll-target="#types-of-user-profiles-in-ewars">8.1 Types of user profiles in EWARS</a></li>
+  <li><a href="#setting-up-user-organizations" id="toc-setting-up-user-organizations" class="nav-link" data-scroll-target="#setting-up-user-organizations">8.2 Setting up user organizations</a></li>
+  <li><a href="#creating-users" id="toc-creating-users" class="nav-link" data-scroll-target="#creating-users">8.3 Creating users</a>
+  <ul class="collapse">
+  <li><a href="#creating-users-manually-via-invitation" id="toc-creating-users-manually-via-invitation" class="nav-link" data-scroll-target="#creating-users-manually-via-invitation">8.3.1 Creating users manually – via invitation</a></li>
+  <li><a href="#creating-users-manually-via-system-generated-login-details" id="toc-creating-users-manually-via-system-generated-login-details" class="nav-link" data-scroll-target="#creating-users-manually-via-system-generated-login-details">8.3.2 Creating users manually – via system-generated login details</a></li>
+  <li><a href="#creating-users-in-bulk" id="toc-creating-users-in-bulk" class="nav-link" data-scroll-target="#creating-users-in-bulk">8.3.3 Creating users in bulk</a></li>
+  </ul></li>
+  <li><a href="#editing-users" id="toc-editing-users" class="nav-link" data-scroll-target="#editing-users">8.4 Editing users</a>
+  <ul class="collapse">
+  <li><a href="#editing-user-details-individually" id="toc-editing-user-details-individually" class="nav-link" data-scroll-target="#editing-user-details-individually">8.4.1 Editing user details individually</a></li>
+  <li><a href="#editing-user-details-in-bulk" id="toc-editing-user-details-in-bulk" class="nav-link" data-scroll-target="#editing-user-details-in-bulk">8.4.2 Editing user details in bulk</a></li>
+  </ul></li>
+  <li><a href="#user-assignments" id="toc-user-assignments" class="nav-link" data-scroll-target="#user-assignments">8.5 User assignments</a>
+  <ul class="collapse">
+  <li><a href="#adding-assignments-to-reporting-users-manually" id="toc-adding-assignments-to-reporting-users-manually" class="nav-link" data-scroll-target="#adding-assignments-to-reporting-users-manually">8.5.1 Adding assignments to Reporting Users manually</a></li>
+  <li><a href="#adding-assignments-in-bulk-via-a-csv-file" id="toc-adding-assignments-in-bulk-via-a-csv-file" class="nav-link" data-scroll-target="#adding-assignments-in-bulk-via-a-csv-file">8.5.2 Adding assignments in bulk via a CSV file</a></li>
+  <li><a href="#adding-assignments-to-existing-users-with-other-assignments" id="toc-adding-assignments-to-existing-users-with-other-assignments" class="nav-link" data-scroll-target="#adding-assignments-to-existing-users-with-other-assignments">8.5.3 Adding assignments to existing users with other assignments</a></li>
+  </ul></li>
+  <li><a href="#changing-a-user-password" id="toc-changing-a-user-password" class="nav-link" data-scroll-target="#changing-a-user-password">8.6 Changing a user password</a></li>
+  <li><a href="#revoking-and-reinstating-user-access" id="toc-revoking-and-reinstating-user-access" class="nav-link" data-scroll-target="#revoking-and-reinstating-user-access">8.7 Revoking and reinstating user access</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-locations.html">Setting up your EWARS account</a></li><li class="breadcrumb-item"><a href="../chapters/11-users-and-their-assignments.html"><span class="chapter-title">Chapter 8. Users and their assignments</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 8. Users and their assignments</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter provides an overview of user management, an integral part of Early Warning, Alert and Response System (EWARS). It will help you to understand the different hierarchies of user profiles in EWARS. Further, it will help you perform key actions with ease, such as setting up organizational profiles, creating/editing user accounts, adding assignments, and managing user access and passwords. Through this, you can manage different hierarchies of users effectively in close alignment with the overall goals of EWARS in any given setting.</p>
+<section id="types-of-user-profiles-in-ewars" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-user-profiles-in-ewars">8.1 Types of user profiles in EWARS</h2>
+<p>Only registered users can access EWARS. There are three types of user profiles in EWARS (Fig. 8.1).</p>
+<p>Fig. 8.1. User profiles in EWARS</p>
+<p><img src="../media/image213.png" style="width:5.16535in;height:4.56693in"></p>
+<ul>
+<li><p><strong>Reporting Users</strong> are EWARS users who report data from primary health-care centres (PHCCs), field hospitals, health posts or the community. Reporting Users mostly use EWARS Mobile for reporting. In any context, there are more Reporting Users than other type. For example, if 200 PHCCs are registered under EWARS, there may be 200 or more Reporting Users.</p></li>
+<li><p><strong>Geographical Administrators</strong> manage the early warning, alert and response functions for a specific geographical area – such as a province or district. If you have five provinces in your EWARS, there may be five Geographical Administrators, each overseeing the functions of one province.</p></li>
+<li><p><strong>Account Administrators</strong> are usually one or two individuals who oversee overall EWARS activities encompassing all provinces and districts.</p></li>
+</ul>
+<p>For more information about different types of users, refer to <strong>Chapter 1. Overview of EWARS in a box</strong>, topic <strong>1.4 Types of users</strong>.</p>
+<p>EWARS users may belong to different organizations, ministries of health and agencies. Therefore, each user and organization should be registered in EWARS to access and report to it successfully. Registration provides a unique username and password for each user to access EWARS.</p>
+<p>The following sections illustrate the key actions under user management.</p>
+</section>
+<section id="setting-up-user-organizations" class="level2">
+<h2 class="anchored" data-anchor-id="setting-up-user-organizations">8.2 Setting up user organizations</h2>
+<p>Before setting up individual EWARS user profiles, set up organizational profiles for the users in the system. Several agencies and organizations may be involved in managing EWARS in your context. For example, all Reporting Users may belong to the ministry of health or the United Nations Children’s Fund, while all administrative users (Account Administrators and Geographical Administrators) may represent the ministry of health and WHO.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> an organization is mandatory for user setup, so it should be added to the system before adding users.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>You can follow the steps below to set up organizations.</p>
+<ul>
+<li>Click on the <strong>settings</strong> <img src="../media/image214.png" style="width:0.25in;height:0.275in"> icon &gt; click on <img src="../media/image215.png" style="width:1.05in;height:0.33333in"> &gt; click on <img src="../media/image216.png" style="width:0.94167in;height:0.35833in">, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image217.png" style="width:6.4683in;height:2.47951in"></p>
+<ul>
+<li><p>Enter the <strong>Organization</strong> <strong>Name</strong> (e.g.&nbsp;Women’s Refugee Commission) &gt; enter the <strong>Acronym</strong> for the organization (e.g.&nbsp;WRC) &gt; enter the <strong>Web Site</strong> link &gt; set <strong>Status</strong> as <strong>Active</strong>.</p></li>
+<li><p>Click on <strong>Save Change(s)</strong>.</p></li>
+<li><p>Repeat the steps above to add other organizations.</p></li>
+</ul>
+<p>Added organizations are visible, as in the screenshot below:</p>
+<p><img src="../media/image218.png" style="width:5.78334in;height:1.74167in"></p>
+<ul>
+<li><p>To <strong>edit</strong> an existing organization, click on the <strong>edit</strong> <img src="../media/image219.png" style="width:0.325in;height:0.275in"> icon &gt; make the required changes. Click on <strong>Save Change(s)</strong>, and a notification appears that the organization is edited.</p></li>
+<li><p>To <strong>delete</strong> an existing organization, click on the <strong>delete</strong> <img src="../media/image220.png" style="width:0.29167in;height:0.3in"> icon &gt; click on <strong>Confirm</strong>, and a notification appears that it is deleted.</p></li>
+</ul>
+</section>
+<section id="creating-users" class="level2">
+<h2 class="anchored" data-anchor-id="creating-users">8.3 Creating users</h2>
+<p>Electronic reporting using EWARS Mobile is the most important step in EWARS. During emergencies, it is paramount to register all health facilities, health posts and community members who want to report to the system rapidly.</p>
+<p>There are two methods of registering or creating users in the system.</p>
+<ul>
+<li><p>You can create users manually – each Reporting User is created by entering their data manually in the system:</p>
+<ul>
+<li><p><strong>Either</strong> they are registered via an invitation to join the system</p></li>
+<li><p><strong>Or</strong> they are registered via system-generated emails.</p></li>
+</ul></li>
+<li><p>You can import Reporting User data in bulk – you can add data for a large number of Reporting Users as a single comma-separated values (CSV) file.</p></li>
+</ul>
+<p>To find more about different types of users and their general responsibilities, refer to <strong>Chapter 1. Overview of EWARS in a box</strong>, topic <strong>1.4 Types of users</strong>.</p>
+<section id="creating-users-manually-via-invitation" class="level3">
+<h3 class="anchored" data-anchor-id="creating-users-manually-via-invitation">8.3.1 Creating users manually – via invitation</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> This m</td>
+<td style="text-align: left;">ethod is best reserved for registering/creating Account Administrators and Geographical Administrators. As they represent a small number of users, sending invitations is not a difficult process. Please note that this method will only work if the person invited to register in the system has a valid email address that they can access easily during an emergency.</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> the Account Administrator decides the role of any users created manually.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Users</strong> &gt; <strong>Create User</strong>. Click on the <strong>Send Invitation</strong> tab, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image221.png" style="width:5.76042in;height:3.15625in"></p>
+<ul>
+<li><p>Enter the <strong>Email</strong> address of the user (e.g.&nbsp;johnsmith@gmail.com) &gt; select the <strong>Role</strong> for the new user (e.g.&nbsp;Geographical Administrator) &gt; set <strong>Status</strong> as <strong>Active</strong> &gt; select the <strong>Location</strong> to be assigned to the new user (e.g.&nbsp;Aimal Province).</p></li>
+<li><p>Click on <strong>Send Invite</strong>. An invitation email is sent to the user. If a user has not received an invitation email, ask them to check their Spam folder.</p></li>
+</ul>
+<p>You can repeat the steps above to create more users via invitation.</p>
+<p>An EWARS invitation looks like this:</p>
+<p><img src="../media/image222.png" style="width:5in;height:2.71875in"></p>
+<p>Once the user clicks on the link, the EWARS Invitation screen below appears:</p>
+<p><img src="../media/image223.png" style="width:5.89346in;height:3.60231in"></p>
+<ul>
+<li>The user needs to enter the following details:</li>
+</ul>
+<!-- -->
+<ul>
+<li><p><strong>Name</strong> (e.g.&nbsp;John Smith)</p></li>
+<li><p><strong>Email</strong> (e.g.&nbsp;johnsmith@gmail.com)</p></li>
+<li><p><strong>Confirm Email</strong> (e.g.&nbsp;johnsmith@gmail.com)</p></li>
+<li><p><strong>Password</strong> (e.g.&nbsp;mv6u741) (Users can customize the password as there are no set rules for it.)</p></li>
+<li><p><strong>Confirm Password</strong> (e.g.&nbsp;mv6u741)</p></li>
+<li><p><strong>Organization</strong> (e.g.&nbsp;Ministry of Health)</p></li>
+</ul>
+<!-- -->
+<ul>
+<li>The user should then click on <strong>Complete Registration</strong>, and an account is created<strong>.</strong></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 71%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> The em</td>
+<td style="text-align: left;">ail and password used for registration are used to access the system each time you want to log in. Alert notifications are also sent to the email address specified, if you enable receiving notifications.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="creating-users-manually-via-system-generated-login-details" class="level3">
+<h3 class="anchored" data-anchor-id="creating-users-manually-via-system-generated-login-details">8.3.2 Creating users manually – via system-generated login details</h3>
+<p>If a user who wishes to have access to EWARS does not have an email address, he/she can proceed as follows.</p>
+<p>The system can generate login details, email addresses and passwords for users without using their own valid email addresses. As these emails addresses are not valid, they can only be used to log in to EWARS. Users created in this way are called “custom users”. All system-generated email addresses follow a uniform pattern, and all end with “<span class="citation" data-cites="ewars.ws">@ewars.ws</span>”.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 75%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Use th</td>
+<td style="text-align: left;">is method when you want to generate login details for Reporting Users, who are reporting from PHCCs, health posts and the community. They may not have access to desktops or laptops and may not have valid email addresses – especially during an emergency.</td>
+</tr>
+</tbody>
+</table>
+<p>Follow the steps below to create users using system-generated login details.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Users</strong> &gt; <strong>Create User</strong>. Click on the <strong>Custom User</strong> tab, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image224.png" style="width:5.775in;height:3.15in"></p>
+<ul>
+<li>Populate the details of the user as set out below.</li>
+</ul>
+<!-- -->
+<ul>
+<li><p><strong>Email</strong> [Mandatory]: enter the name/prefix for the email. The domain will automatically be added as @ewars.ws. For example, enter “johndavis” and the email address will be johndavis@ewars.ws. It should be a unique ID or a warning is triggered by the system.</p>
+<p>In most instances, the system-generated login details will not be under an individual’s name, but under a reporting site (e.g.&nbsp;a health facility first name, such as Aimal or Bilnula). In these cases, the system-generated email address would be <a href="mailto:aimal@ewars.ws">aimal@ewars.ws</a> or <a href="mailto:bilnula@ewars.ws">bilnula@ewars.ws</a>. Any clinician, nurse or reporting officer can report data under the health facility using these login details. You will, however, lose the resolution of knowing which data were sent by which individual.</p></li>
+<li><p><strong>Name</strong> [Mandatory]: enter the name of the user (e.g.&nbsp;John Davis or Birigo health post).</p></li>
+<li><p><strong>Password</strong> [Mandatory]: enter a password that must be at least six characters long and must contain one number or non-standard character (e.g.&nbsp;“john66@d”).</p></li>
+<li><p><strong>Confirm password</strong> [Mandatory]: re-enter the password for confirmation.</p></li>
+<li><p><strong>Organization</strong> [Mandatory]: select the organization of the custom user (e.g.&nbsp;International Rescue Committee).</p></li>
+<li><p><strong>Phone:</strong> enter the phone number of the user.</p></li>
+<li><p><strong>Occupation:</strong> enter an occupation of the user.</p></li>
+<li><p><strong>Role</strong> [Mandatory]: select the role of the user (e.g.&nbsp;Reporting User).</p></li>
+<li><p><strong>Status</strong> [Mandatory]: set status as active.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li>Click on <strong>Add user</strong>, and the user is created.</li>
+</ul>
+<p>Repeat the steps above to create more users via system-generated login details.</p>
+</section>
+<section id="creating-users-in-bulk" class="level3">
+<h3 class="anchored" data-anchor-id="creating-users-in-bulk">8.3.3 Creating users in bulk</h3>
+<p>You can register a large number of EWARS users at once by uploading user details as a CSV file. This saves time during emergencies.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 74%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Use th</td>
+<td style="text-align: left;">is method when you are creating a large number of Reporting Users. It would be best to have all the necessary details ready in a CSV file before importing the data. Download the Template from the system, as shown below to create your CSV file.</td>
+</tr>
+</tbody>
+</table>
+<p>Follow the steps below to create users in bulk.</p>
+<p><strong>Step 1.</strong> Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Users</strong>. Click on <strong>Import Users</strong>, and the screen below appears:</p>
+<p><img src="../media/image225.png" style="width:5.98334in;height:2.06667in"></p>
+<p><strong>Step 2.</strong> Click on <strong>Download</strong> <strong>Template CSV</strong> and open it in Excel:</p>
+<p><img src="../media/image226.png" style="width:5.03334in;height:1.45833in"></p>
+<p><strong>Step 3.</strong> Populate the CSV file columns, as shown below:</p>
+<ul>
+<li><p><strong>Name</strong> [Mandatory]: enter the name of the user (e.g.&nbsp;User A).</p></li>
+<li><p><strong>Role</strong> [Mandatory]: enter the role for the new user (e.g.&nbsp;Reporting User).</p></li>
+<li><p><strong>Email</strong> [Mandatory]: enter the email address of the user (e.g.&nbsp;usera@gmail.com). If you want to create a user with a system-generated email address, use the user id with @ewars.ws (e.g.&nbsp;“userx@ewars.ws”).</p></li>
+<li><p><strong>Password</strong> [Mandatory]: enter a password for the user (e.g.&nbsp;“mb@7fg1”).</p></li>
+<li><p><strong>Organization.en</strong> [Mandatory]: enter the organization name in English. If you want to add a name in French, change the column name from Organization.en to Organization.fr. Here, “en” and “fr” denote the standard language codes. For more information about codes for other languages, click on the <strong>settings</strong> <img src="../media/image35.png" style="width:0.35833in;height:0.375in"> icon &gt; click on <img src="../media/image53.png" style="width:0.86667in;height:0.28333in">.</p></li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> the organization must exist in the system, or the import will be unsuccessful.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li><p><strong>Occupation</strong>: enter the occupation of the user.</p></li>
+<li><p><strong>Phone</strong>: enter the phone number of the user.</p></li>
+<li><p><strong>Status</strong>: keep the status column blank. By default, the status is set as ACTIVE. If you want to create a user with inactive status, add “INACTIVE” to the status column:</p></li>
+</ul>
+<p><img src="../media/image227.png" style="width:6.17708in;height:1.4785in"></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> please be mindful of the typographic use of uppercase and lowercase letters, and correct spellings of the organizations, as these will affect the import process.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>Step 4.</strong> Click on <img src="../media/image228.png" style="width:0.675in;height:0.275in"> &gt; browse and select the prepared CSV file. <strong>Status_of_imported_records.csv</strong> file is downloaded.</p>
+<p><strong>Step 5.</strong> Analyse the <strong>Status_of_imported_records.csv</strong> file as below:</p>
+<p><img src="../media/image229.png" style="width:6.89561in;height:1.82565in"></p>
+<p>The downloaded file is the same as the uploaded file with two additional columns: <strong>import_status</strong> and <strong>import_description</strong>.</p>
+<p>The import_status column shows the success or failure of the imported records, with reasons for any failures indicated in the import_description column.</p>
+<p>As shown in the above screenshot, three users have been successfully imported and two users have failed to import. For “user a”, the import description states “USER_EXISTS_IS_ACTIVE”, which means that “user a” with the specified email address already exists in the system.</p>
+<p>Similarly, for “user d”, the import description states “organization: NGO C does not exist or is empty”, which means the provided organization is not available in the system. You therefore need to create the organization (“NGO C” in this example) first and then import “user d”.</p>
+<p>To reimport users that could not be imported during the first attempt, make the appropriate corrections to the failed user details according to the instructions in the import_description column, and import it again.</p>
+<p><strong>Step 6.</strong> After creating all users, select <strong>Menu</strong> &gt; <strong>Users</strong>, and the imported users appear, as shown below:</p>
+<p><img src="../media/image230.png" style="width:6.41379in;height:3.12174in"></p>
+</section>
+</section>
+<section id="editing-users" class="level2">
+<h2 class="anchored" data-anchor-id="editing-users">8.4 Editing users</h2>
+<p>In EWARS, you can edit the login information of users with system-generated email addresses, but you cannot edit user details with valid personal email addresses: that is the responsibility of the users themselves.</p>
+<p>You can edit user details individually or in bulk.</p>
+<section id="editing-user-details-individually" class="level3">
+<h3 class="anchored" data-anchor-id="editing-user-details-individually">8.4.1 Editing user details individually</h3>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Users</strong>. Click on the <strong>edit</strong> <img src="../media/image231.png" style="width:0.29167in;height:0.28333in"> icon &gt; make the desired changes. Click on <strong>Save Change(s)</strong>.</li>
+</ul>
+</section>
+<section id="editing-user-details-in-bulk" class="level3">
+<h3 class="anchored" data-anchor-id="editing-user-details-in-bulk">8.4.2 Editing user details in bulk</h3>
+<p>This function allows you to edit details including name, role, password, organization, occupation, phone and status, but not email address. The email address is the user identifier and is a mandatory column.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 68%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Some r</td>
+<td style="text-align: left;">eporting sites may change ownership, name or phone numbers as time passes. A process to edit user details in the system without disrupting their access is therefore essential.</td>
+</tr>
+</tbody>
+</table>
+<p>Follow the steps below to edit user details in bulk.</p>
+<p><strong>Step 1.</strong> Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Users</strong> &gt; <strong>Import Users</strong>. Click on <strong>Download Template CSV</strong> and open it in Excel:</p>
+<p><img src="../media/image226.png" style="width:5.03334in;height:1.45833in"></p>
+<p><strong>Step 2.</strong> Populate the details in the CSV file, including the user email addresses, as shown below:</p>
+<p><img src="../media/image232.png" style="width:4.95in;height:1.41667in"></p>
+<p>The system will match provided email addresses with existing users’ email addresses. If the email address matches, the user details are updated with the details provided in the relevant columns in the file.</p>
+<p><strong>Step 3.</strong> Click on <img src="../media/image233.png" style="width:1.25833in;height:0.275in"> &gt; click on <img src="../media/image234.png" style="width:0.65in;height:0.25in"> &gt; browse and select the prepared CSV file. The <strong>Status_of_imported_records.csv</strong> file is downloaded.</p>
+<p><strong>Step 4.</strong> Analyse the <strong>Status_of_imported_records.csv</strong> file as below:</p>
+<p><img src="../media/image235.png" style="width:5.29166in;height:1.31667in"></p>
+<p>The downloaded file is the same as the uploaded file with two additional columns: <strong>import_status</strong> and <strong>import_description</strong>.</p>
+<p>The import_status column shows the success or failure of the imported records, with reasons for any failures indicated in the import_description column.</p>
+<p>If some of the user details are not updated successfully, make the appropriate corrections to the failed user details in the CSV file according to the instructions in the import_description column, and import it again.</p>
+</section>
+</section>
+<section id="user-assignments" class="level2">
+<h2 class="anchored" data-anchor-id="user-assignments">8.5 User assignments</h2>
+<p>Assignments refer to the reporting forms each location is responsible for reporting to EWARS. One location can have multiple assignments.</p>
+<p>For example, Dondo PHCC has two assignments:</p>
+<ul>
+<li><p>submit a weekly reporting form every Monday morning for the previous completed epi week</p></li>
+<li><p>submit an immediate notification form every time an immediately notifiable disease is seen at the PHCC.</p></li>
+</ul>
+<p>If an outbreak is ongoing, they may also have outbreak line lists as assignments.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> Geographical Administrators and Account Administrators do not have assignments under them.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>In EWARS, Reporting Users are not directly associated with locations. Instead, once you assign a form to a user, the location is associated with the user indirectly. When you report the form, the list of associated locations appears for selection.</p>
+<p>There are three methods to add assignments to users.</p>
+<ul>
+<li><p>You can add assignments to Reporting Users manually.</p></li>
+<li><p>You can add assignments in bulk via a CSV file.</p></li>
+<li><p>You can add assignments to existing users with other assignments.</p></li>
+</ul>
+<section id="adding-assignments-to-reporting-users-manually" class="level3">
+<h3 class="anchored" data-anchor-id="adding-assignments-to-reporting-users-manually">8.5.1 Adding assignments to Reporting Users manually</h3>
+<ul>
+<li>Select <strong>Menu </strong>&gt; <strong>Users</strong>. Click on the <strong>folder</strong> <img src="../media/image236.png" style="width:0.3in;height:0.275in"> icon of the Reporting User (e.g.&nbsp;user d).</li>
+</ul>
+<p><img src="../media/image237.png" style="width:4.975in;height:1.45833in"></p>
+<ul>
+<li>Click on <strong>Add New Assignment</strong>, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image238.png" style="width:5.975in;height:1.60833in"></p>
+<ul>
+<li><p>Select the <strong>Form</strong>.</p></li>
+<li><p>Select the <strong>Location</strong> of the <strong>Assignment</strong> from the drop-down menu.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li><p><strong>Specific location</strong>: this indicates that the user must report from the location provided in the next drop-down menu (e.g.&nbsp;Bilnula PHCC).</p></li>
+<li><p><strong>Location group</strong> this indicates that the user is limited to reporting from any of the locations in the location group provided in the next drop-down menu.</p></li>
+<li><p><strong>Reporting locations within:</strong> this indicates that the user must report from any of the locations under the location provided in the next drop-down menu. Thus, if a province is selected, the user can report from any of the health facilities situated within that province (at any geographical level). In this instance, every time the Reporting User logs in to EWARS Mobile to report under this form, he or she is presented with a list of reporting locations within the administrative boundary chosen. The Reporting User can select anyone to report at a given time. This enables one Reporting User with a mobile phone or web access to report for multiple sites, as those sites may not have the required equipment or facilities.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Set <strong>Status</strong> as <strong>Active</strong>. If the status is set as <strong>Inactive</strong>, reporting cannot be done.</p></li>
+<li><p>Click on the <strong>save</strong> <img src="../media/image239.png" style="width:0.21667in;height:0.23333in"> icon, and the assignment is added.</p></li>
+</ul>
+<p>You can repeat the steps above to add more such assignments.</p>
+<section id="editing-or-deleting-an-assignment" class="level4">
+<h4 class="anchored" data-anchor-id="editing-or-deleting-an-assignment">8.5.1.1 Editing or deleting an assignment</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 69%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> You ca</td>
+<td style="text-align: left;">n modify assignments to suit your needs. If an outbreak is declared, you can add line list assignments to Reporting Users, and you can remove such assignments when the outbreak is over.</td>
+</tr>
+</tbody>
+</table>
+<p>To edit an assignment, follow the steps below.</p>
+<ul>
+<li>Select <strong>Menu </strong>&gt; <strong>Users</strong>. Click on the <strong>folder</strong> <img src="../media/image236.png" style="width:0.3in;height:0.275in"> icon of the Reporting User (e.g.&nbsp;user d). Click on the <strong>edit</strong> <img src="../media/image240.png" style="width:0.29167in;height:0.275in"> icon of the <strong>Assignment</strong>, and the row opens in edit mode. Make the desired changes &gt; click on the <strong>save</strong> <img src="../media/image239.png" style="width:0.21667in;height:0.23333in"> icon, and the changes are updated.</li>
+</ul>
+<p>To delete an assignment, follow the steps below.</p>
+<ul>
+<li>Select <strong>Menu </strong>&gt; <strong>Users</strong>. Click on the <strong>folder</strong> <img src="../media/image236.png" style="width:0.3in;height:0.275in"> icon of the Reporting User (e.g.&nbsp;user d). Click on the <strong>delete</strong> <img src="../media/image241.png" style="width:0.29167in;height:0.29167in"> icon of the <strong>Assignment</strong> &gt; click on <strong>Confirm</strong>, and the <strong>Assignment</strong> is deleted.</li>
+</ul>
+</section>
+</section>
+<section id="adding-assignments-in-bulk-via-a-csv-file" class="level3">
+<h3 class="anchored" data-anchor-id="adding-assignments-in-bulk-via-a-csv-file">8.5.2 Adding assignments in bulk via a CSV file</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 74%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> When y</td>
+<td style="text-align: left;">ou have a large number of reporting sites and users, it can be time-consuming to add assignments one by one. Have a CSV file ready with user details to import to the system for efficiency. Use the CSV template to create your CSV file for import.</td>
+</tr>
+</tbody>
+</table>
+<p>You can add assignments in bulk by uploading a CSV file populated with assignment details. Each row in the file indicates one assignment – i.e.&nbsp;a reporting form assigned to a user at a location.</p>
+<p>Follow the steps below to import assignments in bulk.</p>
+<p><strong>Step 1.</strong> Select <strong>Menu</strong> &gt; <strong>Users</strong> &gt; <strong>Bulk Assignment</strong>, and the screen below appears:</p>
+<p><img src="../media/image242.png" style="width:5.84167in;height:2.13333in"></p>
+<p><strong>Step 2.</strong> Click on <strong>Download</strong> <strong>Template CSV</strong> and open it in Excel:</p>
+<p><img src="../media/image243.png" style="width:5.46667in;height:1.21667in"></p>
+<p><strong>Step 3.</strong> Populate the CSV file columns as shown below:</p>
+<p><img src="../media/image244.png" style="width:5.96667in;height:1.65833in"></p>
+<ul>
+<li><p><strong>user_email</strong> <mark>[Mandatory]: enter the email address of the user</mark> to whom you want to assign the form. For an <strong>Assignment</strong> to be added successfully, the user’s status must be <strong>Active</strong>, and the email address entered must match the user’s email address.</p></li>
+<li><p><strong>form_name.en</strong> [Mandatory]: enter the form name in English. If you want to add a name in French, change the column name from “form_name.en” to “form_name.fr”.</p></li>
+</ul>
+<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> for an assignment to be added successfully, the form status needs to be <strong>Active</strong>, and it must be enabled for <strong>Location-Based Reporting</strong>.</p>
+<ul>
+<li><strong>location_type</strong> <mark>[Mandatory]:</mark> enter the location type as “SPECIFIC” or “LOCATION_WITHIN” OR “GROUP”.</li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>SPECIFIC:</strong> the form is assigned to a specific location, which is provided in the <strong>location_uuid</strong> column. Enter the location universally unique identifier (UUID) in the <strong>location_uuid</strong> column.</p>
+<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> to obtain the location UUID, select <strong>Menu</strong> &gt; <strong>Locations</strong>. Click on the <strong>folder</strong> <img src="../media/image45.png" style="width:0.25in;height:0.23958in"> icon to expand the location hierarchy &gt; click on the location name, and the location details including the UUID are at the right-hand side.</p>
+<p><strong>LOCATION_WITHIN:</strong> the form is assigned to locations that exist under the location provided in the <strong>location_uuid</strong> column. Enter the location UUID in the <strong>location_uuid</strong> column.</p>
+<p><strong>GROUP:</strong> the form is assigned to the group provided in the <strong>location_group</strong> column. Enter the group name in the <strong>location_group</strong> column.</p>
+</blockquote>
+<ul>
+<li><strong>Status</strong>: keep the status column blank. By default, the <strong>Status</strong> is set as ACTIVE. If you want the assignment to be INACTIVE, set the status column value as “INACTIVE”.</li>
+</ul>
+<p><strong>Step 4.</strong> Click on <img src="../media/image245.png" style="width:0.65in;height:0.275in"> &gt; browse and select the prepared CSV file. The <strong>Status_of_imported_records.csv</strong> file is downloaded.</p>
+<p><strong>Step 5.</strong> Analyse the <strong>Status_of_imported_records.csv</strong> file as below:</p>
+<p><img src="../media/image246.png" style="width:5.825in;height:1.125in"></p>
+<p>The downloaded file is the same as the uploaded file with two additional columns: <strong>import_status</strong> and <strong>import_description</strong>.</p>
+<p>The import_status column shows the success or failure of the imported records, with reasons for any failures indicated in the import_description column.</p>
+<p>If an assignment has failed to import successfully, make corrections to the unsuccessful rows of the CSV file, and import it again.</p>
+</section>
+<section id="adding-assignments-to-existing-users-with-other-assignments" class="level3">
+<h3 class="anchored" data-anchor-id="adding-assignments-to-existing-users-with-other-assignments">8.5.3 Adding assignments to existing users with other assignments</h3>
+<p>The replicate assignments feature is used in a scenario where a form “X” is assigned to users at one location, and a new form “Y” needs to be assigned to those users at the same location.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 77%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> You ma</td>
+<td style="text-align: left;">y want to add a second or third (or fourth) assignment to a user who is already assigned with one report – for example, all PHCCs in Aimal Province are assigned with a weekly EWARS reporting form, and you want to assign a second form to them (e.g.&nbsp;an immediate reporting form).</td>
+</tr>
+</tbody>
+</table>
+<p>To assign the new form “Y”, follow the steps below.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Users</strong> &gt; <strong>Bulk Assignment</strong> &gt; <strong>Replicate Assignments</strong>, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image247.png" style="width:5.93148in;height:2.77426in"></p>
+<ul>
+<li><p>Select the form that was previously assigned to the users from the <strong>For users that currently have access to form</strong> drop-down menu.</p></li>
+<li><p>Select the new form that is to be assigned to all users of the previous form from the <strong>Give access to form</strong> drop-down menu. By default, <strong>Role</strong> is set as Reporting User.</p></li>
+<li><p>Click on <strong>Assign</strong> &gt; click on <strong>Confirm</strong>, and the form is assigned.</p></li>
+</ul>
+</section>
+</section>
+<section id="changing-a-user-password" class="level2">
+<h2 class="anchored" data-anchor-id="changing-a-user-password">8.6 Changing a user password</h2>
+<p>In EWARS, as an Account Administrator, you can change the passwords of users created with a system-generated email address, but you can’t change passwords of users created with a valid personal email address.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 77%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Report</td>
+<td style="text-align: left;">ing sites, PHCCs, health posts and similar may have a high turnaround of staff/users, and the process of transferring EWARS login details between old and new users may therefore not be very smooth. This feature enables the Account Administrator to change passwords without any hassle.</td>
+</tr>
+</tbody>
+</table>
+<p>Follow the below steps to change a password for a user with a system-generated email address.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Users.</strong> Click on the <img src="../media/image248.png" style="width:0.23958in;height:0.20833in"> icon, and the <strong>Update Password</strong> screen below appears:</li>
+</ul>
+<p><img src="../media/image249.png" style="width:5.85in;height:1.38333in"></p>
+<ul>
+<li>Enter the new password. Click on <strong>Save Change(s)</strong>, and the password is changed.</li>
+</ul>
+</section>
+<section id="revoking-and-reinstating-user-access" class="level2">
+<h2 class="anchored" data-anchor-id="revoking-and-reinstating-user-access">8.7 Revoking and reinstating user access</h2>
+<p>Revoking access means the user will not be able to use their account: their user status will be access revoked and they will not be able to log in into the system. User access can also be reinstated to make the user active again.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 69%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Some G</td>
+<td style="text-align: left;">eographical Administrators or Reporting Users leave the system when they exit the emergency response. As an Account Administrator, you can revoke or reinstate the access of any user.</td>
+</tr>
+</tbody>
+</table>
+<p>To revoke user access, follow the steps below:</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Users</strong>. Click on the <img src="../media/image250.png" style="width:0.26042in;height:0.20833in"> icon of the user (e.g.&nbsp;John Smith) &gt; click on <strong>Confirm</strong>, and access is revoked.</li>
+</ul>
+<p>To reinstate user access after it has been revoked, follow the steps below:</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Users</strong>. Click on the <img src="../media/image250.png" style="width:0.26042in;height:0.20833in"> icon of the revoked user (e.g.&nbsp;John Smith) &gt; click on <strong>Confirm</strong>, and access is reinstated.</li>
+</ul>
+<p>The following chapter will help you manage your profile, tasks and notifications.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/10-alarms.html" class="pagination-link" aria-label="Chapter 7. Alarms">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 7. Alarms</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/12-user-profiles-tasks-and-notifications.html" class="pagination-link" aria-label="Chapter 9. User profiles, tasks and notifications">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 9. User profiles, tasks and notifications</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© World Health Organization, 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

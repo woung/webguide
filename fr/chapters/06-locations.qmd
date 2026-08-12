@@ -1,0 +1,3 @@
+# Chapitre 3. Emplacements
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 3. Locations](../../en/chapters/06-locations.qmd).

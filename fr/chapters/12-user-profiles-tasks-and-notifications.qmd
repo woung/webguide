@@ -1,0 +1,3 @@
+# Chapitre 9. Profils utilisateurs, tâches et notifications
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 9. User profiles, tasks and notifications](../../en/chapters/12-user-profiles-tasks-and-notifications.qmd).

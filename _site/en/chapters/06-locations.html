@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Chapter 3. Locations – EWARS Mobile</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/07-configuration-transfer.html" rel="next">
+<link href="../chapters/05-getting-started.html" rel="prev">
+<link href=".././media/image1.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d60a5906468b64742e20e52e09f920c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cb29c9f9deed8f7c023d39522d0343d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../shared/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">EWARS Mobile</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-language" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🌐 Language</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-language">    
+        <li>
+    <a class="dropdown-item" href="../index.html">
+ <span class="dropdown-text">English</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../fr/index.qmd">
+ <span class="dropdown-text">Français</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../es/index.qmd">
+ <span class="dropdown-text">Español</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../ar/index.qmd">
+ <span class="dropdown-text">العربية</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-locations.html">Setting up your EWARS account</a></li><li class="breadcrumb-item"><a href="../chapters/06-locations.html"><span class="chapter-title">Chapter 3. Locations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EWARS Mobile</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-acknowledgments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-abbreviations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abbreviations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-executive-summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Executive summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-overview-of-ewars-in-a-box.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1. Overview of EWARS in a box</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2. Getting started</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Setting up your EWARS account</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-locations.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 3. Locations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-configuration-transfer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4. Configuration Transfer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5. Indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-forms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6. Forms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-alarms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7. Alarms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-users-and-their-assignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8. Users and their assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-user-profiles-tasks-and-notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9. User profiles, tasks and notifications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-ewars-account-settings.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10. EWARS account settings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data Collection and Monitoring</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-report-manager.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11. Report manager</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-m-e-auditor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 12. M&amp;E Auditor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-alert-log.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 13. Alert log</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-data-import.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 14. Data Import</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data analysis, visualization and dissemination</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-plot.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 15. Plot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/19-mapping.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 16. Mapping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/20-widgets-and-their-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 17. Widgets and their configuration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/21-notebooks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 18. Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/22-dashboards.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 19. Dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/23-outbreaks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 20. Outbreaks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/24-documents-and-document-templates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 21. Documents and Document Templates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/25-website-builder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 22. Website Builder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/26-export.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 23. Export</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/27-sms-reporting-and-teams.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 24. SMS reporting and teams</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/28-ewars-stand-alone.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 25. EWARS Stand-alone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/29-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 26. Glossary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/30-help-and-support.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 27. Help and support</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#creating-editing-and-deleting-location-types" id="toc-creating-editing-and-deleting-location-types" class="nav-link active" data-scroll-target="#creating-editing-and-deleting-location-types">3.1 Creating, editing and deleting location types</a></li>
+  <li><a href="#creating-locations" id="toc-creating-locations" class="nav-link" data-scroll-target="#creating-locations">3.2 Creating locations</a>
+  <ul class="collapse">
+  <li><a href="#editing-root-location-as-country" id="toc-editing-root-location-as-country" class="nav-link" data-scroll-target="#editing-root-location-as-country">3.2.1 Editing root location as country</a></li>
+  <li><a href="#creating-child-locations-manually" id="toc-creating-child-locations-manually" class="nav-link" data-scroll-target="#creating-child-locations-manually">3.2.2 Creating child locations manually</a></li>
+  <li><a href="#importing-child-locations-in-bulk-via-a-csv-file" id="toc-importing-child-locations-in-bulk-via-a-csv-file" class="nav-link" data-scroll-target="#importing-child-locations-in-bulk-via-a-csv-file">3.2.3 Importing child locations in bulk via a CSV file</a></li>
+  </ul></li>
+  <li><a href="#editing-locations" id="toc-editing-locations" class="nav-link" data-scroll-target="#editing-locations">3.3 Editing locations</a>
+  <ul class="collapse">
+  <li><a href="#editing-locations-individually" id="toc-editing-locations-individually" class="nav-link" data-scroll-target="#editing-locations-individually">3.3.1 Editing locations individually</a></li>
+  <li><a href="#editing-locations-in-bulk-via-a-csv-file" id="toc-editing-locations-in-bulk-via-a-csv-file" class="nav-link" data-scroll-target="#editing-locations-in-bulk-via-a-csv-file">3.3.2 Editing locations in bulk via a CSV file</a></li>
+  </ul></li>
+  <li><a href="#adding-geographical-mapping-information-to-locations" id="toc-adding-geographical-mapping-information-to-locations" class="nav-link" data-scroll-target="#adding-geographical-mapping-information-to-locations">3.4 Adding geographical mapping information to locations</a>
+  <ul class="collapse">
+  <li><a href="#mapping-reporting-locations-as-point-locations" id="toc-mapping-reporting-locations-as-point-locations" class="nav-link" data-scroll-target="#mapping-reporting-locations-as-point-locations">3.4.1 Mapping reporting locations as point locations</a></li>
+  <li><a href="#mapping-administrative-locations-to-geometric-polygons" id="toc-mapping-administrative-locations-to-geometric-polygons" class="nav-link" data-scroll-target="#mapping-administrative-locations-to-geometric-polygons">3.4.2 Mapping administrative locations to geometric polygons</a></li>
+  </ul></li>
+  <li><a href="#adding-reporting-information-to-locations" id="toc-adding-reporting-information-to-locations" class="nav-link" data-scroll-target="#adding-reporting-information-to-locations">3.5 Adding reporting information to locations</a></li>
+  <li><a href="#adding-locations-to-the-location-group" id="toc-adding-locations-to-the-location-group" class="nav-link" data-scroll-target="#adding-locations-to-the-location-group">3.6 Adding locations to the location group</a></li>
+  <li><a href="#activating-and-deactivating-child-locations" id="toc-activating-and-deactivating-child-locations" class="nav-link" data-scroll-target="#activating-and-deactivating-child-locations">3.7 Activating and deactivating child locations</a></li>
+  <li><a href="#merging-child-locations-with-another-location" id="toc-merging-child-locations-with-another-location" class="nav-link" data-scroll-target="#merging-child-locations-with-another-location">3.8 Merging child locations with another location</a></li>
+  <li><a href="#viewing-locations-under-the-tree-tab" id="toc-viewing-locations-under-the-tree-tab" class="nav-link" data-scroll-target="#viewing-locations-under-the-tree-tab">3.9 Viewing locations under the tree tab</a></li>
+  <li><a href="#viewing-locations-under-the-table-tab" id="toc-viewing-locations-under-the-table-tab" class="nav-link" data-scroll-target="#viewing-locations-under-the-table-tab">3.10 Viewing locations under the table tab</a></li>
+  <li><a href="#exporting-locations" id="toc-exporting-locations" class="nav-link" data-scroll-target="#exporting-locations">3.11 Exporting locations</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-locations.html">Setting up your EWARS account</a></li><li class="breadcrumb-item"><a href="../chapters/06-locations.html"><span class="chapter-title">Chapter 3. Locations</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 3. Locations</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>When setting up a new Early Warning, Alert and Response System (EWARS) account, organizing reporting locations is the primary activity. This chapter will help you to set these up.</p>
+<p>EWARS needs to recognize reporting units (such as health facilities and shelters) and health administrative levels at national and subnational levels of a country, and their context, before establishing a reporting mechanism.</p>
+<p>By setting up locations, you enable the following three key actions:</p>
+<ul>
+<li><p>letting EWARS know your reporting locations by adding reporting locations and their hierarchies (via the “location tree”) to the system;</p></li>
+<li><p>letting EWARS know what information each reporting location should report by assigning reporting forms to reporting locations;</p></li>
+<li><p>letting EWARS map data geospatially by adding geographical data to reporting locations.</p></li>
+</ul>
+<p>To clarify these processes, this chapter uses the example of Nambutu (a fictional country). For demonstration purposes, let’s say that the Account Administrator has to establish reporting from four health facilities within two provinces of Nambutu: Bilnula, Birigo, Dirabi and Isltun primary health-care centres (PHCCs). To do this, a location tree should be created (Fig. 3.1).</p>
+<p>Fig. 3.1. Example location tree</p>
+<p><img src="../media/image34.png" style="width:6.24167in;height:2.65in"></p>
+<p>This example shows three location types with the hierarchy of <strong>Level 1: Country</strong> &gt; <strong>Level 2: Province</strong> &gt; <strong>Level 3: Health facility</strong>. Level 1 and Level 2 are administrative location types, whereas Level 3 is a reporting location type.</p>
+<p>Other administrative location types may also be relevant to your context, such as a state, district, county, hub, governorate or health area. Other reporting location types include health posts, mobile clinics, field hospitals, community health worker areas and community health volunteer areas.</p>
+<p>EWARS uses the parent–child hierarchy when describing locations. In Fig. 3.1 above, Nambutu is the <strong>Parent location</strong> for provinces Aimal and Dirran. Using the same logic, it also follows that Aimal and Dirran are the <strong>Child locations</strong> of Nambutu.</p>
+<p>In brief, it is important to recognize the types of locations and their hierarchies applicable to your context by creating a location tree before you create locations. This logic is used throughout when creating new locations or adding locations to an established EWARS account.</p>
+<section id="creating-editing-and-deleting-location-types" class="level2">
+<h2 class="anchored" data-anchor-id="creating-editing-and-deleting-location-types">3.1 Creating, editing and deleting location types</h2>
+<p>The first step in creating locations is inputting the location types applicable to your context. You can create as many administrative and reporting location types as you need. In the example of the fictional country Nambutu, the location tree has three location types: country, province and health facility.</p>
+<p>Creating, editing and deleting location types is done under settings.</p>
+<p>To create location types, follow the steps below.</p>
+<ul>
+<li>Click on the <strong>settings</strong> <img src="../media/image35.png" style="width:0.35833in;height:0.375in"> icon at the top right-hand corner of your dashboard screen. Click on <img src="../media/image36.png" style="width:0.81667in;height:0.275in"> in the menu on the left of the screen. Click on <img src="../media/image37.png" style="width:0.20833in;height:0.23333in">, and the following screen appears:</li>
+</ul>
+<p><img src="../media/image38.png" style="width:5.59166in;height:2.4in"></p>
+<ul>
+<li><p>Enter the name of the <strong>Location Type</strong> (e.g.&nbsp;“Country”). To enter the name in French, click on <strong>en</strong> in the right-hand box and select <strong>fr</strong> from <strong>Available Languages</strong>. Enter the name in French. It will be visible in French once you have selected French as your default language.</p></li>
+<li><p>Set Status as <strong>Active</strong>.</p></li>
+<li><p>Enter the <strong>Description</strong> for the <strong>Location Type</strong> (e.g.&nbsp;“This is a top-level location type”).</p></li>
+<li><p>Click on <strong>Save Change(s)</strong>. A notification appears, confirming that the location type has been added.</p></li>
+<li><p>Repeat the steps above to add a <strong>Province</strong> or <strong>Health facility</strong> location type.</p></li>
+</ul>
+<p>The newly added location types are displayed as shown below:</p>
+<p><img src="../media/image39.png" style="width:6.16666in;height:2.99167in"></p>
+<p>Follow the steps below to edit an existing location type.</p>
+<ul>
+<li>Click on the <strong>settings</strong> <img src="../media/image35.png" style="width:0.35833in;height:0.375in"> icon at the top right-hand corner of your dashboard screen. Click on <img src="../media/image36.png" style="width:0.95764in;height:0.31667in"> in the menu on the left of the screen. Click on the <strong>Location Type</strong> that needs editing. Click on the <strong>edit</strong> <img src="../media/image40.png" style="width:0.36667in;height:0.36667in"> icon and make the changes. Click on <strong>Save Change(s)</strong>. A notification that the changes have been saved appears.</li>
+</ul>
+<p>Follow the steps below to delete an existing location type.</p>
+<ul>
+<li>Click on the <strong>settings</strong> <img src="../media/image35.png" style="width:0.35833in;height:0.375in"> icon at the top right-hand corner of your dashboard screen. Click on <img src="../media/image36.png" style="width:1.03333in;height:0.35833in"> in the menu on the left of the screen. Click on the location type to be deleted. Click on the <strong>delete</strong> <img src="../media/image41.png" style="width:0.35833in;height:0.35833in"> icon and <strong>Confirm</strong>. A notification that the location type has been deleted appears.</li>
+</ul>
+</section>
+<section id="creating-locations" class="level2">
+<h2 class="anchored" data-anchor-id="creating-locations">3.2 Creating locations</h2>
+<p>Once you have added location types in the system, the next step is to categorize locations under existing location types.</p>
+<p>Locations can be entered in EWARS either manually or in bulk. For either method, four key variables need to be known about each location before the details can be entered:</p>
+<ul>
+<li><p><strong>Location name</strong>: the name of the location to be added</p></li>
+<li><p><strong>Location type</strong>: the location type of the location to be added</p></li>
+<li><p><strong>Parent location</strong>: the parent location of the location to be added</p></li>
+<li><p><strong>PCODE</strong>: the place code of the location to be added.</p></li>
+</ul>
+<p>Place codes (PCODEs) are unique identifiers for locations that are represented by combinations of letters and/or numbers to identify a specific location within a database – these provide a systematic means of linking data to a specific, unambiguous location, such as “NBT001” or “NBT001HF001” in this fictional example. PCODEs need to be identified for each new location before entering it in EWARS.</p>
+<p>Before entering the locations in EWARS, list all the locations and their variables as shown in Table 3.1.</p>
+<p>Table 3.1. Locations and variables</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 22%">
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 24%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">No.</td>
+<td style="text-align: left;"><strong>Location name</strong></td>
+<td style="text-align: left;"><strong>PCODE</strong></td>
+<td style="text-align: left;"><strong>Location type</strong></td>
+<td style="text-align: left;"><strong>Parent location</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Nambutu</td>
+<td style="text-align: left;">NBT</td>
+<td style="text-align: left;">Country</td>
+<td style="text-align: left;">–</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Aimal</td>
+<td style="text-align: left;">NBT001</td>
+<td style="text-align: left;">Province</td>
+<td style="text-align: left;">Nambutu</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Bilnula PHCC</td>
+<td style="text-align: left;">PHCC001</td>
+<td style="text-align: left;">Health Facility</td>
+<td style="text-align: left;">Aimal</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Birigo PHCC</td>
+<td style="text-align: left;">PHCC002</td>
+<td style="text-align: left;">Health Facility</td>
+<td style="text-align: left;">Aimal</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Dirran</td>
+<td style="text-align: left;">NBT002</td>
+<td style="text-align: left;">Province</td>
+<td style="text-align: left;">Nambutu</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Dirabi PHCC</td>
+<td style="text-align: left;">PHCC003</td>
+<td style="text-align: left;">Health Facility</td>
+<td style="text-align: left;">Dirran</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">Isltun PHCC</td>
+<td style="text-align: left;">PHCC004</td>
+<td style="text-align: left;">Health Facility</td>
+<td style="text-align: left;">Dirran</td>
+</tr>
+</tbody>
+</table>
+<p>Parent location is the location immediately above the location under consideration.</p>
+<p>Level 1 locations (such as Country) have no parent location as they are the highest level for a country. They are set up automatically by the system as Root location (Uncategorized).</p>
+<p>First, you need to create the root location, from which all other locations and the location tree will span out.</p>
+<p>The following sections set out the steps to create a location tree by editing the root location to country as the parent location and creating child locations manually one by one or importing them in bulk.</p>
+<section id="editing-root-location-as-country" class="level3">
+<h3 class="anchored" data-anchor-id="editing-root-location-as-country">3.2.1 Editing root location as country</h3>
+<p>To set the root location as the top-level location type of your location hierarchy – as country (for Nambutu), in this example – follow the steps below.</p>
+<ul>
+<li>Select the <strong>menu</strong> icon &gt; <strong>Locations</strong>. Click on <strong>Root Location (Uncategorized)</strong>. The following screen appears:</li>
+</ul>
+<blockquote class="blockquote">
+<p><img src="../media/image42.png" style="width:5.69167in;height:2.84167in"></p>
+</blockquote>
+<ul>
+<li><p>Enter the <strong>Location Name</strong> as the Country name: “Nambutu” in this example.</p></li>
+<li><p>Give the <strong>PCODE</strong> for the Country: “NBT” in this example.</p></li>
+<li><p>Select <strong>Location Type</strong> as <strong>Country</strong>.</p></li>
+<li><p>Click on <strong>Save Change(s)</strong>.</p></li>
+</ul>
+</section>
+<section id="creating-child-locations-manually" class="level3">
+<h3 class="anchored" data-anchor-id="creating-child-locations-manually">3.2.2 Creating child locations manually</h3>
+<p>You can create child locations – including provinces, districts and health facilities – manually in the system. As this is a manual process, creation of new locations is done one by one.</p>
+<p>Please follow a hierarchy when creating locations manually: the parent location must be created before the child location.</p>
+<div class="line-block">&nbsp;<img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Have a location tree created in a separate Excel spreadsheet. This makes entering each location in EWARS within the correct hierarchy much easier.|</div>
+<p>Using the example shown in Fig. 3.1, the following steps explain how to add the six locations manually.</p>
+<ul>
+<li>Select the <strong>menu</strong> icon &gt; <strong>Locations</strong>. Click on <strong>Create New</strong>, and the <strong>General Settings</strong> tab opens:</li>
+</ul>
+<p><img src="../media/image44.png" style="width:6.09167in;height:2.66667in"></p>
+<ul>
+<li><p>Enter the new <strong>Location Name</strong>: “Aimal” in this fictional example.</p></li>
+<li><p>The <strong>UUID (universally unique identifier)</strong> is a system-generated unique number assigned to the new location.</p></li>
+<li><p>Set <strong>Status</strong> as <strong>Active</strong>.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li><p><strong>Active</strong> locations appear in green; these can receive reports.</p></li>
+<li><p><strong>Inactive</strong> locations appear in red; these cannot receive reports.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Enter the <strong>PCODE</strong> for the new location: “NBT001” for Aimal in this example.</p></li>
+<li><p>Enter the location <strong>Prefix</strong> – for example, for Aimal the prefix is AIM (see Table 3.1).</p></li>
+</ul>
+<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> A prefix is useful to auto-generate unique identifiers on form submissions. For more information, refer to <strong>Chapter 6. Forms</strong>, topic <strong>6.8.4.2 Auto-generating a unique ID on form</strong> <strong>submissions</strong>.</p>
+<ul>
+<li><p>Select an appropriate <strong>Location Type</strong> from the drop-down menu (e.g.&nbsp;Provinces).</p></li>
+<li><p>Enter the <strong>Location Group</strong> name – for example, let’s assume that Aimal belongs to nongovernmental organization (NGO) A or NGO B. You can assign multiple groups by separating them with a comma (,). For more information, refer to topic <strong>3.6 Adding locations to the location group.</strong></p></li>
+<li><p>Select an appropriate <strong>Parent Location</strong> from the drop-down menu. The new location is created as a Child of the selected Parent location.</p></li>
+<li><p>Click on <strong>Save Change(s)</strong>.</p></li>
+</ul>
+<p>Follow the same steps to create all six locations. Entered locations are displayed in the location tree on the system.</p>
+<ul>
+<li>Click on the <strong>folder</strong> <img src="../media/image45.png" style="width:0.25in;height:0.24167in"> icon on the left to see the correct location pathway for each location entered. The expanded location tree appears, as shown below:</li>
+</ul>
+<p><img src="../media/image46.png" style="width:5.91666in;height:2.83333in"></p>
+<p>Within the location tree, the <strong>folder</strong> <img src="../media/image47.png" style="width:0.34167in;height:0.33516in"> icon represents administrative locations, while the <strong>location</strong> <img src="../media/image48.png" style="width:0.33333in;height:0.35619in"> icon represents reporting locations.</p>
+</section>
+<section id="importing-child-locations-in-bulk-via-a-csv-file" class="level3">
+<h3 class="anchored" data-anchor-id="importing-child-locations-in-bulk-via-a-csv-file">3.2.3 Importing child locations in bulk via a CSV file</h3>
+<p>Rather than entering them individually, manually, you can import all provinces, districts and health facilities in your location hierarchy at once using a comma-separated values (CSV) file.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 99%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Use the import feature when you need to set up many reporting sites in EWARS rapidly.</td>
+</tr>
+</tbody>
+</table>
+<p>Check the flowchart in Fig. 3.2 to understand the process of importing locations.</p>
+<p>Fig. 3.2. Flowchart for importing locations</p>
+<p><img src="../media/image49.png" style="width:3.91691in;height:6.55093in"></p>
+<p>Follow the steps below to import locations as shown in Table 3.1.</p>
+<p><strong>Step 1.</strong> Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Locations</strong> &gt; <strong>Import Locations</strong>. The following screen appears:</p>
+<p><img src="../media/image50.png" style="width:5.75in;height:2.175in"></p>
+<p><strong>Step 2.</strong> Click on <strong>Download</strong> <strong>Template CSV</strong> and open the <strong>locations_template</strong> file in Excel:</p>
+<p><img src="../media/image51.png" style="width:6in;height:1.64167in"></p>
+<p><strong>Step 3.</strong> Populate the CSV file as shown in the example below:</p>
+<p><img src="../media/image52.png" style="width:6.04166in;height:2.14167in"></p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> for successful location import, the Parent row must be added before the Child rows.</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Be careful to ensure that spellings, uppercase and lowercase letters are accurate while doing the bulk import of locations.</td>
+</tr>
+</tbody>
+</table>
+<p>Populate the columns as outlined below.</p>
+<ul>
+<li><p><strong>name.en</strong> [Mandatory]: enter the location name in English. If you want to add a name in French, change the column name from “Name.en” to “Name.fr”. Here, “en” and “fr” denote the language code, which is defined when adding new languages. To obtain codes for other languages, click on the <strong>settings</strong> <img src="../media/image35.png" style="width:0.35833in;height:0.375in"> icon and click on <img src="../media/image53.png" style="width:0.86667in;height:0.28333in">.</p></li>
+<li><p><strong>pcode</strong> [Mandatory]: enter a unique PCODE for the location (e.g.&nbsp;“NBT001” for Aimal in this example).</p></li>
+<li><p><strong>description:</strong> enter a short description of the location.</p></li>
+<li><p><strong>parent_pcode</strong> [Mandatory]: enter the PCODE of the Parent location.</p></li>
+</ul>
+<hr>
+<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> parent locations must be imported before doing the bulk import or the locations will not be able to be imported, and an error message will appear. —————————————————————————————————————————————————-</p>
+<ul>
+<li><p><strong>prefix:</strong> enter the location prefix (e.g.&nbsp;“NBT” for Nambutu). A prefix is useful to auto-generate a unique identifier on form submissions. For more information, refer to <strong>Chapter 6. Forms</strong>, topic <strong>6.8.4.2 Auto-generating a unique ID on form</strong> <strong>submissions</strong>.</p></li>
+<li><p><strong>location_type.en:</strong> enter the type under each location name (e.g.&nbsp;“Health facility”, “Mobile clinic”).</p></li>
+<li><p><strong>location_groups</strong>: enter the location group’s name (e.g.&nbsp;NGO A or NGO B). You can assign multiple groups by separating them with a comma (,). For more information, refer to topic <strong>3.6 Adding locations to the location group</strong>.</p></li>
+<li><p><strong>status</strong>: enter the status “ACTIVE”.</p></li>
+</ul>
+<p><strong>Save</strong> the file.</p>
+<hr>
+<p><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Complete only the mandatory fields for a rapid import.</p>
+<hr>
+<p><strong>Step 4.</strong> On the <strong>Import Locations</strong> screen, Click on <img src="../media/image54.png" style="width:0.85833in;height:0.325in"> &gt; browse and select the prepared CSV file. The <strong>Status_of_imported_records.csv</strong> file is downloaded.</p>
+<p><strong>Step 5.</strong> Analyse the <strong>Status_of_imported_records.csv</strong> file as below.</p>
+<p>The downloaded Status_of_imported_records.csv file has two additional columns: <strong>import_status</strong> and <strong>import_description</strong>.</p>
+<p>All successfully imported rows have import_status as SUCCESS and import_description as Created successfully. For any unsuccessful imports, import_status appears as FAILED. The reason for any failure listed is indicated in the import_description column.</p>
+<p>The following is a screenshot of the Status_of_imported_records.csv file:</p>
+<p><img src="../media/image55.png" style="width:7in;height:1.8375in"></p>
+<p>As shown in the screenshot, four locations have been successfully imported and two locations have failed to import. For location Birigo PHCC, import_description states “parent_pcode: NBT003 does not exist”; this means that a location with the parent PCODE provided (NBT003) is not available in the system. You need to create the parent location first and then import the location Birigo PHCC.</p>
+<p>Similarly, for location Isltun PHCC, import_description states “location_type: County does not exist”; this means that the location type provided (County) is not available in the system. You need to create the location type “County” first, and then import the location Isltun PHCC.</p>
+<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"><strong>Note:</strong> to reimport locations that cannot be imported at the first attempt, you need to make the appropriate corrections to the field in the file, as per the instructions in the import_description, and then import the locations again.</p>
+<p><strong>Step 6.</strong> After creating all locations, select <strong>Menu</strong> &gt; <strong>Locations</strong>. Click on the <strong>Table</strong> tab on the left, and the imported locations are listed, as shown below:</p>
+<p><img src="../media/image56.png" style="width:6.125in;height:2.53333in"></p>
+</section>
+</section>
+<section id="editing-locations" class="level2">
+<h2 class="anchored" data-anchor-id="editing-locations">3.3 Editing locations</h2>
+<p>Existing or imported locations can be edited when there is a change in their name or status.</p>
+<p>Locations can also be edited either individually or in bulk via a CSV file.</p>
+<section id="editing-locations-individually" class="level3">
+<h3 class="anchored" data-anchor-id="editing-locations-individually">3.3.1 Editing locations individually</h3>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Locations</strong> &gt; expand or search location you want to edit by clicking on the <strong>folder</strong> <img src="../media/image45.png" style="width:0.25in;height:0.24167in"> icon of the parent location, and clicking on the name of the location you would like to edit. Information on the location will appear on the right-hand side under General settings. Make changes or edits and <strong>Save Change(s)</strong>.</li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> When you have few locations that need to be edited, use General Settings to edit locations individually.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="editing-locations-in-bulk-via-a-csv-file" class="level3">
+<h3 class="anchored" data-anchor-id="editing-locations-in-bulk-via-a-csv-file">3.3.2 Editing locations in bulk via a CSV file</h3>
+<p>Editing locations in bulk allows you to edit all variables except the PCODE. It can be useful in situations involving the same change to multiple locations at once – for example, if 20 PHCCs managed by NGO A plan to change their management to NGO B, or if you need to disable reporting from multiple PHCCs because they are decommissioned. Instead of changing each location individually, you can edit everything easily in one action by creating a CSV file with the changes you want to make to the existing locations.</p>
+<p>To identify a location, the PCODE is the primary identifier. It is a mandatory column in the CSV file. For example, Birigo PHCC is an active PHCC in the system, and you want to disable reporting from it. EWARS will rely on the PCODE to identify which PHCC needs to be disabled. It is therefore paramount that the PCODE of the new CSV file with your changes matches the existing PCODE of the location. If the PCODEs do not match or there are no existing locations using that PCODE, you will not be able to edit or introduce new changes with bulk importation.</p>
+<p>See the example below of how to change the status of reporting locations Birigo PHCC and Isltun PHCC and set the location as disabled.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Administration</strong>&gt; <strong>Locations</strong> &gt; <strong>Import Locations</strong>. Click on <strong>Download Template CSV</strong> and open the <strong>locations_template</strong> file in Excel:</li>
+</ul>
+<p><img src="../media/image51.png" style="width:5.93333in;height:1.625in"></p>
+<ul>
+<li>Populate the CSV file as shown in the screenshot below:</li>
+</ul>
+<p><img src="../media/image57.png" style="width:6.025in;height:1.525in"></p>
+<ul>
+<li><p>Check the box in <img src="../media/image58.png" style="width:1.90833in;height:0.29167in"> &gt; click on <img src="../media/image54.png" style="width:0.85833in;height:0.325in"> &gt; browse and select the prepared CSV file. <strong>Status_of_imported_records.csv</strong> file is downloaded.</p></li>
+<li><p>Analyse the <strong>Status_of_imported_records.csv</strong> file as below:</p></li>
+</ul>
+<p><img src="../media/image59.png" style="width:6.40834in;height:1.58333in"></p>
+<p>The file downloaded is the same as the uploaded file with two additional columns: <strong>import_status</strong> and <strong>import_description.</strong></p>
+<p>The import_status column shows the success or failure of the imported records, with reasons for any failures indicated in the import_description column.</p>
+<p>To edit locations that could not be updated at the first attempt, you need to make the appropriate corrections to the field locations according to the instructions given in the import_description column, and import the locations again.</p>
+</section>
+</section>
+<section id="adding-geographical-mapping-information-to-locations" class="level2">
+<h2 class="anchored" data-anchor-id="adding-geographical-mapping-information-to-locations">3.4 Adding geographical mapping information to locations</h2>
+<p>EWARS supports the integration of geographical information to locations you have entered. EWARS allows locations to be displayed as either a <strong>point</strong> or a geometric <strong>polygon</strong>.</p>
+<p>Reporting locations such as health facilities, clinics and treatment centres are points. Administrative locations such as countries, provinces and districts are geometric polygons. They appear as highlighted in Fig. 3.3.</p>
+<p>Fig. 3.3. Examples of a point location and a polygon</p>
+<p><img src="../media/image60.png" style="width:2.86667in;height:1.81667in"> <img src="../media/image61.png" style="width:3.06056in;height:1.8in"></p>
+<p>EWARS supports geographical mapping with GeoJson files. If you plan to develop maps with EWARS data, please have your GeoJson dataset ready for the locations.</p>
+<section id="mapping-reporting-locations-as-point-locations" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-reporting-locations-as-point-locations">3.4.1 Mapping reporting locations as point locations</h3>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Locations</strong>. Click on the <strong>folder</strong> <img src="../media/image45.png" style="width:0.25in;height:0.24167in"> icon &gt; click on <strong>Location Name</strong> &gt; click on the <strong>Mapping</strong> tab at the left-hand side. Select <strong>Point</strong> from the <strong>Mapping Display Type</strong> drop-down menu, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image62.png" style="width:5.86458in;height:3.19886in"></p>
+<p>Provide latitude and longitude information for the location. This can be achieved in three different ways.</p>
+<ul>
+<li><p>Enter it manually: type in the latitude and longitude coordinates of the location.</p></li>
+<li><p>Enter it via <strong>Current Location</strong>: if you are currently at the location, this method can be used to automatically input the latitude and longitude. Click on <strong>Current Location</strong> and confirm that EWARS should use your current location. The latitude and longitude coordinates are added.</p></li>
+</ul>
+<hr>
+<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> for security reasons, the browser may ask you to allow use of the location service. Select <strong>Confirm</strong> to allow this. —————————————————————————————————————————————————-</p>
+<ul>
+<li>Enter it via <strong>Map Location</strong>: with this method<strong>,</strong> you can specify a location on the map to get the latitude and longitude coordinates. Click on <strong>Map Location</strong>. Navigate and locate the location on the map, and double-click on the centre of the location. Close the map screen, and the latitude and longitude coordinates are set automatically in the input box. Click on <strong>Save Change(s)</strong>.</li>
+</ul>
+</section>
+<section id="mapping-administrative-locations-to-geometric-polygons" class="level3">
+<h3 class="anchored" data-anchor-id="mapping-administrative-locations-to-geometric-polygons">3.4.2 Mapping administrative locations to geometric polygons</h3>
+<p>Before embarking on mapping locations as geometric polygons, please make sure you have GeoJson files for the administrative locations in your context.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Locations</strong>. Click on the <strong>folder</strong> <img src="../media/image45.png" style="width:0.25in;height:0.24167in"> icon &gt; click on <strong>Location Name</strong> &gt; click on the <strong>Mapping</strong> tab at the left-hand side. Select <strong>Geometry</strong> from the <strong>Mapping Display Type</strong> drop-down menu, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image63.png" style="width:6.10833in;height:2.65in"></p>
+<ul>
+<li>Paste the mapping data information in the <strong>GeoJSON</strong> field, as shown below:</li>
+</ul>
+<blockquote class="blockquote">
+<p><img src="../media/image64.png" style="width:5.77083in;height:2.28125in"></p>
+</blockquote>
+<ul>
+<li>Click on <strong>Edit Geometry</strong>, and a map of the location appears, as shown below:</li>
+</ul>
+<blockquote class="blockquote">
+<p><img src="../media/image65.jpeg" style="width:4.97695in;height:2.34332in"></p>
+</blockquote>
+<ul>
+<li>Click on <strong>Save Change(s)</strong>.</li>
+</ul>
+</section>
+</section>
+<section id="adding-reporting-information-to-locations" class="level2">
+<h2 class="anchored" data-anchor-id="adding-reporting-information-to-locations">3.5 Adding reporting information to locations</h2>
+<hr>
+<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> to add reporting to locations, you need to have reporting forms ready. For information on creating and configuring the reporting forms, refer to <strong>Chapter 6. Forms</strong>, and then revisit this topic to connect the locations to the reporting forms. ——————————————————————————————————————————————————————</p>
+<p>The reporting tab enables you to set up reporting from different locations, including setting up reporting periods. For example, you can create a weekly EWARS reporting form or an event-based surveillance form for 23&nbsp;February&nbsp;2021 to 31&nbsp;December&nbsp;2021.</p>
+<p>This helps during emergencies, when reporting status may change over time. New reports can be added to locations or removed. This section explains how such modifications can be done easily.</p>
+<hr>
+<p><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> It is important to manage the reporting periods carefully and keep them up to date to calculate performance indicators, completeness and timeliness accurately. —————————————————————————————————————————————————-</p>
+<p>You can add reporting forms under each reporting location manually. In most instances, however, all PHCCs within a particular province or district tend to report using the same reporting form. In that case, you can set up a reporting tab at the province level so that all changes are inherited by the child locations.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Locations</strong> &gt; click on a reporting <strong>Location Name</strong> &gt; click on the <strong>Reporting</strong> tab. Click on <strong>Add Reporting Period</strong> &gt; select the relevant <strong>Form</strong> from the drop-down menu and select <strong>Start Date</strong>, <strong>End Date</strong> and <strong>Status</strong>.</li>
+</ul>
+<p>Reporting start and end dates remain flexible, and can be edited later. Form and start date are mandatory fields, but the start date can be edited later.</p>
+<hr>
+<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> you can select a start date that pre-dates the current calendar date. This allows the reporting location to report retrospectively, depending on the report. You can select an end date that is far in the future. —————————————————————————————————————————————————-</p>
+<ul>
+<li><p>Set the <strong>Status</strong> of reporting (<strong>Active/Disabled</strong>). By default, the status is set as <strong>Active</strong>.</p></li>
+<li><p>Click on <strong>Save Change(s)</strong>. The reporting period is added, as shown below:</p></li>
+</ul>
+<p><img src="../media/image66.png" style="width:6.18334in;height:2.63333in"></p>
+<p>Type is shown as custom when the reporting period is based on your preference (i.e., custom-made). It is shown as Inherited when the reporting period is inherited from the parent location. For example, all health facilities in a particular province or district may report within a specific period; that period is inherited from the province or district level.</p>
+<ul>
+<li><p>To edit the reporting details, click on the <strong>edit</strong> <img src="../media/image67.png" style="width:0.375in;height:0.3in"> icon &gt; make the desired changes &gt; click on <strong>Save Change(s)</strong>. A notification appears to confirm that the information has been edited.</p></li>
+<li><p>To delete the reporting details, click on the <strong>delete</strong> <img src="../media/image68.png" style="width:0.34167in;height:0.25in"> icon &gt; click <strong>Confirm</strong>. A notification appears to confirm that the information has been deleted.</p></li>
+</ul>
+</section>
+<section id="adding-locations-to-the-location-group" class="level2">
+<h2 class="anchored" data-anchor-id="adding-locations-to-the-location-group">3.6 Adding locations to the location group</h2>
+<p>Locations can be grouped based on your needs. For example, you can group reporting locations in internally displaced person (IDP) camps, locations belonging to humanitarian NGOs, remote areas and so on. This enables disaggregation of data by grouping.</p>
+<p>One location can be a member of several groups. For example, Birigo PHCC can be grouped under the location groups “IDP camp clinics” and “NGO A”.</p>
+<p>Location groups are also useful when configuring widgets. For more information, refer to <strong>Chapter 17. Widgets and their</strong> <strong>configuration</strong>.</p>
+<p>To group locations, add the group name to the location details under general settings.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Locations</strong> &gt; select a reporting location you want to group (e.g.&nbsp;Dirabi PHCC ), and the screen below appears:</li>
+</ul>
+<p><img src="../media/image69.png" style="width:6.13333in;height:2.475in"></p>
+<ul>
+<li>Enter a <strong>Location Group</strong> name (e.g.&nbsp;“NGO A”). A popup screen appears as below:</li>
+</ul>
+<p><img src="../media/image70.png" style="width:4.98333in;height:0.73333in"></p>
+<ul>
+<li>Click on <strong>Create Group: NGO A</strong>, and the Group is added as below:</li>
+</ul>
+<p><img src="../media/image71.png" style="width:5.03333in;height:1in"></p>
+<ul>
+<li>Click on <strong>Save Change(s)</strong>, and the location is added to the group.</li>
+</ul>
+<p>To continue grouping other locations, follow the steps above.</p>
+<p>You can view all locations belonging to a group under the table tab at the far left-hand side.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Locations</strong> &gt; click on the <strong>Table</strong> tab. Click on the <strong>filter</strong> <img src="../media/image72.png" style="width:0.21667in;height:0.23333in"> icon in the <strong>Location Group(s)</strong> column &gt; select <strong>Is equal to</strong> under <strong>Filter by condition</strong> &gt; select <strong>NGO A</strong> under <strong>Filter by value</strong>. Click on <strong>Save Change(s)</strong>, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image73.png" style="width:6.375in;height:2.225in"></p>
+</section>
+<section id="activating-and-deactivating-child-locations" class="level2">
+<h2 class="anchored" data-anchor-id="activating-and-deactivating-child-locations">3.7 Activating and deactivating child locations</h2>
+<p>Child locations can be activated or deactivated.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Locations</strong> &gt; select a location you want to activate/deactivate. Right-click on the location name and the screen below appears:</li>
+</ul>
+<p><img src="../media/image74.png" style="width:3.88333in;height:2.20833in"></p>
+<ul>
+<li><p>Click on <strong>Disable Children</strong>, and child locations of the parent location are deactivated.</p></li>
+<li><p>Click on <strong>Enable Children</strong>, and child locations of the parent location are activated.</p></li>
+</ul>
+</section>
+<section id="merging-child-locations-with-another-location" class="level2">
+<h2 class="anchored" data-anchor-id="merging-child-locations-with-another-location">3.8 Merging child locations with another location</h2>
+<p>You can merge the child locations of a parent location with another location.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Locations</strong> &gt; expand or search location “Birigo PHCC”. Right-click on the location name, click on <strong>Merge Into</strong>, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image75.png" style="width:6.26666in;height:2.15833in"></p>
+<ul>
+<li><p>Select the destination location from <strong>Merge [location] into</strong> drop-down menu – Bilnula PHCC in this example.</p></li>
+<li><p>Click on <strong>Save Change(s)</strong>.</p></li>
+</ul>
+<p>Birigo PHCC is merged into Bilnula PHCC.</p>
+<p>Once the merge is complete, Birigo PHCC will not be available in the system. Only the merged location – Bilnula PHCC – will remain in the system.</p>
+</section>
+<section id="viewing-locations-under-the-tree-tab" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-locations-under-the-tree-tab">3.9 Viewing locations under the tree tab</h2>
+<p>To view the locations in a hierarchical manner, follow the steps below.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Locations</strong>. Click on the <strong>Tree</strong> tab &gt; click on a location <strong>folder</strong> <img src="../media/image45.png" style="width:0.25in;height:0.24167in"> icon. Right-click on the location name, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image76.png" style="width:5.88333in;height:2.85833in"></p>
+<ul>
+<li><p>Click on <strong>Save Change(s)</strong>.</p></li>
+<li><p>To expand or collapse the location, click on the <strong>folder</strong> <img src="../media/image45.png" style="width:0.25in;height:0.24167in"> icon.</p></li>
+</ul>
+<p>The green highlighted bar by each name indicates <strong>Active</strong> locations; the red bar indicates that the location is <strong>Inactive</strong>.</p>
+</section>
+<section id="viewing-locations-under-the-table-tab" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-locations-under-the-table-tab">3.10 Viewing locations under the table tab</h2>
+<p>The table tab displays locations in tabular form.</p>
+<ul>
+<li><img src="../media/image77.png" style="width:6.38334in;height:1.825in">Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Locations</strong>. Click on the <strong>Table</strong> tab, and the screen below appears:</li>
+</ul>
+</section>
+<section id="exporting-locations" class="level2">
+<h2 class="anchored" data-anchor-id="exporting-locations">3.11 Exporting locations</h2>
+<p>You can also export locations to share them with other users. To find out how to use the Export feature effectively, refer to <strong>Chapter 23. Exports</strong>, topic <strong>23.4 Exporting locations data</strong>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/05-getting-started.html" class="pagination-link" aria-label="Chapter 2. Getting started">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 2. Getting started</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/07-configuration-transfer.html" class="pagination-link" aria-label="Chapter 4. Configuration Transfer">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 4. Configuration Transfer</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© World Health Organization, 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

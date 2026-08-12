@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Chapter 5. Indicators – EWARS Mobile</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/09-forms.html" rel="next">
+<link href="../chapters/07-configuration-transfer.html" rel="prev">
+<link href=".././media/image1.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d60a5906468b64742e20e52e09f920c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cb29c9f9deed8f7c023d39522d0343d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../shared/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">EWARS Mobile</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-language" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🌐 Language</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-language">    
+        <li>
+    <a class="dropdown-item" href="../index.html">
+ <span class="dropdown-text">English</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../fr/index.qmd">
+ <span class="dropdown-text">Français</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../es/index.qmd">
+ <span class="dropdown-text">Español</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../ar/index.qmd">
+ <span class="dropdown-text">العربية</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-locations.html">Setting up your EWARS account</a></li><li class="breadcrumb-item"><a href="../chapters/08-indicators.html"><span class="chapter-title">Chapter 5. Indicators</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EWARS Mobile</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-acknowledgments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-abbreviations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abbreviations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-executive-summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Executive summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-overview-of-ewars-in-a-box.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1. Overview of EWARS in a box</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2. Getting started</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Setting up your EWARS account</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-locations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3. Locations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-configuration-transfer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4. Configuration Transfer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-indicators.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 5. Indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-forms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6. Forms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-alarms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 7. Alarms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-users-and-their-assignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8. Users and their assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-user-profiles-tasks-and-notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9. User profiles, tasks and notifications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-ewars-account-settings.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10. EWARS account settings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data Collection and Monitoring</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-report-manager.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11. Report manager</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-m-e-auditor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 12. M&amp;E Auditor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-alert-log.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 13. Alert log</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-data-import.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 14. Data Import</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data analysis, visualization and dissemination</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-plot.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 15. Plot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/19-mapping.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 16. Mapping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/20-widgets-and-their-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 17. Widgets and their configuration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/21-notebooks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 18. Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/22-dashboards.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 19. Dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/23-outbreaks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 20. Outbreaks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/24-documents-and-document-templates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 21. Documents and Document Templates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/25-website-builder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 22. Website Builder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/26-export.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 23. Export</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/27-sms-reporting-and-teams.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 24. SMS reporting and teams</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/28-ewars-stand-alone.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 25. EWARS Stand-alone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/29-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 26. Glossary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/30-help-and-support.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 27. Help and support</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#types-of-indicators" id="toc-types-of-indicators" class="nav-link active" data-scroll-target="#types-of-indicators">5.1 Types of indicators</a>
+  <ul class="collapse">
+  <li><a href="#early-warning-indicators" id="toc-early-warning-indicators" class="nav-link" data-scroll-target="#early-warning-indicators">5.1.1 Early warning indicators</a></li>
+  <li><a href="#nutrition-indicators" id="toc-nutrition-indicators" class="nav-link" data-scroll-target="#nutrition-indicators">5.1.2 Nutrition indicators</a></li>
+  <li><a href="#outbreak-response-indicators" id="toc-outbreak-response-indicators" class="nav-link" data-scroll-target="#outbreak-response-indicators">5.1.3 Outbreak response indicators</a></li>
+  <li><a href="#system-indicators" id="toc-system-indicators" class="nav-link" data-scroll-target="#system-indicators">5.1.4 System indicators</a></li>
+  </ul></li>
+  <li><a href="#copying-sample-indicators-from-the-model-account" id="toc-copying-sample-indicators-from-the-model-account" class="nav-link" data-scroll-target="#copying-sample-indicators-from-the-model-account">5.2 Copying sample indicators from the Model account</a></li>
+  <li><a href="#creating-a-new-indicator-group" id="toc-creating-a-new-indicator-group" class="nav-link" data-scroll-target="#creating-a-new-indicator-group">5.3 Creating a new indicator group</a></li>
+  <li><a href="#editing-or-deleting-an-indicator-group" id="toc-editing-or-deleting-an-indicator-group" class="nav-link" data-scroll-target="#editing-or-deleting-an-indicator-group">5.4 Editing or deleting an indicator group</a></li>
+  <li><a href="#creating-indicators" id="toc-creating-indicators" class="nav-link" data-scroll-target="#creating-indicators">5.5 Creating indicators</a></li>
+  <li><a href="#editing-an-indicator" id="toc-editing-an-indicator" class="nav-link" data-scroll-target="#editing-an-indicator">5.6 Editing an indicator</a></li>
+  <li><a href="#viewing-reporting-forms-matched-with-an-indicator" id="toc-viewing-reporting-forms-matched-with-an-indicator" class="nav-link" data-scroll-target="#viewing-reporting-forms-matched-with-an-indicator">5.7 Viewing reporting forms matched with an indicator</a></li>
+  <li><a href="#system-indicators-1" id="toc-system-indicators-1" class="nav-link" data-scroll-target="#system-indicators-1">5.8 System indicators</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-locations.html">Setting up your EWARS account</a></li><li class="breadcrumb-item"><a href="../chapters/08-indicators.html"><span class="chapter-title">Chapter 5. Indicators</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 5. Indicators</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This chapter provides an overview of indicators, their main types and key actions involving them. Data collected under different variables are categorized under a set of Early Warning, Alert and Response System (EWARS) indicators. EWARS analyses data according to indicators, and they set the stage for many features in EWARS, including Alarms, Plots, Notebooks, Document Templates, Dashboards, Website Builder and so on.</p>
+<p>In EWARS, there are two types of indicators: <strong>indicators attached to reporting forms</strong> and <strong>system indicators</strong> that are generated automatically. Indicators attached to reporting forms need to be added to the EWARS Country account and mapped to the relevant forms before they can be used for analysis and in EWARS products.</p>
+<p>Data submitted through reporting forms act as the main sources for the indicators. Fig. 5.1 shows an example.</p>
+<p>Fig. 5.1. Data flow</p>
+<p><img src="../media/image85.png" style="width:6.93443in;height:1.26925in"></p>
+<section id="types-of-indicators" class="level2">
+<h2 class="anchored" data-anchor-id="types-of-indicators">5.1 Types of indicators</h2>
+<p>There are two types of indicators in EWARS:</p>
+<ul>
+<li><p><strong>indicators based on reporting forms</strong>, which are matched with a form field in a reporting form (e.g.&nbsp;suspected cases and deaths);</p></li>
+<li><p><strong>system indicators</strong>, which are not matched with a form or form field but are generated by the system (e.g.&nbsp;completeness, timeliness and so on).</p></li>
+</ul>
+<p>With indicators based on reporting form indicators, mapping of the indicator to the form field happens when a reporting form is set up. Indicators in your system should map to the data that have been collected. Mapping indicators with reporting forms and form fields is explained in <strong>Chapter 6. Forms</strong>, topic <strong>6.6 Adding logic in the form</strong>.</p>
+<p>You can also add indicators to the system, based on the data you plan to collect, before setting up a reporting form.</p>
+<p>All early warning, alert and response systems have a similar outlook across emergencies. Therefore, the data collected and the indicators they feed into have a common structure.</p>
+<p>For a standard set of indicators, refer to the indicators available in the Model account. You can copy the sample indicators from the Model account.</p>
+<p>For the sake of convenience, EWARS recommends grouping indicators as shown in Fig. 5.2.</p>
+<p><img src="../media/image86.png" style="width:5.78125in;height:3.62533in">Fig. 5.2. Suggested indicator groups</p>
+<section id="early-warning-indicators" class="level3">
+<h3 class="anchored" data-anchor-id="early-warning-indicators">5.1.1 Early warning indicators</h3>
+<p>Early warning indicators can be grouped into three categories. As standard practice, they are divided into age categories of “under 5” and “5 and over”, and are usually not categorized by sex. These indicators may be:</p>
+<ul>
+<li><p>related to access and utilization (e.g.&nbsp;the number of children under the age of 5 years having consultations at primary health-care centres (PHCCs));</p></li>
+<li><p>related to morbidity (e.g.&nbsp;the number of children under the age of 5 years with suspected measles, or with suspected viral haemorrhagic fevers (VHFs));</p></li>
+<li><p>related to mortality (e.g.&nbsp;the number of deaths of children over the age of 5 years from VHFs).</p></li>
+</ul>
+<p>Sample early warning indicators are included in the Model account. You could refer to them and transfer selected ones, as suited to your setting. To transfer them to your account, refer to topic <strong>5.2 Copying sample indicators from the Model account</strong>.</p>
+<p>If you want to create your own indicators, it is recommended that you follow the indicator groupings shown in Fig. 5.2 in your account.</p>
+</section>
+<section id="nutrition-indicators" class="level3">
+<h3 class="anchored" data-anchor-id="nutrition-indicators">5.1.2 Nutrition indicators</h3>
+<p>In some contexts, nutrition indicators are collected as a form of early warning of severe acute malnutrition. Collecting nutrition data using EWARS is not recommended. If used, they should be limited to providing an early warning of severe acute malnutrition and used only for a limited period.</p>
+<p>Sample nutrition indicators are included in the Model account. You could refer to them and transfer selected ones, as suited to your setting. To transfer them to your account, refer to topic <strong>5.2 Copying sample indicators from the Model account</strong>.</p>
+</section>
+<section id="outbreak-response-indicators" class="level3">
+<h3 class="anchored" data-anchor-id="outbreak-response-indicators">5.1.3 Outbreak response indicators</h3>
+<p>A lot of case-based data need to be collected during outbreaks. These indicators are grouped as outbreak response indicators, and are different from early warning indicators. They may include, for example, the number of cholera cases with severe dehydration in people aged over 60 years.</p>
+<p>Outbreak response indicators may change with the outbreak and the line lists used. Please refer to your outbreak response plan for the specific outbreak to develop appropriate outbreak indicators.</p>
+</section>
+<section id="system-indicators" class="level3">
+<h3 class="anchored" data-anchor-id="system-indicators">5.1.4 System indicators</h3>
+<p>System indicators are special purpose indicators. They are not bound to reporting forms but are generated by the system when data are collected (e.g.&nbsp;completeness, timeliness of reporting and similar). System indicators are useful when configuring widgets – for more information, refer to <strong>Chapter 17. Widgets and their configuration</strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 56%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> System</td>
+<td style="text-align: center;">indicators are already set up in the system once an account is created. You don’t need to create them.</td>
+</tr>
+</tbody>
+</table>
+<p>You can copy the sample indicators available in the Model account or create new ones, as shown in the following sections.</p>
+</section>
+</section>
+<section id="copying-sample-indicators-from-the-model-account" class="level2">
+<h2 class="anchored" data-anchor-id="copying-sample-indicators-from-the-model-account">5.2 Copying sample indicators from the Model account</h2>
+<p>Follow the steps below to copy the indicators available inside the Model account to your account.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Configuration Transfer</strong>. Select <strong>Model account</strong> from the <strong>Source Account</strong> drop-down menu. Select the indicators you want to copy. Click on <img src="../media/image87.png" style="width:1.10903in;height:0.4in">, and the indicators are copied to your account.</li>
+</ul>
+<p>Follow the steps below to view the copied indicators.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Indicators</strong> &gt; click on the <strong>folder</strong> <img src="../media/image88.png" style="width:0.25833in;height:0.23194in"> icon to expand the <strong>Indicator Group</strong>, and the copied indicators are available.</li>
+</ul>
+</section>
+<section id="creating-a-new-indicator-group" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-new-indicator-group">5.3 Creating a new indicator group</h2>
+<p>The first step in creating indicators is to create an indicator group. An indicator group allows you to organize the related indicators together. You can also create subgroups within an indicator group to organize them into subcategories. Follow the steps below to create an indicator group.</p>
+<p><img src="../media/image89.png" style="width:0.94792in;height:0.29167in"></p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Indicators</strong>. Click on and the following screen appears:</li>
+</ul>
+<p><img src="../media/image90.png" style="width:5.88021in;height:2.83942in"></p>
+<p>Assume you want to create a laboratory indicator subgroup under the early warning indicator group.</p>
+<ul>
+<li>Enter a <strong>Name</strong> (e.g.&nbsp;“Lab”) &gt; select a <strong>Parent</strong> group from the drop-down menu (e.g.&nbsp;Early Warning). Click on <strong>Save Change(s)</strong>, and a notification appears that the group is created.</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 99%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> if you select a parent group, the new group is created as a subgroup of the parent group. If you do not, the new group is created as a top-level independent group.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="editing-or-deleting-an-indicator-group" class="level2">
+<h2 class="anchored" data-anchor-id="editing-or-deleting-an-indicator-group">5.4 Editing or deleting an indicator group</h2>
+<p>To edit an indicator group, follow the steps below.</p>
+<ul>
+<li><p>Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Indicators</strong> &gt; right-click on the name of the <strong>Indicator Group</strong> &gt; click on <strong>Edit</strong>.</p></li>
+<li><p>Make appropriate changes to the <strong>Indicator Group</strong> &gt; click on <strong>Save Change(s)</strong>, and a notification appears that it is updated.</p></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 99%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> the system indicators group cannot be edited or deleted. The following notification appears when you try to delete or edit one:</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../media/image91.png" style="width:3in;height:0.70833in"></p>
+<p>To delete an indicator group, follow the steps below.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Indicators</strong> &gt; right-click on the name of the <strong>Indicator Group</strong>. Click on <strong>Delete</strong> &gt; click on <strong>Confirm</strong>, and a notification appears that it is deleted.</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 99%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> if you delete an indicator group, all the subgroups and the indicators present inside the group and its subgroups will also be deleted.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="creating-indicators" class="level2">
+<h2 class="anchored" data-anchor-id="creating-indicators">5.5 Creating indicators</h2>
+<p>Indicators depend on the data you collect. Therefore, an indicator that is applicable to one setting might not be applicable to another. For example, in some cases, the Under 5 fever and rash cases indicator is important, while in others, Under 5 suspected measles cases is the preferred indicator.</p>
+<p>Before creating a new indicator, you need to identify the indicator group to which it belongs. Follow the steps below to create an indicator.</p>
+<p><img src="../media/image92.png" style="width:1.15903in;height:0.31528in"></p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Indicators</strong>. Click on and the following screen appears:</li>
+</ul>
+<p><img src="../media/image93.png" style="width:5.94375in;height:3.33333in"></p>
+<ul>
+<li>Populate the details in the general settings tab of the indicator screen as shown below.</li>
+</ul>
+<!-- -->
+<ul>
+<li><p><strong>Name</strong> [Mandatory]: enter the name of the indicator (e.g.&nbsp;“Total suspected measles cases”).</p></li>
+<li><p><strong>Status</strong> [Mandatory]: set as <strong>Active</strong>.</p></li>
+</ul>
+<blockquote class="blockquote">
+<p><strong>Active</strong> indicators appear with a green bar and are ready to use in features like Alarms, Plot and Mapping.</p>
+<p><strong>Inactive</strong> indicators appear with a red bar and cannot be used in any features of EWARS.</p>
+</blockquote>
+<ul>
+<li><p><strong>Value Type</strong> [Mandatory]: select numeric from the drop-down menu.</p>
+<p>Set as <strong>Numeric</strong> to hold a numeric value (e.g.&nbsp;the total number of suspected measles cases).</p>
+<p>Set as <strong>Text</strong> if the indicator needs to bind with a text field in a form (e.g.&nbsp;the name of a hazard).</p></li>
+<li><p><strong>Group/Folder</strong> [Mandatory]: select the indicator group or subgroup from the drop-down menu to which the indicator belongs (e.g.&nbsp;total suspected measles cases would belong under the early warning &gt; morbidity indicator group).</p></li>
+<li><p><strong>Description:</strong> enter a description explaining the purpose of the indicator.</p></li>
+<li><p><strong>Tag:</strong> enter a tag for the indicator, click add tag, and the tag is added. Similarly, you can add multiple tags for an indicator. Tags make indicator searching easy when transferring indicators via Configuration Transfer.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li>Click on <strong>Save Change(s)</strong>, and a notification appears that the indicator is added.</li>
+</ul>
+</section>
+<section id="editing-an-indicator" class="level2">
+<h2 class="anchored" data-anchor-id="editing-an-indicator">5.6 Editing an indicator</h2>
+<p>You can edit the indicator’s name, status and other details.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Indicators</strong>. Expand the <strong>Indicator Group</strong> by clicking on the <strong>folder</strong> <img src="../media/image88.png" style="width:0.25833in;height:0.23194in"> icon &gt; right-click on the name of the indicator. Click on <strong>Edit</strong>, and the following screen appears:</li>
+</ul>
+<p><img src="../media/image94.png" style="width:6.13889in;height:3.08333in"></p>
+<ul>
+<li>Edit the indicator details &gt; click on <strong>Save Change(s)</strong>, and a notification appears that it is edited.</li>
+</ul>
+</section>
+<section id="viewing-reporting-forms-matched-with-an-indicator" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-reporting-forms-matched-with-an-indicator">5.7 Viewing reporting forms matched with an indicator</h2>
+<p>Data for each indicator are collected via reporting forms in the system. Linking form fields to indicators is done when creating forms. This is discussed in <strong>Chapter 6. Forms</strong>, topic <strong>6.6 Adding logic in the form</strong>. When such linking has taken place, the form/forms feeding into each indicator is displayed underneath them.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Indicators</strong> &gt; expand the <strong>Indicator Group</strong> by clicking on the <strong>folder</strong> <img src="../media/image88.png" style="width:0.25833in;height:0.23194in">icon. Click on the name of the indicator &gt; scroll down further and you will see the following screen:</li>
+</ul>
+<blockquote class="blockquote">
+<p><img src="../media/image95.png" style="width:5.66667in;height:2.86944in"></p>
+</blockquote>
+<ul>
+<li><strong>Derivation</strong> shows a list of the form names bound within that indicator. The derivation will only appear after the indicator is mapped to form fields, and it is not editable here.</li>
+</ul>
+</section>
+<section id="system-indicators-1" class="level2">
+<h2 class="anchored" data-anchor-id="system-indicators-1">5.8 System indicators</h2>
+<p>System indicators are a special set of fixed indicators. These are not bound to any form fields but are calculated automatically by EWARS. You cannot modify or delete the system indicators. They are useful when configuring widgets – for more information, refer to <strong>Chapter 17. Widgets and their configuration</strong>.</p>
+<p>A list of system indicators is shown here and described further below:</p>
+<p><img src="../media/image96.png" style="width:2.94097in;height:3.40903in"></p>
+<ul>
+<li><p><strong>Alerts</strong>: the alerts indicator provides a count for alerts based on filters and dimensions, such as closed alerts and similar. For more information, refer to <strong>Chapter 13. Alert log</strong>.</p></li>
+<li><p><strong>Assignments:</strong> the assignments indicator provides a count of assignments based on filters.</p></li>
+<li><p><strong>Forms:</strong> the forms indicator provides a count of the reporting locations based on filters.</p></li>
+<li><p><strong>Form Submissions:</strong> the form submissions indicator provides a count of submitted reports based on filters and dimensions, such as expected, late and so on.</p></li>
+<li><p><strong>Locations:</strong> the location indicator provides a count of locations, such as active locations and similar.</p></li>
+<li><p><strong>Users:</strong> the users indicator provides a count for users, such as active users, Inactive users and so on.</p></li>
+</ul>
+<p>Table 5.1 lists the filters and dimensions options available for system indicators. These are not visible under the indicators menu but are useful when configuring widgets in Notebooks, Bulletins, Website Builder and so on.</p>
+<p>Table 5.1. Filters and dimension options for system indicators</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>System indicators</strong></th>
+<th><strong>Dimensions</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Alerts</td>
+<td><ul>
+<li><p>No selection</p></li>
+<li><p>Alerts triggered</p></li>
+<li><p>Open alerts</p></li>
+<li><p>Alerts closed</p></li>
+<li><p>Closed alerts (not incl.&nbsp;auto-discarded)</p></li>
+<li><p>Auto-discarded alerts</p></li>
+<li><p>Alerts discarded</p></li>
+<li><p>Alerts monitor</p></li>
+<li><p>Alerts response</p></li>
+<li><p>Alerts in verification</p></li>
+<li><p>Alerts awaiting verification</p></li>
+<li><p>Alerts verified</p></li>
+<li><p>Alerts discarded at verification</p></li>
+<li><p>Alerts monitoring at verification</p></li>
+<li><p>Alerts in risk assessment</p></li>
+<li><p>Alerts risk assessed</p></li>
+<li><p>Alerts in outcome</p></li>
+<li><p>Alerts awaiting outcome</p></li>
+<li><p>Alerts with outcome</p></li>
+<li><p>Alerts discarded at the outcome</p></li>
+<li><p>Alerts monitoring at the outcome</p></li>
+<li><p>Alerts respond at the outcome</p></li>
+<li><p>Alerts (Low risk)</p></li>
+<li><p>Alerts (Moderate risk)</p></li>
+<li><p>Alerts (High risk)</p></li>
+<li><p>Alerts (Very high risk)</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Assignments</td>
+<td><p><strong>Form</strong>: select a form from the drop-down menu. If set as <strong>No selection</strong>, the filter does not apply.</p>
+<p><strong>Status</strong>: select an appropriate option to filter by status. If set as <strong>No</strong> <strong>selection</strong>, the filter does not apply. Status options are <strong>No selection</strong>, <strong>Active</strong> and <strong>Inactive</strong>.</p></td>
+</tr>
+<tr class="odd">
+<td>Forms</td>
+<td><strong>Form</strong>: select a form from the drop-down menu. If set as <strong>No selection</strong>, the filter does not apply.</td>
+</tr>
+<tr class="even">
+<td>Form Submissions</td>
+<td><p><strong>Form</strong>: select the form.</p>
+<p><strong>Dimension</strong>: select the dimension. If set as <strong>No selection</strong>, the filter does not apply.</p></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><p>- Submitted: a count of the reports submitted</p>
+<p>- Late: a count of the reports submitted after the due date</p>
+<p>- Expected: a count of the reports to be submitted during the reporting period of the form</p>
+<p>- Missing: calculated as (Expected – Submitted)</p>
+<p>- Completeness: indicator value is a percentage, calculated as (100&nbsp;×&nbsp;Submitted/Expected)</p>
+<p>- Timeliness: indicator value is a percentage, calculated as (100&nbsp;×&nbsp;On time/Expected)</p></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><p><strong>Source</strong>: select the source. If set as <strong>No selection</strong>, the filter does not apply. Source options are:</p>
+<ul>
+<li><p>Mobile: a count of the reports submitted via EWARS Mobile</p></li>
+<li><p>Web: a count of the reports submitted via EWARS Web</p></li>
+<li><p>Desktop: not yet implemented</p></li>
+<li><p>Short Message Service (SMS): not yet implemented</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Locations</td>
+<td><p><strong>Status</strong>: select the locations. If set as <strong>No selection</strong>, the filter does not apply. Options are:</p>
+<ul>
+<li><p>Active: a count of the active locations</p></li>
+<li><p>Disabled: a count of the disabled locations</p></li>
+</ul>
+<p><strong>Location Type</strong>: select the location type to filter the locations. If set as <strong>No selection</strong>, the filter does not apply.</p></td>
+</tr>
+<tr class="even">
+<td>Users</td>
+<td><p><strong>Status</strong>: select an appropriate option to filter by status. If set as <strong>No selection</strong>, the filter does not apply.</p>
+<p>Options are:</p>
+<ul>
+<li><p>Active: a count of the active users</p></li>
+<li><p>Inactive: a count of the inactive users</p></li>
+<li><p>Pending Approval: a count of the users with their approval in pending status</p></li>
+</ul>
+<p><strong>User Type</strong>: select an appropriate option to filter by user type. If set as No selection, the filter does not apply.</p>
+<p>Options are:</p>
+<ul>
+<li><p>Reporting User</p></li>
+<li><p>Geographical Administrator</p></li>
+<li><p>Account Administrator</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p>You can now use indicators to analyse data in EWARS – for example, in Plots, Notebooks, Document Templates, Dashboards, Website Builder and so on. Indicators act as an important link between raw data collection in forms, analysis, visualization and, ultimately, timely action. The following chapter gives an overview of the Forms feature in EWARS.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/07-configuration-transfer.html" class="pagination-link" aria-label="Chapter 4. Configuration Transfer">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 4. Configuration Transfer</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/09-forms.html" class="pagination-link" aria-label="Chapter 6. Forms">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 6. Forms</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© World Health Organization, 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

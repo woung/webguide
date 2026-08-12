@@ -1,0 +1,3 @@
+# Chapitre 1. Aperçu d'EWARS in a box
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 1. Overview of EWARS in a box](../../en/chapters/04-overview-of-ewars-in-a-box.qmd).

@@ -1,0 +1,3 @@
+# Capítulo 24. Notificación por SMS y equipos
+
+> **Traducción en curso.** Esta página está pendiente de traducción al español. Mientras tanto, la versión en inglés es la referencia — ver [Chapter 24. SMS reporting and teams](../../en/chapters/27-sms-reporting-and-teams.qmd).

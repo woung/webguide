@@ -1,0 +1,3 @@
+# Chapitre 4. Transfert de configuration
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 4. Configuration Transfer](../../en/chapters/07-configuration-transfer.qmd).

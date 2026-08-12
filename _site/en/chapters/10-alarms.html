@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Chapter 7. Alarms – EWARS Mobile</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/11-users-and-their-assignments.html" rel="next">
+<link href="../chapters/09-forms.html" rel="prev">
+<link href=".././media/image1.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d60a5906468b64742e20e52e09f920c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-cb29c9f9deed8f7c023d39522d0343d0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../shared/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">EWARS Mobile</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-language" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">🌐 Language</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-language">    
+        <li>
+    <a class="dropdown-item" href="../index.html">
+ <span class="dropdown-text">English</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../fr/index.qmd">
+ <span class="dropdown-text">Français</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../es/index.qmd">
+ <span class="dropdown-text">Español</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../ar/index.qmd">
+ <span class="dropdown-text">العربية</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-locations.html">Setting up your EWARS account</a></li><li class="breadcrumb-item"><a href="../chapters/10-alarms.html"><span class="chapter-title">Chapter 7. Alarms</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">EWARS Mobile</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/01-acknowledgments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Acknowledgments</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/02-abbreviations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abbreviations</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/03-executive-summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Executive summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/04-overview-of-ewars-in-a-box.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 1. Overview of EWARS in a box</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/05-getting-started.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 2. Getting started</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Setting up your EWARS account</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/06-locations.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 3. Locations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/07-configuration-transfer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 4. Configuration Transfer</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/08-indicators.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 5. Indicators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/09-forms.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 6. Forms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/10-alarms.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Chapter 7. Alarms</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/11-users-and-their-assignments.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 8. Users and their assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/12-user-profiles-tasks-and-notifications.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 9. User profiles, tasks and notifications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/13-ewars-account-settings.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 10. EWARS account settings</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data Collection and Monitoring</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/14-report-manager.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 11. Report manager</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/15-m-e-auditor.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 12. M&amp;E Auditor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/16-alert-log.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 13. Alert log</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/17-data-import.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 14. Data Import</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Data analysis, visualization and dissemination</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/18-plot.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 15. Plot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/19-mapping.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 16. Mapping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/20-widgets-and-their-configuration.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 17. Widgets and their configuration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/21-notebooks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 18. Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/22-dashboards.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 19. Dashboards</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/23-outbreaks.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 20. Outbreaks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/24-documents-and-document-templates.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 21. Documents and Document Templates</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/25-website-builder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 22. Website Builder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/26-export.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 23. Export</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/27-sms-reporting-and-teams.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 24. SMS reporting and teams</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/28-ewars-stand-alone.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 25. EWARS Stand-alone</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/29-glossary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 26. Glossary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/30-help-and-support.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Chapter 27. Help and support</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#alarms-and-their-uses" id="toc-alarms-and-their-uses" class="nav-link active" data-scroll-target="#alarms-and-their-uses">7.1 Alarms and their uses</a></li>
+  <li><a href="#copying-sample-alarms" id="toc-copying-sample-alarms" class="nav-link" data-scroll-target="#copying-sample-alarms">7.2 Copying sample alarms</a></li>
+  <li><a href="#creating-and-configuring-an-alarm" id="toc-creating-and-configuring-an-alarm" class="nav-link" data-scroll-target="#creating-and-configuring-an-alarm">7.3 Creating and configuring an alarm</a>
+  <ul class="collapse">
+  <li><a href="#creating-an-alarm" id="toc-creating-an-alarm" class="nav-link" data-scroll-target="#creating-an-alarm">7.3.1 Creating an alarm</a></li>
+  <li><a href="#configuring-an-alarm-as-a-record-based-alarm" id="toc-configuring-an-alarm-as-a-record-based-alarm" class="nav-link" data-scroll-target="#configuring-an-alarm-as-a-record-based-alarm">7.3.2 Configuring an alarm as a record-based alarm</a></li>
+  <li><a href="#configuring-an-alarm-as-an-aggregate-based-alarm" id="toc-configuring-an-alarm-as-an-aggregate-based-alarm" class="nav-link" data-scroll-target="#configuring-an-alarm-as-an-aggregate-based-alarm">7.3.3 Configuring an alarm as an aggregate-based alarm</a></li>
+  </ul></li>
+  <li><a href="#enabling-auto-discard-of-an-alert" id="toc-enabling-auto-discard-of-an-alert" class="nav-link" data-scroll-target="#enabling-auto-discard-of-an-alert">7.4 Enabling auto-discard of an alert</a></li>
+  <li><a href="#running-an-evaluation-of-an-alarm-manually" id="toc-running-an-evaluation-of-an-alarm-manually" class="nav-link" data-scroll-target="#running-an-evaluation-of-an-alarm-manually">7.5 Running an evaluation of an alarm manually</a></li>
+  <li><a href="#editing-an-alarm" id="toc-editing-an-alarm" class="nav-link" data-scroll-target="#editing-an-alarm">7.6 Editing an alarm</a></li>
+  <li><a href="#turning-off-an-alarm" id="toc-turning-off-an-alarm" class="nav-link" data-scroll-target="#turning-off-an-alarm">7.7 Turning off an alarm</a></li>
+  <li><a href="#deleting-an-alarm" id="toc-deleting-an-alarm" class="nav-link" data-scroll-target="#deleting-an-alarm">7.8 Deleting an alarm</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/06-locations.html">Setting up your EWARS account</a></li><li class="breadcrumb-item"><a href="../chapters/10-alarms.html"><span class="chapter-title">Chapter 7. Alarms</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Chapter 7. Alarms</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Alarms are one of the key features of Early Warning, Alert and Response System (EWARS), as they help to raise early awareness of potential outbreaks, thereby facilitating prompt action from stakeholders. By leveraging the alarms function, users can set predefined criteria to detect unusual trends. When these trends are detected, the system can alert other users and initiate necessary actions to achieve resolution. This chapter will help users create, configure, edit and turn off alarms, as appropriate. Stakeholders are thus empowered to take swift action, saving lives in the process.</p>
+<section id="alarms-and-their-uses" class="level2">
+<h2 class="anchored" data-anchor-id="alarms-and-their-uses">7.1 Alarms and their uses</h2>
+<p>Fig. 7.1. shows how alerts are triggered, based on criteria set in alarms.</p>
+<p>Fig. 7.1. How alarms work</p>
+<p><img src="../media/image190.png" style="width:4.54722in;height:5.05347in"></p>
+<p>Alarms are set based on the criteria users allocate to each disease or event, based on the prevailing conditions. To put this in perspective, one case of suspected viral haemorrhagic fever (VHF) or a doubling of acute watery diarrhoea (AWD) cases in a primary health-care centre (PHCC), should sound an alarm in the system.</p>
+<p>The alarm can be attached to any disease, condition or event. The alert threshold is the level at which point the alarm bell should be ringing, alerting everyone responsible. There is no real alarm bell, and no audible ringing as such, but the bell sign is used to indicate “alarm” in the system. For example, a suspected case of acute flaccid paralysis (AFP) should ring an alarm. Rumours of clusters of deaths should also ring an alarm.</p>
+<p>How to manage raised alerts is dealt with in <strong>Chapter 13. Alert log</strong>. Alert thresholds are generally standardized – especially for immediately notifiable diseases. Refer to national, regional or global surveillance guidance for more information on setting alert thresholds.</p>
+<p>EWARS provides some sample alarms in the Model account, which you can copy and then make required changes. Alternatively, you can set new alarms relevant to your country.</p>
+</section>
+<section id="copying-sample-alarms" class="level2">
+<h2 class="anchored" data-anchor-id="copying-sample-alarms">7.2 Copying sample alarms</h2>
+<p>You can copy the sample alarms in the Model account and make changes according to your country’s requirements.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Configuration Transfer</strong>. Select <strong>Model account</strong> from the <strong>Source Account</strong> drop-down menu. The system lists all transferable items. Search and select the sample alarms(e.g.&nbsp;Measles)<em>.</em> Click on the <strong>transfer</strong> <img src="../media/image191.png" style="width:0.34375in;height:0.3125in"> icon, and the chosen alarms are copied to your account.</li>
+</ul>
+</section>
+<section id="creating-and-configuring-an-alarm" class="level2">
+<h2 class="anchored" data-anchor-id="creating-and-configuring-an-alarm">7.3 Creating and configuring an alarm</h2>
+<p>You can set up new alarms from scratch according to your country’s epidemiological profile. First, identify which priority diseases/conditions/events you need to set an alarm for. Next, define a threshold: this is the level at which the system will inform epidemiologists and surveillance officers that a potential threat has been detected. This threshold can be a report of a single case, an event or a worrying trend, based on an analysis of data over a period.</p>
+<section id="creating-an-alarm" class="level3">
+<h3 class="anchored" data-anchor-id="creating-an-alarm">7.3.1 Creating an alarm</h3>
+<p>You can set an alarm based on submission of a report (<strong>record-based alarm</strong>) or on a departure from the trend (<strong>aggregate-based alarm</strong>). Fig. 7.2 shows the flowcharts for these two methods.</p>
+<p>Fig. 7.2. Ways to set an alarm</p>
+<p><img src="../media/image192.png" style="width:5.91719in;height:5.22685in"></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 84%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Go thr</td>
+<td style="text-align: left;">ough the reporting forms in EWARS and decide which diseases, events or conditions you need to set up alarms for. Then, refer to surveillance and early warning guidance documents to identify the standard alert thresholds for each disease, condition or event. An “alert” is the first hint of a larger public health problem. Once an alarm is set for a particular disease or condition, all individuals in the reporting pathway are informed of the potential threat.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Alarms</strong>. Click on <img src="../media/image193.png" style="width:0.73958in;height:0.35417in">, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image194.png" style="width:5in;height:2.58333in"></p>
+<ul>
+<li>Populate the details in the <strong>General</strong> tab as set out below.</li>
+</ul>
+<!-- -->
+<ul>
+<li><p><strong>Name</strong> [Mandatory]: enter the name of the alarm. It is usual to add the name of the disease or the condition to the alarm (e.g.&nbsp;Malaria or VHF).</p></li>
+<li><p><strong>Status</strong> [Mandatory]: set status as active.</p>
+<p><strong>Active</strong> alarms can trigger alerts.</p>
+<p><strong>Inactive</strong> alarms cannot trigger alerts.</p></li>
+<li><p><strong>Description</strong>: enter a description of the alarm (e.g.&nbsp;“Raise an alert when a Reporting User reports more than 10 malaria cases”). Ideally, include the alert threshold in the description.</p></li>
+<li><p><strong>Alert electronic identification (EID) Prefix</strong>: set an alert EID prefix. The prefix is concatenated with the alert EID; this helps to create a unique identification for an alert. For example, if the prefix is set as SARS, the alert EID is SARS-0A-354C-5230-3462.</p></li>
+<li><p><strong>Tags</strong>: enter tags for the alarm. A tag is an identifier that will help you find your alarm in the Configuration Transfer. You can add one or more tags.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li>Click on <strong>Save Change(s)</strong>, and an alarm is created.</li>
+</ul>
+</section>
+<section id="configuring-an-alarm-as-a-record-based-alarm" class="level3">
+<h3 class="anchored" data-anchor-id="configuring-an-alarm-as-a-record-based-alarm">7.3.2 Configuring an alarm as a record-based alarm</h3>
+<p>For record-based alarms, the data source is a single report. In brief, every report will trigger an alarm in the system. This is vital for event-based surveillance or surveillance reporting from the community on clusters of cases and deaths or unknown diseases.</p>
+<p>The following example shows how to raise an alert when a Reporting User reports an event using an event-based form.</p>
+<ul>
+<li><p>Select <strong>Menu</strong> &gt; <strong>Alarms</strong>. Click on the <strong>edit</strong> <img src="../media/image195.png" style="width:0.25in;height:0.25in"> icon of alarm (e.g.&nbsp;Measles) &gt; click on the <strong>Monitoring</strong> tab &gt; click on <strong>Record-based</strong>.</p></li>
+<li><p>Set <strong>Monitored By</strong> as <strong>Indicator</strong> &gt; select <strong>System</strong> &gt; <strong>Form submissions</strong> from the <strong>Source Indicator</strong> drop-down menu &gt; select <strong>Event-Based Surveillance Form</strong> from the <strong>Form</strong> drop-down menu &gt; select <strong>Submitted</strong> from the <strong>Dimension</strong> drop-down menu &gt; keep <strong>Source</strong> as <strong>No selection</strong>.</p></li>
+</ul>
+<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> if you don’t specify the source (i.e.&nbsp;no selection), it will include reports submitted from EWARS Web as well as EWARS Mobile.</p>
+<p><img src="../media/image196.png" style="width:5in;height:3.6875in"></p>
+<ul>
+<li><p>Select the <strong>Comparator</strong> (e.g.&nbsp;&gt;=) &gt; enter the threshold <strong>Value</strong> (e.g.&nbsp;1).</p></li>
+<li><p>Click on <strong>Save Change(s)</strong>, and the alarm is configured.</p></li>
+</ul>
+</section>
+<section id="configuring-an-alarm-as-an-aggregate-based-alarm" class="level3">
+<h3 class="anchored" data-anchor-id="configuring-an-alarm-as-an-aggregate-based-alarm">7.3.3 Configuring an alarm as an aggregate-based alarm</h3>
+<p>For aggregate-based alarms, the data are sourced from multiple reports. Data submitted during a specific period are used to evaluate the alarms. This is vital to acquire information about whether a particular disease or condition is on the rise at greater than expected levels for the location and season. Similarly, it is needed to detect diseases whose presence (even one suspected case) is important and needs notification (e.g.&nbsp;cases of VHF, AFP and similar).</p>
+<p>The following steps show how to set up aggregate-based alarms using the various source specifications.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Alarms</strong>. Click on the <strong>edit</strong> <img src="../media/image195.png" style="width:0.25in;height:0.25in"> icon of the relevant alarm (e.g.&nbsp;Malaria) &gt; click on the <strong>Monitoring</strong> tab &gt; click on <strong>Aggregate-based</strong>, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image197.png" style="width:5.78125in;height:2.15625in"></p>
+<section id="specifying-the-monitoring-location-or-groups" class="level4">
+<h4 class="anchored" data-anchor-id="specifying-the-monitoring-location-or-groups">7.3.3.1 Specifying the monitoring location or groups</h4>
+<ul>
+<li><p><strong>Either</strong> set <strong>Monitor For</strong> as <strong>Location</strong> if an alarm is to monitor a particular geographical location &gt; select the geographical locations you want to monitor from the drop-down menu (e.g.&nbsp;country, province or district)</p></li>
+<li><p><strong>Or</strong> set <strong>Monitor For</strong> as <strong>Location Group(s)</strong> if an alarm is to monitor a group of locations (e.g.&nbsp;a group of PHCCs managed by a nongovernmental organization (NGO) such as Médecins Sans Frontières or the International Committee of the Red Cross).</p></li>
+</ul>
+</section>
+<section id="specifying-the-location-type" class="level4">
+<h4 class="anchored" data-anchor-id="specifying-the-location-type">7.3.3.2 Specifying the location type</h4>
+<ul>
+<li>Select the <strong>location type</strong> for which you want to set the alarm. The alarm is set for the entire location type selected, as follows:</li>
+</ul>
+<!-- -->
+<ul>
+<li><p>for country-level alarms, set location type to <strong>Country</strong></p></li>
+<li><p>for province-level alarms, set location type to <strong>Province</strong></p></li>
+<li><p>for health facility-level alarms, set location type to <strong>Health Facility</strong>.</p></li>
+</ul>
+</section>
+<section id="restricting-the-data-source" class="level4">
+<h4 class="anchored" data-anchor-id="restricting-the-data-source">7.3.3.3 Restricting the data source</h4>
+<ul>
+<li><p><strong>Either</strong> set <strong>Restrict data source</strong> to <strong>No</strong>, and all reports submitted are considered for alarm evaluation</p></li>
+<li><p><strong>Or</strong> set <strong>Restrict data source</strong> to <strong>Yes</strong>, and only the reports of the selected <strong>location type</strong> are considered for alarm evaluation. You can select the location type in the <strong>Data reported on location type</strong> field.</p></li>
+</ul>
+<!-- -->
+<ul>
+<li>For example, if location type is set as health facility, only those reports with reporting location type health facility are considered for alarm evaluation.</li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> when you set an alarm for location type, the alarm is evaluated based on specification of the location type (e.g.&nbsp;a mobile clinic, laboratory or health post). In this situation, an alarm will be triggered for each location type, whereas if you set the source of data by location type, you indicate what data sources should be considered for triggering alarms; for example, select PHCC if you want to use data reported from PHCCs to trigger the alarm, or select mobile clinics if you want to aggregate data reported from mobile clinics for this alarm.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="configuring-the-data-source-interval" class="level4">
+<h4 class="anchored" data-anchor-id="configuring-the-data-source-interval">7.3.3.4 Configuring the data source interval</h4>
+<p>The data source interval can be set as a fixed <strong>Interval</strong> (daily, weekly, monthly or yearly). The example below shows the data source interval set as the current calendar week:</p>
+<blockquote class="blockquote">
+<p><img src="../media/image198.png" style="width:3.5625in;height:0.84375in"></p>
+</blockquote>
+<p>The data source interval can also be set as a specified <strong>Range of Intervals</strong> (biweekly, quarterly, every three months and so on). If set as a range, you also need to provide a figure for the number of intervals. The example below shows the data source interval set as three-monthly:</p>
+<blockquote class="blockquote">
+<p><img src="../media/image199.png" style="width:3.55208in;height:1.20833in"></p>
+</blockquote>
+<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> the three-month interval includes the current calendar month and the previous two months.</p>
+<p>The example below shows the data source interval set as every 10 days:</p>
+<blockquote class="blockquote">
+<p><img src="../media/image200.png" style="width:3.58333in;height:1.34375in"></p>
+</blockquote>
+</section>
+<section id="configuring-the-data-aggregation" class="level4">
+<h4 class="anchored" data-anchor-id="configuring-the-data-aggregation">7.3.3.5 Configuring the data aggregation</h4>
+<ul>
+<li><p><strong>Either</strong> set <strong>Aggregation</strong> as <strong>Sum</strong>, and data from all the reports for the specified interval are aggregated as a sum</p></li>
+<li><p><strong>Or</strong> set <strong>Aggregation</strong> as <strong>Average</strong>, and data from all the reports for the specified interval are aggregated as a sum and then divided by the number of submitted reports in the specified interval, creating an average per report.</p></li>
+</ul>
+</section>
+<section id="configuring-the-monitored-by-field" class="level4">
+<h4 class="anchored" data-anchor-id="configuring-the-monitored-by-field">7.3.3.6 Configuring the monitored by field</h4>
+<p>The form field monitored by has three options: <strong>Indicator</strong>, <strong>Complex</strong> and <strong>SD/Mean/Percentile</strong>. These are set out below with their sub-options.</p>
+<p>If <strong>Monitored</strong> by is set as <strong>Indicator</strong>, this sets a threshold for a single indicator.</p>
+<ul>
+<li>Set <strong>Monitored by</strong> as <strong>Indicator</strong> &gt; select the <strong>Source Indicator</strong> from the drop-down menu.</li>
+</ul>
+<p>If <strong>Monitored</strong> by is set as <strong>Complex</strong>, this sets a threshold for a complex indicator.</p>
+<ul>
+<li>Set <strong>Monitored by</strong> as <strong>Complex</strong>, and you can consider more than one indicator and formula – for example the COVID-19 test positivity rate = (number of cases/number of tests) × 100.</li>
+</ul>
+<p>If <strong>Monitored</strong> by is set as <strong>SD/Mean/Percentile</strong>, the standard deviation (SD), Mean average and Percentile of historical data for a given date range or specified weeks are automatically calculated. For this option to work, you have to input historical data into the system. It will not work without existing data to refer to.</p>
+<ul>
+<li>Set <strong>Monitored by</strong> to <strong>SD/Mean/Percentile</strong> &gt; select the <strong>Source Indicator</strong> from the drop-down menu. The <strong>Interval</strong> is pre-set as <strong>Week</strong>: this can’t be changed. Select a <strong>Pre-Configured Formula</strong> or enter a <strong>Formula</strong> manually.</li>
+</ul>
+<!-- -->
+<ul>
+<li>For example, to establish whether the <strong>Indicator</strong> value is Higher than 1SD, select the <strong>Pre-Configured Formula</strong> for <strong>Higher than 1SD</strong>, [IDV – (MEAN + SD)] from the drop-down menu.</li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> when you want to develop your own formulas, use the following abbreviations to indicate commonly use statistical terms: SD for standard deviation, MEAN for mean, IDV for indicator value (i.e.&nbsp;the value you want to compare against data), and PERCENTILE for percentile. Always add absolute values (positive values), the use of the abs () function is allowed in the formula.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li><p><strong>Either</strong> set <strong>Exclude zero value</strong> to <strong>Yes</strong>, and any zero value intervals within the specified interval are ignored in the calculation of SD, Mean and Percentile</p></li>
+<li><p><strong>Or</strong> set <strong>Exclude zero value</strong> to <strong>No</strong>, and no intervals are ignored in the calculation.</p></li>
+</ul>
+</section>
+<section id="configuring-seasonal-variation" class="level4">
+<h4 class="anchored" data-anchor-id="configuring-seasonal-variation">7.3.3.7 Configuring seasonal variation</h4>
+<ul>
+<li><p><strong>Either</strong> set <strong>Seasonal Variation</strong> to <strong>No</strong> and provide a <strong>Date Range</strong> – historical data from the date range specified are considered in the calculation of SD, Mean and Percentile</p></li>
+<li><p><strong>Or</strong> set <strong>Seasonal Variation</strong> to <strong>Yes</strong> and populate the <strong>No.&nbsp;of +/- Weeks</strong> and <strong>No.&nbsp;of previous years</strong> fields. Historical data from the weeks and years specified are considered in the calculation of SD, Mean and Percentile. If you set <strong>Seasonal Variation</strong> as <strong>Yes</strong>, the system calculates the average of the previous years. For example, if the number of previous years is set as 3 and the current year is 2021, the system considers the averages of June 2020, June 2019 and June 2018.</p></li>
+</ul>
+</section>
+<section id="specifying-the-criteria-for-triggering-alerts" class="level4">
+<h4 class="anchored" data-anchor-id="specifying-the-criteria-for-triggering-alerts">7.3.3.8 Specifying the criteria for triggering alerts</h4>
+<ul>
+<li>Select the <strong>Comparator</strong> (e.g.&nbsp;&gt;) and enter a value to be compared (e.g.&nbsp;0), as show below:</li>
+</ul>
+<blockquote class="blockquote">
+<p><img src="../media/image201.png" style="width:4.84375in;height:1.5in"></p>
+</blockquote>
+<ul>
+<li>Click on <strong>Save Change(s)</strong>.</li>
+</ul>
+</section>
+<section id="examples-of-aggregate-based-alarms" class="level4">
+<h4 class="anchored" data-anchor-id="examples-of-aggregate-based-alarms">7.3.3.9 Examples of aggregate-based alarms</h4>
+<p>For demonstration purposes, this guide uses the following six examples.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Example 1.</strong> Raise an alert when there are more than five malaria cases in a month.</p>
+<ul>
+<li><p>Select <strong>Menu</strong> &gt; <strong>Alarms</strong>. Click on the <strong>edit</strong> <img src="../media/image195.png" style="width:0.25in;height:0.25in"> icon of the relevant alarm (Malaria) &gt; click on the <strong>Monitoring</strong> tab &gt; click on <strong>Aggregate-based</strong>. |</p></li>
+<li><p>Set <strong>Monitor For</strong> as <strong>Location</strong> &gt; select the country name in the <strong>Location</strong> drop-down menu &gt; select a reporting location from the <strong>Set alarm for location type</strong> drop-down menu (e.g.&nbsp;Country) &gt; set <strong>Restrict data source</strong> as <strong>No</strong>.</p></li>
+<li><p>Set <strong>Monitored By</strong> as <strong>Indicator</strong> &gt; set <strong>Data Source Interval</strong> as <strong>Interval</strong> &gt; set <strong>Data Source Interval</strong> as <strong>Month</strong> &gt; set <strong>Aggregation</strong> as <strong>Sum</strong> &gt; select the <strong>Source Indicator</strong> <strong>Malaria Total Cases</strong>.</p></li>
+<li><p>Select the <strong>Comparator</strong> as &gt;= &gt; enter the threshold <strong>value</strong> “5”).</p></li>
+<li><p>Click on <strong>Save Change(s)</strong>, and the alarm is configured.</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Example 2.</strong> Set an alarm to trigger an alert on malaria total cases.</p>
+<ul>
+<li><p>Select <strong>Menu</strong> &gt; <strong>Alarms</strong>. Click on the <strong>edit</strong> <img src="../media/image195.png" style="width:0.25in;height:0.25in"> icon of the relevant alarm (Malaria) &gt; click on the <strong>Monitoring</strong> tab &gt; click on <strong>Aggregate-based</strong>. |</p></li>
+<li><p>Set <strong>Monitor For</strong> as <strong>Location</strong> &gt; select the country name in the <strong>Location</strong> drop-down menu &gt; select a reporting location from the <strong>Set alarm for location type</strong> drop-down menu (e.g.&nbsp;Country) &gt; set <strong>Restrict data source</strong> as <strong>No</strong>.</p></li>
+<li><p>Set <strong>Monitored By</strong> as <strong>Complex</strong> &gt; set <strong>Data Source Interval</strong> as <strong>Interval</strong> &gt; set <strong>Data Source Interval</strong> as <strong>Month</strong> &gt; set <strong>Aggregation</strong> as <strong>Sum</strong>.</p></li>
+<li><p>Add two variables: one for under 5 cases and another for over 5 cases &gt; click on <strong>Add</strong> <strong>Variable</strong> &gt; click on the <strong>edit</strong> <img src="../media/image195.png" style="width:0.25in;height:0.25in"> icon &gt; enter the <strong>Variable Name</strong> “under_5” &gt; select <strong>Malaria under 5 cases</strong> from the <strong>Indicator</strong> drop-down menu &gt; click on <strong>Add Variable</strong> &gt; click on the <strong>edit</strong> <img src="../media/image195.png" style="width:0.25in;height:0.25in"> icon &gt; enter the <strong>Variable Name</strong> “over_5” &gt; select <strong>Malaria over 5 cases</strong> from the <strong>Indicator</strong> drop-down menu &gt; enter a <strong>Formula</strong> using the <strong>Variable</strong> <strong>Names</strong> (e.g.&nbsp;“Under_5 + Over_5”) in the <strong>Formula</strong> field. |</p></li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> the system sets <strong>Comparator</strong> as &gt; and <strong>Value</strong> as 0 automatically. Thus, if the formula returns a positive value, the alert is triggered. |</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li>Click on <strong>Save Change(s)</strong>, and the alarm is configured.</li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Example 3.</strong> Trigger an alert when malaria total cases are higher than 110% of the average of the last three weeks.</p>
+<ul>
+<li><p>Select <strong>Menu</strong> &gt; <strong>Alarms</strong>. Click on the <strong>edit</strong> <img src="../media/image195.png" style="width:0.25in;height:0.25in"> icon of the relevant alarm (Malaria) &gt; click on the <strong>Monitoring</strong> tab &gt; click on <strong>Aggregate-based</strong>. |</p></li>
+<li><p>Set <strong>Monitor For</strong> as <strong>Location</strong> &gt; select the country name in the <strong>Location</strong> drop-down menu &gt; select a reporting location from the <strong>Set alarm for location type</strong> drop-down menu (e.g.&nbsp;Country) &gt; set <strong>Restrict data source</strong> as <strong>No</strong>.</p></li>
+<li><p>Set <strong>Monitored By</strong> as <strong>SD/Mean/Percentile</strong>, as shown below:</p></li>
+</ul>
+<blockquote class="blockquote">
+<p><img src="../media/image202.png" style="width:5.83333in;height:3.1875in"> |</p>
+</blockquote>
+<ul>
+<li><p>Select the <strong>Source Indicator</strong> <strong>Malaria Total Cases</strong> &gt; enter the <strong>Formula</strong> “IDV – (1.10*MEAN)”. Set <strong>Exclude zero value</strong> and <strong>Seasonal Variation</strong> as <strong>No</strong>. In the <strong>Date Range</strong> field, select <strong>This week</strong> from the <strong>Quick Ranges</strong>: <strong>From</strong> is set as <strong>This week start</strong> and <strong>To</strong> is set as <strong>This week end</strong>.</p></li>
+<li><p>Enter “-3W” in the <strong>Offset</strong> field of the <strong>From</strong> field date picker, and <strong>From</strong> is updated to <strong>This week start - 3 week(s)</strong> &gt; enter “-3W” in the <strong>Offset</strong> field of the <strong>To</strong> field date picker, and <strong>To</strong> is updated to <strong>This week end - 3 week(s)</strong>.</p></li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> the system sets <strong>Comparator</strong> as &gt; <strong>and Value</strong> as 0 automatically. Thus, if the formula returns a positive value, the alert is triggered. |</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li>Click on <strong>Save Change(s)</strong>, and the alarm is configured.</li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Example 4.</strong> Trigger an alert when the current week’s count for under 5 years malaria cases is greater than the 110% of the mean value for the previous 52 weeks.</p>
+<ul>
+<li><p>Select <strong>Menu</strong> &gt; <strong>Alarms</strong>. Click on the <strong>edit</strong> <img src="../media/image195.png" style="width:0.25in;height:0.25in"> icon of the relevant alarm (Malaria) &gt; click on the <strong>Monitoring</strong> tab &gt; click on <strong>Aggregate-based</strong>. |</p></li>
+<li><p>Set <strong>Monitor For</strong> as <strong>Location</strong> &gt; select the country name in the <strong>Location</strong> drop-down menu &gt; select a reporting location from the <strong>Set alarm for location type</strong> drop-down menu (e.g.&nbsp;Country) &gt; set <strong>Restrict data source</strong> as <strong>No</strong>.</p></li>
+<li><p>Set <strong>Monitored By</strong> as <strong>SD/Mean/Percentile</strong>, as shown below:</p></li>
+</ul>
+<blockquote class="blockquote">
+<p><img src="../media/image203.png" style="width:5in;height:2.47917in"> |</p>
+</blockquote>
+<ul>
+<li>Select the <strong>Source Indicator</strong> <strong>Malaria under 5 cases</strong> &gt; enter the <strong>Formula</strong> “IDV – (1.10*MEAN)”. Set <strong>Exclude zero value</strong> and <strong>Seasonal Variation</strong> as <strong>No</strong>. In the <strong>Date</strong> <strong>Range</strong> field select <strong>Previous 52 weeks</strong> from <strong>Quick Ranges</strong>.</li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> the system sets the comparator as &gt; and the value as 0 automatically. Thus, if the formula returns a positive value, the alert is triggered. |</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li>Click on <strong>Save Change(s)</strong>, and the alarm is configured.</li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Example 5.</strong> Trigger an alarm if current reporting is more than the 75th percentile for the last three years.</p>
+<ul>
+<li><p>Select <strong>Menu</strong> &gt; <strong>Alarms</strong>. on the <strong>edit</strong> <img src="../media/image195.png" style="width:0.25in;height:0.25in"> icon of the relevant alarm (Malaria) &gt; click on the <strong>Monitoring</strong> tab &gt; click on <strong>Aggregate-based</strong>. |</p></li>
+<li><p>Set <strong>Monitor For</strong> as <strong>Location</strong> &gt; select the country name in the <strong>Location</strong> drop-down menu &gt; select a reporting location from the <strong>Set alarm for location type</strong> drop-down menu (e.g.&nbsp;Country) &gt; set <strong>Restrict data source</strong> as <strong>No</strong>.</p></li>
+<li><p>Set <strong>Monitored By</strong> as <strong>SD/Mean/Percentile</strong>, as shown below:</p>
+<p><img src="../media/image204.png" style="width:5in;height:3.09375in"> |</p></li>
+<li><p>Select the <strong>Source Indicator</strong> <strong>Malaria Total Cases</strong> &gt; enter the <strong>Formula</strong> “PERCENTILE - 75”. Set <strong>Exclude zero value</strong> and <strong>Seasonal Variation</strong> as <strong>No</strong>. In the <strong>Data Range</strong> field, select <strong>Today</strong> from <strong>Quick Ranges</strong>, and <strong>Today</strong> is set as the <strong>From</strong> and <strong>To</strong> fields. Enter “-3Y” in the <strong>Offset</strong> field of the <strong>From</strong> field date picker, and <strong>From</strong> is set as <strong>Today - 3 year(s)</strong>.</p></li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> the system sets the comparator as &gt; and the value as 0 automatically. Thus, if the formula returns a positive value, the alert is triggered. |</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li>Click on <strong>Save Change(s)</strong>, and the alarm is configured.</li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Example 6:</strong> Trigger an alert when the under 5 years count of malaria cases is greater than the corresponding moving average of three weeks for the last three years (&gt; mean + 2SD). This is for seasonality, to see whether the value is statistically different from the corresponding weeks of the last three years.</p>
+<ul>
+<li><p>Select <strong>Menu</strong> &gt; <strong>Alarms</strong>. Click on the <strong>edit</strong> <img src="../media/image195.png" style="width:0.25in;height:0.25in"> icon of the relevant alarm (Malaria) &gt; click on the <strong>Monitoring</strong> tab &gt; click on <strong>Aggregate-based</strong>. |</p></li>
+<li><p>Set <strong>Monitor For</strong> as <strong>Location</strong> &gt; select country name in the <strong>Location</strong> drop-down menu &gt; select a reporting location from the <strong>Set alarm for location type</strong> drop-down menu (e.g.&nbsp;Country) &gt; set <strong>Restrict data source</strong> as <strong>No</strong>.</p></li>
+<li><p>Set <strong>Monitored By</strong> as <strong>SD/Mean/Percentile</strong>.</p></li>
+<li><p>Select the <strong>Source Indicator</strong> <strong>Malaria Under 5 Cases</strong> &gt; enter the <strong>Formula</strong> “IDV – (MEAN + 2SD)”. Set <strong>Exclude zero value</strong> as <strong>No</strong> &gt; set <strong>Seasonal Variation</strong> as <strong>Yes</strong>. Enter “1” in <strong>No.&nbsp;of +/- Weeks</strong> &gt; enter “3” in <strong>No.</strong> <strong>of previous years</strong>. The data considered for this are thus from the last three years, with week range (x+1), where x = week of report submission.</p></li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> the system sets the comparator as &gt; and the value as 0 automatically. Thus, if the formula returns a positive value, the alert is triggered. |</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li>Click on <strong>Save Change(s)</strong>, and the alarm is configured.</li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="enabling-auto-discard-of-an-alert" class="level2">
+<h2 class="anchored" data-anchor-id="enabling-auto-discard-of-an-alert">7.4 Enabling auto-discard of an alert</h2>
+<p>Once an alert is triggered, you are expected to conduct a verification rapidly. Therefore, you are not expected to discard alerts without verification. However, after a long lapse of time, the system allows you to auto-discard alerts. For example, if an alert is not verified after three months, you may set the conditions to discard it. When discarded it will not appear under open alerts, indicating that you need to take action.</p>
+<p>By default, the auto-discard setting is off, but when enabled, the system automatically discards a specified alert after a defined period.</p>
+<p>The following example shows you how to auto-discard an alert after two weeks.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Alarms</strong> &gt; click on the <strong>edit</strong> <img src="../media/image195.png" style="width:0.25in;height:0.25in"> icon of the relevant alarm (e.g.&nbsp;Malaria) &gt; click on the <img src="../media/image205.png" style="width:1.0625in;height:0.375in"> tab, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image206.png" style="width:5.48958in;height:2.875in"></p>
+<ul>
+<li><p>Click on the <strong>toggle</strong> <img src="../media/image207.png" style="width:0.38783in;height:0.27702in"> icon to enable it, and the icon colour changes to green.</p></li>
+<li><p>Set <strong>Auto-discard interval</strong> to <strong>Week(s)</strong> &gt; set <strong>No.&nbsp;of Intervals</strong> to “2”.</p></li>
+<li><p>Click on <strong>Save Change(s)</strong>.</p></li>
+</ul>
+</section>
+<section id="running-an-evaluation-of-an-alarm-manually" class="level2">
+<h2 class="anchored" data-anchor-id="running-an-evaluation-of-an-alarm-manually">7.5 Running an evaluation of an alarm manually</h2>
+<p>An alarm evaluation is done by the system automatically whenever a new report is submitted, but the Account Administrator can also evaluate it manually.</p>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Alarm</strong>. Click on the <strong>edit</strong> <img src="../media/image208.png" style="width:0.29167in;height:0.3125in"> icon of the relevant alarm (e.g.&nbsp;Malaria) &gt; click on the <img src="../media/image209.png" style="width:1.05208in;height:0.375in"> tab, and the screen below appears:</li>
+</ul>
+<p><img src="../media/image210.png" style="width:5.5625in;height:2.53125in"></p>
+<ul>
+<li><p><strong>Either</strong> click on <strong>Run evaluation</strong> to evaluate the reports submitted within the last 10 days – if the evaluation meets the alarm criteria, it triggers an alert and sends an email notification for the triggered alerts</p></li>
+<li><p><strong>Or</strong> click on <strong>Run evaluation [Silent]</strong>, which evaluates the reports submitted within the last 10 days but does not send any email notifications for the triggered alerts, if any.</p></li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> silent action won’t override email alert notification settings set in the profile.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="editing-an-alarm" class="level2">
+<h2 class="anchored" data-anchor-id="editing-an-alarm">7.6 Editing an alarm</h2>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Alarm</strong>. Click on the <strong>edit</strong> <img src="../media/image208.png" style="width:0.29167in;height:0.3125in"> icon of the relevant alarm (e.g.&nbsp;Malaria) &gt; make the desired changes. Click on <strong>Save Change(s)</strong>.</li>
+</ul>
+</section>
+<section id="turning-off-an-alarm" class="level2">
+<h2 class="anchored" data-anchor-id="turning-off-an-alarm">7.7 Turning off an alarm</h2>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Alarm</strong>. Click on the <strong>edit</strong> <img src="../media/image208.png" style="width:0.29167in;height:0.3125in"> icon of the relevant alarm (e.g.&nbsp;Malaria) &gt; set <strong>Status</strong> as <strong>Inactive</strong>, and the alarm is inactivated. Click on <strong>Save Change(s)</strong>.</li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"> <strong>Note:</strong> if you don’t want an alarm, it is recommended that you make the alarm inactive.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="deleting-an-alarm" class="level2">
+<h2 class="anchored" data-anchor-id="deleting-an-alarm">7.8 Deleting an alarm</h2>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="../media/image211.png" style="width:0.41061in;height:0.3875in" alt="Icon Description automatically generated"><strong>WARNING:</strong> Deleting an alarm will also delete all the alerts and the alert data associated with it.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<ul>
+<li>Select <strong>Menu</strong> &gt; <strong>Alarm</strong>. Click on the <strong>delete</strong> <img src="../media/image212.png" style="width:0.25in;height:0.23958in"> icon of the relevant alarm (e.g.&nbsp;Measles) &gt; click on <strong>Confirm</strong>, and the alarm with its associated alert/alert data is deleted.</li>
+</ul>
+<p>The following chapter gives further information about the different user profiles in EWARS and how to add assignments for them.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/09-forms.html" class="pagination-link" aria-label="Chapter 6. Forms">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Chapter 6. Forms</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/11-users-and-their-assignments.html" class="pagination-link" aria-label="Chapter 8. Users and their assignments">
+        <span class="nav-page-text"><span class="chapter-title">Chapter 8. Users and their assignments</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© World Health Organization, 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Built with Quarto</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

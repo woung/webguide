@@ -1,0 +1,3 @@
+# Capítulo 6. Formularios
+
+> **Traducción en curso.** Esta página está pendiente de traducción al español. Mientras tanto, la versión en inglés es la referencia — ver [Chapter 6. Forms](../../en/chapters/09-forms.qmd).

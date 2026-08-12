@@ -1,0 +1,3 @@
+# Chapitre 5. Indicateurs
+
+> **Traduction en cours.** Cette page attend sa traduction française. La version anglaise fait foi entre-temps — voir [Chapter 5. Indicators](../../en/chapters/08-indicators.qmd).
