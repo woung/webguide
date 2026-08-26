@@ -80,3 +80,4 @@ overrides (`html[dir="rtl"]`) so the Arabic edition mirrors correctly.
    cross-references stay intact.
 3. Image paths can point back at `../en/media/...` (already used in the
    placeholders) since the source images aren't language-specific.
+# webguide1
