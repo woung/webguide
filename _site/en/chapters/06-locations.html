@@ -363,6 +363,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#editing-locations-individually" id="toc-editing-locations-individually" class="nav-link" data-scroll-target="#editing-locations-individually">3.3.1 Editing locations individually</a></li>
   <li><a href="#editing-locations-in-bulk-via-a-csv-file" id="toc-editing-locations-in-bulk-via-a-csv-file" class="nav-link" data-scroll-target="#editing-locations-in-bulk-via-a-csv-file">3.3.2 Editing locations in bulk via a CSV file</a></li>
+  <li><a href="#setting-closed-days" id="toc-setting-closed-days" class="nav-link" data-scroll-target="#setting-closed-days">3.3.3 Setting closed days</a></li>
+  <li><a href="#view-history-of-changes-on-the-locations-configuration" id="toc-view-history-of-changes-on-the-locations-configuration" class="nav-link" data-scroll-target="#view-history-of-changes-on-the-locations-configuration">3.3.4 View history of changes on the location’s configuration</a></li>
   </ul></li>
   <li><a href="#adding-geographical-mapping-information-to-locations" id="toc-adding-geographical-mapping-information-to-locations" class="nav-link" data-scroll-target="#adding-geographical-mapping-information-to-locations">3.4 Adding geographical mapping information to locations</a>
   <ul class="collapse">
@@ -375,7 +377,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#merging-child-locations-with-another-location" id="toc-merging-child-locations-with-another-location" class="nav-link" data-scroll-target="#merging-child-locations-with-another-location">3.8 Merging child locations with another location</a></li>
   <li><a href="#viewing-locations-under-the-tree-tab" id="toc-viewing-locations-under-the-tree-tab" class="nav-link" data-scroll-target="#viewing-locations-under-the-tree-tab">3.9 Viewing locations under the tree tab</a></li>
   <li><a href="#viewing-locations-under-the-table-tab" id="toc-viewing-locations-under-the-table-tab" class="nav-link" data-scroll-target="#viewing-locations-under-the-table-tab">3.10 Viewing locations under the table tab</a></li>
-  <li><a href="#exporting-locations" id="toc-exporting-locations" class="nav-link" data-scroll-target="#exporting-locations">3.11 Exporting locations</a></li>
+  <li><a href="#adding-comments-on-locations" id="toc-adding-comments-on-locations" class="nav-link" data-scroll-target="#adding-comments-on-locations">3.10 Adding comments on locations</a></li>
+  <li><a href="#exporting-locations" id="toc-exporting-locations" class="nav-link" data-scroll-target="#exporting-locations">3.12 Exporting locations</a></li>
   </ul>
 </nav>
     </div>
@@ -402,7 +405,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>When setting up a new Early Warning, Alert and Response System (EWARS) account, organizing reporting locations is the primary activity. This chapter will help you to set these up.</p>
-<p>EWARS needs to recognize reporting units (such as health facilities and shelters) and health administrative levels at national and subnational levels of a country, and their context, before establishing a reporting mechanism.</p>
+<p>EWARS needs to recognize reporting units (such as health facilities, Mobile clinics, temporary health sites and shelters) and health administrative levels at national and subnational levels of a country, and their context, before establishing a reporting mechanism.</p>
 <p>By setting up locations, you enable the following three key actions:</p>
 <ul>
 <li><p>letting EWARS know your reporting locations by adding reporting locations and their hierarchies (via the “location tree”) to the system;</p></li>
@@ -426,7 +429,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><img src="../media/image38.png" style="width:5.59166in;height:2.4in"></p>
 <ul>
-<li><p>Enter the name of the <strong>Location Type</strong> (e.g.&nbsp;“Country”). To enter the name in French, click on <strong>en</strong> in the right-hand box and select <strong>fr</strong> from <strong>Available Languages</strong>. Enter the name in French. It will be visible in French once you have selected French as your default language.</p></li>
+<li><p>Enter the name of the <strong>Location Type</strong> (e.g.&nbsp;“Country”). To enter the name in French, click on <strong>en</strong> in the right-hand box and select <strong>fr</strong> from <strong>Available Languages</strong>. Enter the name in French. It will be visible in French once you have selected French as your default language. You can do the same for any other language.</p></li>
 <li><p>Set Status as <strong>Active</strong>.</p></li>
 <li><p>Enter the <strong>Description</strong> for the <strong>Location Type</strong> (e.g.&nbsp;“This is a top-level location type”).</p></li>
 <li><p>Click on <strong>Save Change(s)</strong>. A notification appears, confirming that the location type has been added.</p></li>
@@ -450,6 +453,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p><strong>Location name</strong>: the name of the location to be added</p></li>
 <li><p><strong>Location type</strong>: the location type of the location to be added</p></li>
+<li><p><strong>Location group</strong>: the location group of the location to be added</p></li>
 <li><p><strong>Parent location</strong>: the parent location of the location to be added</p></li>
 <li><p><strong>PCODE</strong>: the place code of the location to be added.</p></li>
 </ul>
@@ -540,6 +544,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Enter the <strong>Location Name</strong> as the Country name: “Nambutu” in this example.</p></li>
 <li><p>Give the <strong>PCODE</strong> for the Country: “NBT” in this example.</p></li>
 <li><p>Select <strong>Location Type</strong> as <strong>Country</strong>.</p></li>
+<li><p>Give the <strong>IPC Score of the location</strong> This is recently added to be used in data Analysis.</p></li>
 <li><p>Click on <strong>Save Change(s)</strong>.</p></li>
 </ul>
 </section>
@@ -547,7 +552,13 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="creating-child-locations-manually">3.2.2 Creating child locations manually</h3>
 <p>You can create child locations – including provinces, districts and health facilities – manually in the system. As this is a manual process, creation of new locations is done one by one.</p>
 <p>Please follow a hierarchy when creating locations manually: the parent location must be created before the child location.</p>
-<div class="line-block">&nbsp;<img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Have a location tree created in a separate Excel spreadsheet. This makes entering each location in EWARS within the correct hierarchy much easier.|</div>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Have a location tree created in a separate Excel spreadsheet. This makes entering each location in EWARS within the correct hierarchy much easier.</td>
+</tr>
+</tbody>
+</table>
 <p>Using the example shown in Fig. 3.1, the following steps explain how to add the six locations manually.</p>
 <ul>
 <li>Select the <strong>menu</strong> icon &gt; <strong>Locations</strong>. Click on <strong>Create New</strong>, and the <strong>General Settings</strong> tab opens:</li>
@@ -557,18 +568,18 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Enter the new <strong>Location Name</strong>: “Aimal” in this fictional example.</p></li>
 <li><p>The <strong>UUID (universally unique identifier)</strong> is a system-generated unique number assigned to the new location.</p></li>
 <li><p>Set <strong>Status</strong> as <strong>Active</strong>.</p></li>
-</ul>
-<!-- -->
-<ul>
 <li><p><strong>Active</strong> locations appear in green; these can receive reports.</p></li>
 <li><p><strong>Inactive</strong> locations appear in red; these cannot receive reports.</p></li>
-</ul>
-<!-- -->
-<ul>
 <li><p>Enter the <strong>PCODE</strong> for the new location: “NBT001” for Aimal in this example.</p></li>
 <li><p>Enter the location <strong>Prefix</strong> – for example, for Aimal the prefix is AIM (see Table 3.1).</p></li>
 </ul>
-<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> A prefix is useful to auto-generate unique identifiers on form submissions. For more information, refer to <strong>Chapter 6. Forms</strong>, topic <strong>6.8.4.2 Auto-generating a unique ID on form</strong> <strong>submissions</strong>.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="../media/image14.png" width="0.28125in" height="0.28125in"></a> <strong>Note:</strong> A prefix is useful to auto-generate unique identifiers on form submissions. For more information, refer to <strong>Chapter 6. Forms</strong>, topic <strong>6.8.4.2 Auto-generating a unique ID on form</strong> <strong>submissions</strong>.</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li><p>Select an appropriate <strong>Location Type</strong> from the drop-down menu (e.g.&nbsp;Provinces).</p></li>
 <li><p>Enter the <strong>Location Group</strong> name – for example, let’s assume that Aimal belongs to nongovernmental organization (NGO) A or NGO B. You can assign multiple groups by separating them with a comma (,). For more information, refer to topic <strong>3.6 Adding locations to the location group.</strong></p></li>
@@ -586,9 +597,6 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="importing-child-locations-in-bulk-via-a-csv-file">3.2.3 Importing child locations in bulk via a CSV file</h3>
 <p>Rather than entering them individually, manually, you can import all provinces, districts and health facilities in your location hierarchy at once using a comma-separated values (CSV) file.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 99%">
-</colgroup>
 <tbody>
 <tr class="odd">
 <td style="text-align: right;"><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Use the import feature when you need to set up many reporting sites in EWARS rapidly.</td>
@@ -626,18 +634,27 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>description:</strong> enter a short description of the location.</p></li>
 <li><p><strong>parent_pcode</strong> [Mandatory]: enter the PCODE of the Parent location.</p></li>
 </ul>
-<hr>
-<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> parent locations must be imported before doing the bulk import or the locations will not be able to be imported, and an error message will appear. —————————————————————————————————————————————————-</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> parent locations must be imported before doing the bulk import or the locations will not be able to be imported, and an error message will appear.</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li><p><strong>prefix:</strong> enter the location prefix (e.g.&nbsp;“NBT” for Nambutu). A prefix is useful to auto-generate a unique identifier on form submissions. For more information, refer to <strong>Chapter 6. Forms</strong>, topic <strong>6.8.4.2 Auto-generating a unique ID on form</strong> <strong>submissions</strong>.</p></li>
 <li><p><strong>location_type.en:</strong> enter the type under each location name (e.g.&nbsp;“Health facility”, “Mobile clinic”).</p></li>
-<li><p><strong>location_groups</strong>: enter the location group’s name (e.g.&nbsp;NGO A or NGO B). You can assign multiple groups by separating them with a comma (,). For more information, refer to topic <strong>3.6 Adding locations to the location group</strong>.</p></li>
+<li><p><strong>location_groups</strong>: enter the location group’s name (e.g.&nbsp;NGO A or NGO B or Public or Private). You can assign multiple groups by separating them with a comma (,). For more information, refer to topic <strong>3.6 Adding locations to the location group</strong>.</p></li>
 <li><p><strong>status</strong>: enter the status “ACTIVE”.</p></li>
 </ul>
 <p><strong>Save</strong> the file.</p>
-<hr>
-<p><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Complete only the mandatory fields for a rapid import.</p>
-<hr>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Complete only the mandatory fields for a rapid import.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Step 4.</strong> On the <strong>Import Locations</strong> screen, Click on <img src="../media/image54.png" style="width:0.85833in;height:0.325in"> &gt; browse and select the prepared CSV file. The <strong>Status_of_imported_records.csv</strong> file is downloaded.</p>
 <p><strong>Step 5.</strong> Analyse the <strong>Status_of_imported_records.csv</strong> file as below.</p>
 <p>The downloaded Status_of_imported_records.csv file has two additional columns: <strong>import_status</strong> and <strong>import_description</strong>.</p>
@@ -646,7 +663,13 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="../media/image55.png" style="width:7in;height:1.8375in"></p>
 <p>As shown in the screenshot, four locations have been successfully imported and two locations have failed to import. For location Birigo PHCC, import_description states “parent_pcode: NBT003 does not exist”; this means that a location with the parent PCODE provided (NBT003) is not available in the system. You need to create the parent location first and then import the location Birigo PHCC.</p>
 <p>Similarly, for location Isltun PHCC, import_description states “location_type: County does not exist”; this means that the location type provided (County) is not available in the system. You need to create the location type “County” first, and then import the location Isltun PHCC.</p>
-<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in" alt="Icon Description automatically generated"><strong>Note:</strong> to reimport locations that cannot be imported at the first attempt, you need to make the appropriate corrections to the field in the file, as per the instructions in the import_description, and then import the locations again.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><a href="../media/image14.png" width="0.28125in" height="0.28125in"></a><strong>Note:</strong> to reimport locations that cannot be imported at the first attempt, you need to make the appropriate corrections to the field in the file, as per the instructions in the import_description, and then import the locations again.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Step 6.</strong> After creating all locations, select <strong>Menu</strong> &gt; <strong>Locations</strong>. Click on the <strong>Table</strong> tab on the left, and the imported locations are listed, as shown below:</p>
 <p><img src="../media/image56.png" style="width:6.125in;height:2.53333in"></p>
 </section>
@@ -690,6 +713,19 @@ ul.task-list li input[type="checkbox"] {
 <p>The import_status column shows the success or failure of the imported records, with reasons for any failures indicated in the import_description column.</p>
 <p>To edit locations that could not be updated at the first attempt, you need to make the appropriate corrections to the field locations according to the instructions given in the import_description column, and import the locations again.</p>
 </section>
+<section id="setting-closed-days" class="level3">
+<h3 class="anchored" data-anchor-id="setting-closed-days">3.3.3 Setting closed days</h3>
+<p>To enable the configuration of Close days, Click on the <strong>settings</strong> <img src="../media/image35.png" style="width:0.35833in;height:0.375in"> icon at the top right-hand corner of your dashboard screen. Click on <img src="../media/image36.png" style="width:0.81667in;height:0.275in"> in the menu on the left of the screen. Enable closed days and select the location types where closed days should apply.</p>
+<p><img src="../media/image882.png" style="width:6.025in;height:1.525in"></p>
+</section>
+<section id="view-history-of-changes-on-the-locations-configuration" class="level3">
+<h3 class="anchored" data-anchor-id="view-history-of-changes-on-the-locations-configuration">3.3.4 View history of changes on the location’s configuration</h3>
+<p>To view the changes in configuration of a given location, follow the steps below.</p>
+<ul>
+<li><p>Select the <strong>menu</strong> icon &gt; <strong>Locations</strong>. Click on the location you want to see changes <strong>Here teh example is Aimal</strong>. in the screen that appears, click on the history icon marked here in Red: <img src="../media/image885.png" style="width:6.025in;height:1.525in"></p></li>
+<li><p>Select the <strong>Base version</strong> and the <strong>Target version</strong>. The changes will be displayed under. In the changes geometry information will be displayed in json format: <img src="../media/image886.png" style="width:6.025in;height:1.525in"></p></li>
+</ul>
+</section>
 </section>
 <section id="adding-geographical-mapping-information-to-locations" class="level2">
 <h2 class="anchored" data-anchor-id="adding-geographical-mapping-information-to-locations">3.4 Adding geographical mapping information to locations</h2>
@@ -709,8 +745,13 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Enter it manually: type in the latitude and longitude coordinates of the location.</p></li>
 <li><p>Enter it via <strong>Current Location</strong>: if you are currently at the location, this method can be used to automatically input the latitude and longitude. Click on <strong>Current Location</strong> and confirm that EWARS should use your current location. The latitude and longitude coordinates are added.</p></li>
 </ul>
-<hr>
-<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> for security reasons, the browser may ask you to allow use of the location service. Select <strong>Confirm</strong> to allow this. —————————————————————————————————————————————————-</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> for security reasons, the browser may ask you to allow use of the location service. Select <strong>Confirm</strong> to allow this.</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>Enter it via <strong>Map Location</strong>: with this method<strong>,</strong> you can specify a location on the map to get the latitude and longitude coordinates. Click on <strong>Map Location</strong>. Navigate and locate the location on the map, and double-click on the centre of the location. Close the map screen, and the latitude and longitude coordinates are set automatically in the input box. Click on <strong>Save Change(s)</strong>.</li>
 </ul>
@@ -741,19 +782,34 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="adding-reporting-information-to-locations" class="level2">
 <h2 class="anchored" data-anchor-id="adding-reporting-information-to-locations">3.5 Adding reporting information to locations</h2>
-<hr>
-<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> to add reporting to locations, you need to have reporting forms ready. For information on creating and configuring the reporting forms, refer to <strong>Chapter 6. Forms</strong>, and then revisit this topic to connect the locations to the reporting forms. ——————————————————————————————————————————————————————</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> to add reporting to locations, you need to have reporting forms ready. For information on creating and configuring the reporting forms, refer to <strong>Chapter 6. Forms</strong>, and then revisit this topic to connect the locations to the reporting forms.</td>
+</tr>
+</tbody>
+</table>
 <p>The reporting tab enables you to set up reporting from different locations, including setting up reporting periods. For example, you can create a weekly EWARS reporting form or an event-based surveillance form for 23&nbsp;February&nbsp;2021 to 31&nbsp;December&nbsp;2021.</p>
 <p>This helps during emergencies, when reporting status may change over time. New reports can be added to locations or removed. This section explains how such modifications can be done easily.</p>
-<hr>
-<p><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> It is important to manage the reporting periods carefully and keep them up to date to calculate performance indicators, completeness and timeliness accurately. —————————————————————————————————————————————————-</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> It is important to manage the reporting periods carefully and keep them up to date to calculate performance indicators, completeness and timeliness accurately.</td>
+</tr>
+</tbody>
+</table>
 <p>You can add reporting forms under each reporting location manually. In most instances, however, all PHCCs within a particular province or district tend to report using the same reporting form. In that case, you can set up a reporting tab at the province level so that all changes are inherited by the child locations.</p>
 <ul>
 <li>Select <strong>Menu</strong> &gt; <strong>Locations</strong> &gt; click on a reporting <strong>Location Name</strong> &gt; click on the <strong>Reporting</strong> tab. Click on <strong>Add Reporting Period</strong> &gt; select the relevant <strong>Form</strong> from the drop-down menu and select <strong>Start Date</strong>, <strong>End Date</strong> and <strong>Status</strong>.</li>
 </ul>
 <p>Reporting start and end dates remain flexible, and can be edited later. Form and start date are mandatory fields, but the start date can be edited later.</p>
-<hr>
-<p><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> you can select a start date that pre-dates the current calendar date. This allows the reporting location to report retrospectively, depending on the report. You can select an end date that is far in the future. —————————————————————————————————————————————————-</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> you can select a start date that pre-dates the current calendar date. This allows the reporting location to report retrospectively, depending on the report. You can select an end date that is far in the future.</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li><p>Set the <strong>Status</strong> of reporting (<strong>Active/Disabled</strong>). By default, the status is set as <strong>Active</strong>.</p></li>
 <li><p>Click on <strong>Save Change(s)</strong>. The reporting period is added, as shown below:</p></li>
@@ -767,7 +823,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="adding-locations-to-the-location-group" class="level2">
 <h2 class="anchored" data-anchor-id="adding-locations-to-the-location-group">3.6 Adding locations to the location group</h2>
-<p>Locations can be grouped based on your needs. For example, you can group reporting locations in internally displaced person (IDP) camps, locations belonging to humanitarian NGOs, remote areas and so on. This enables disaggregation of data by grouping.</p>
+<p>Locations can be grouped based on your needs. For example, you can group reporting locations in internally displaced person (IDP) camps, locations belonging to humanitarian NGOs, remote areas, classification between public and private facilities and so on. This enables disaggregation of data by grouping.</p>
 <p>One location can be a member of several groups. For example, Birigo PHCC can be grouped under the location groups “IDP camp clinics” and “NGO A”.</p>
 <p>Location groups are also useful when configuring widgets. For more information, refer to <strong>Chapter 17. Widgets and their</strong> <strong>configuration</strong>.</p>
 <p>To group locations, add the group name to the location details under general settings.</p>
@@ -818,6 +874,9 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Birigo PHCC is merged into Bilnula PHCC.</p>
 <p>Once the merge is complete, Birigo PHCC will not be available in the system. Only the merged location – Bilnula PHCC – will remain in the system.</p>
+<ul>
+<li>You can bulk disable location using the <strong>3.10 Viewing locations under the table tab</strong>.</li>
+</ul>
 </section>
 <section id="viewing-locations-under-the-tree-tab" class="level2">
 <h2 class="anchored" data-anchor-id="viewing-locations-under-the-tree-tab">3.9 Viewing locations under the tree tab</h2>
@@ -838,9 +897,14 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><img src="../media/image77.png" style="width:6.38334in;height:1.825in">Select <strong>Menu</strong> &gt; <strong>Administration</strong> &gt; <strong>Locations</strong>. Click on the <strong>Table</strong> tab, and the screen below appears:</li>
 </ul>
+<p>to bulk disable the locations, click on <img src="../media/image880.png" style="width:0.35833in;height:0.375in"> and check all the locations you want to bulk disable and click <img src="../media/image881.png" style="width:0.35833in;height:0.375in"></p>
+</section>
+<section id="adding-comments-on-locations" class="level2">
+<h2 class="anchored" data-anchor-id="adding-comments-on-locations">3.10 Adding comments on locations</h2>
+<p>You can also export locations to share them with other users. To find out how to use the Export feature effectively, refer to <strong>Chapter 23. Exports</strong>, topic <strong>23.4 Exporting locations data</strong>.</p>
 </section>
 <section id="exporting-locations" class="level2">
-<h2 class="anchored" data-anchor-id="exporting-locations">3.11 Exporting locations</h2>
+<h2 class="anchored" data-anchor-id="exporting-locations">3.12 Exporting locations</h2>
 <p>You can also export locations to share them with other users. To find out how to use the Export feature effectively, refer to <strong>Chapter 23. Exports</strong>, topic <strong>23.4 Exporting locations data</strong>.</p>
 
 

@@ -425,10 +425,14 @@ ul.task-list li input[type="checkbox"] {
 <p>The chapter will help you to perform key actions using forms, thereby setting the stage for data collection activities according to the key objectives of your situation.</p>
 <section id="forms-and-their-uses" class="level2">
 <h2 class="anchored" data-anchor-id="forms-and-their-uses">6.1 Forms and their uses</h2>
-<p>Forms are created in EWARS Web and can be viewed in EWARS Mobile for data collection purposes. However, mobile users cannot create, edit or modify forms: only web users are able to modify the forms.</p>
+<p>Forms are created in EWARS Web or in the standalone application and can be viewed in EWARS Mobile for data collection purposes. However, mobile users cannot create, edit or modify forms: only web users and desktop users are able to modify the forms.</p>
 <p>Fig. 6.1 shows the usage of forms in capturing data and using it to display different information via dashboards, alarms, website and so on.</p>
-<p>Fig. 6.1. EWARS forms</p>
-<p><img src="../media/image97.png" style="width:6.27083in;height:3.13542in"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image97.png" style="width:6.27083in;height:3.13542in" class="figure-img"></p>
+<figcaption>Fig. 6.1. EWARS forms</figcaption>
+</figure>
+</div>
 <p>You can create any number of reporting forms for early warnings. There are three types of standard forms:</p>
 <ul>
 <li><p>weekly EWARS reporting forms for health facilities</p></li>
@@ -470,7 +474,7 @@ ul.task-list li input[type="checkbox"] {
 <table class="caption-top table">
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> it is not compulsory to use a form copied via Configuration Transfer. Having copied a sample form, you can still create a new form from the beginning. In that case, the sample form can act as a true sample to inspire the development of a form you need, but you should be mindful of the dependencies you may have in the system that transferred with the copied form.</td>
+<td><img src="../media/image14.png" style="width:0.28125in;height:0.28125in"> <strong>Note:</strong> it is not compulsory to use a form copied via Configuration Transfer. Having copied a sample form, you can still create a new form from the beginning. In that case, the sample form can act as a true sample to inspire the development of a form you need, but you should be mindful of the dependencies you may have in the system that transferred with the copied form.</td>
 </tr>
 </tbody>
 </table>
@@ -524,14 +528,20 @@ ul.task-list li input[type="checkbox"] {
 <section id="creating-a-new-form" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-new-form">6.4 Creating a new form</h2>
 <p>You can create a new form if you have not copied the sample form to your account. Creating a form involves four major steps (Fig. 6.2).</p>
-<p>Fig. 6.2. Steps to create a form</p>
-<p><img src="../media/image110.png" style="width:6.04407in;height:2.94648in"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../media/image110.png" style="width:6.04407in;height:2.94648in" class="figure-img"></p>
+<figcaption>Fig. 6.2. Steps to create a form</figcaption>
+</figure>
+</div>
 <p>Details of the steps are as follows:</p>
 <ul>
 <li><p><strong>Settings</strong> enables you to set up basic information related to the form, such as name, identifier (ID) and so on.</p></li>
 <li><p><strong>Fields</strong> enables you to set up all form fields.</p></li>
 <li><p><strong>Logic</strong> enables you to link form fields with the indicators in the system.</p></li>
-<li><p><strong>Translation</strong> enables you to set the language for the form.</p></li>
+<li><p><strong>Validation</strong> enables you to create validation rules for data consistency.</p></li>
+<li><p><strong>Translation</strong> enables you to set the language translation for the form.</p></li>
+<li><p><strong>History</strong> Show in json format all the changes made to the form since its creation.</p></li>
 </ul>
 <p>The following steps set out how to create the form with basic information setting.</p>
 <ul>
@@ -585,14 +595,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="adding-and-configuring-data-fields-in-the-form" class="level2">
 <h2 class="anchored" data-anchor-id="adding-and-configuring-data-fields-in-the-form">6.5 Adding and configuring data fields in the form</h2>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 31%">
-<col style="width: 67%">
-</colgroup>
 <tbody>
 <tr class="odd">
-<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Before</td>
-<td style="text-align: center;">you create an electronic form in EWARS, have your paper reporting form handy to guide you on the format. The electronic form looks like the paper form for all users.</td>
+<td><img src="../media/image43.png" style="width:0.65625in;height:0.35417in"> Before you create an electronic form in EWARS, have your paper reporting form handy to guide you on the format. The electronic form looks like the paper form for all users.</td>
 </tr>
 </tbody>
 </table>
@@ -615,110 +620,58 @@ ul.task-list li input[type="checkbox"] {
 <col style="width: 4%">
 <col style="width: 95%">
 </colgroup>
-<thead>
-<tr class="header">
-<th><strong>Field</strong></th>
-<th><strong>Description</strong></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td><strong>Field label</strong></td>
-<td><p><img src="../media/image115.png" style="width:3.66528in;height:0.40069in"> |</p>
-<p>This shows what data/information the user needs to provide in the field.</p>
-<p>When previewing the form or completing the form in EWARS Mobile, the field label appears, as shown below:</p>
-<p><img src="../media/image116.png" style="width:3.59028in;height:0.61528in"> |</p>
-<p>When the field label is set as name of reporting health facility for a text-input field, you need to specify the reporting health facility name.</p>
-<p>Use an appropriate field label.</p></td>
+<td rowspan="2"><h1 id="field"><strong>Field</strong></h1>
+<p><strong>Field label</strong></p></td>
+<td rowspan="2"><strong>Description</strong> | ================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+ <img src="../media/image115.png" style="width:3.66528in;height:0.40069in"> | | This shows what data/information the user needs to provide in the field. | | When previewing the form or completing the form in EWARS Mobile, the field label appears, as shown below: | | <img src="../media/image116.png" style="width:3.59028in;height:0.61528in"> | | When the field label is set as name of reporting health facility for a text-input field, you need to specify the reporting health facility name. | | Use an appropriate field label. |</td>
 </tr>
 <tr class="even">
+</tr>
+<tr class="odd">
 <td><strong>Export label</strong></td>
-<td><p><img src="../media/image117.png" style="width:3.32639in;height:0.45in"> |</p>
-<p>Once you export the records of the form, the export label appears inside the CSV file as a data column label. Export label does not appear on the form.</p>
-<p>Give a name to the export label. If left blank while exporting, the column name becomes the field name.</p></td>
+<td><img src="../media/image117.png" style="width:3.32639in;height:0.45in"> | | Once you export the records of the form, the export label appears inside the CSV file as a data column label. Export label does not appear on the form. | | Give a name to the export label. If left blank while exporting, the column name becomes the field name. |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Field name</strong></td>
-<td><p><img src="../media/image118.png" style="width:3.53542in;height:0.45833in"> |</p>
-<p>This is an ID for the field, so it should be unique. For this purpose, when a user creates a new field, the field name is specified by the system automatically as, for example, “untitled_c6663d32”. It is recommended that users should change the first part (“untitled”) to an appropriate label to identify the field and leave the second part as it is.</p></td>
-</tr>
-<tr class="even">
-<td><strong>Show on mobile?</strong></td>
-<td><p><img src="../media/image119.png" style="width:2.04167in;height:0.4in"> |</p>
-<p>This can be set as <strong>Yes</strong> or <strong>No</strong>. If set as <strong>Yes</strong>, the field is visible on a mobile phone or tablet while the Reporting User is filling in the form. If set as <strong>No</strong>, the field is not visible while the form is being filled in on a mobile phone or tablet.</p></td>
+<td><img src="../media/image118.png" style="width:3.53542in;height:0.45833in"> | | This is an ID for the field, so it should be unique. For this purpose, when a user creates a new field, the field name is specified by the system automatically as, for example, “untitled_c6663d32”. It is recommended that users should change the first part (“untitled”) to an appropriate label to identify the field and leave the second part as it is. |</td>
 </tr>
 <tr class="odd">
-<td><strong>Conditional logic</strong></td>
-<td><p><img src="../media/image120.png" style="width:2.06667in;height:0.4in"> |</p>
-<p>This can be set as <strong>Yes</strong> or <strong>No</strong>. If set as <strong>Yes</strong>, you can display or hide the field based on the set conditions. If the condition is satisfied, the selected field is visible; otherwise the field is hidden. If set as <strong>No</strong>, you can’t set up the conditions.</p>
-<p>To set up conditional logic, select <strong>Yes</strong>, and the rules editor appears, as shown below:</p>
-<p><img src="../media/image121.png" style="width:4.95069in;height:0.41597in"> |</p>
-<ul>
-<li>Click on the <strong>add</strong> <img src="../media/image122.png" style="width:0.375in;height:0.34167in"> icon to add a rule, based on which the field will appear (or not) in the form. Select from the left-hand drop-down menu which field in the form needs be linked to the rule (e.g.&nbsp;Age), then select from the middle drop-down menu the relevant level for that rule (e.g.&nbsp;Greater than), and add the last section (e.g.&nbsp;5). In this example, the field will only appear in the form when the person in the form is aged over 5 years. |</li>
-</ul>
-<p><img src="../media/image123.png" style="width:5in;height:0.41667in"> |</p>
-<p><img src="../media/image124.png" style="width:5in;height:0.45833in"> |</p>
-<p>You can repeat the process to add multiple rules.</p>
-<p>If multiple rules are added, you also need to select one of the options <strong>All of the following are true</strong> or <strong>Any of the following are true</strong>, according to your needs.</p>
-<p>For example, in a line list, imagine that the previous question is about case outcomes with an array of responses as below:</p>
-<ul>
-<li><p>Alive</p></li>
-<li><p>Dead</p></li>
-<li><p>Discharged</p></li>
-<li><p>Unknown.</p></li>
-</ul>
-<p>You can make the next question a conditional one, based on the response.</p>
-<p>For example, you can request the date of death:</p>
-<p><img src="../media/image125.png" style="width:4.95625in;height:0.41667in"> |</p>
-<p>Similarly, you can request the date of discharge:</p>
-<p><img src="../media/image126.png" style="width:4.95625in;height:0.40694in"> |</p></td>
+<td><strong>Show on mobile?</strong></td>
+<td><img src="../media/image119.png" style="width:2.04167in;height:0.4in"> | | This can be set as <strong>Yes</strong> or <strong>No</strong>. If set as <strong>Yes</strong>, the field is visible on a mobile phone or tablet while the Reporting User is filling in the form. If set as <strong>No</strong>, the field is not visible while the form is being filled in on a mobile phone or tablet. |</td>
 </tr>
 <tr class="even">
+<td><strong>Conditional logic</strong></td>
+<td><img src="../media/image120.png" style="width:2.06667in;height:0.4in"> | | This can be set as <strong>Yes</strong> or <strong>No</strong>. If set as <strong>Yes</strong>, you can display or hide the field based on the set conditions. If the condition is satisfied, the selected field is visible; otherwise the field is hidden. If set as <strong>No</strong>, you can’t set up the conditions. | | To set up conditional logic, select <strong>Yes</strong>, and the rules editor appears, as shown below: | | <img src="../media/image121.png" style="width:4.95069in;height:0.41597in"> | | - Click on the <strong>add</strong> <img src="../media/image122.png" style="width:0.375in;height:0.34167in"> icon to add a rule, based on which the field will appear (or not) in the form. Select from the left-hand drop-down menu which field in the form needs be linked to the rule (e.g.&nbsp;Age), then select from the middle drop-down menu the relevant level for that rule (e.g.&nbsp;Greater than), and add the last section (e.g.&nbsp;5). In this example, the field will only appear in the form when the person in the form is aged over 5 years. | | <img src="../media/image123.png" style="width:5in;height:0.41667in"> | | <img src="../media/image124.png" style="width:5in;height:0.45833in"> | | You can repeat the process to add multiple rules. | | If multiple rules are added, you also need to select one of the options <strong>All of the following are true</strong> or <strong>Any of the following are true</strong>, according to your needs. | | For example, in a line list, imagine that the previous question is about case outcomes with an array of responses as below: | | - Alive | | - Dead | | - Discharged | | - Unknown. | | You can make the next question a conditional one, based on the response. | | For example, you can request the date of death: | | <img src="../media/image125.png" style="width:4.95625in;height:0.41667in"> | | Similarly, you can request the date of discharge: | | <img src="../media/image126.png" style="width:4.95625in;height:0.40694in"> |</td>
+</tr>
+<tr class="odd">
 <td><p><strong>Display in</strong></p>
 <p><strong>Main Record</strong></p></td>
-<td><p><img src="../media/image127.png" style="width:2.40903in;height:0.44167in"> |</p>
-<p>This feature is applicable only to sub forms: it enables inclusion of a sub form field in the main form field. It can be set as <strong>Yes</strong> or <strong>No</strong>. If set as <strong>Yes</strong>, this field of the sub form is automatically displayed in the main form. If set as <strong>No</strong>, this field is not included in the main form.</p></td>
+<td><img src="../media/image127.png" style="width:2.40903in;height:0.44167in"> | | This feature is applicable only to sub forms: it enables inclusion of a sub form field in the main form field. It can be set as <strong>Yes</strong> or <strong>No</strong>. If set as <strong>Yes</strong>, this field of the sub form is automatically displayed in the main form. If set as <strong>No</strong>, this field is not included in the main form. |</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><strong>Required</strong></td>
-<td><p><img src="../media/image128.png" style="width:1.49167in;height:0.38333in"> |</p>
-<p>If you want this field to be mandatory in the form, select <strong>Yes</strong>; if not, select <strong>No</strong>. All mandatory fields should be completed in a form. Without filling them in, the form cannot be submitted.</p></td>
+<td><img src="../media/image128.png" style="width:1.49167in;height:0.38333in"> | | If you want this field to be mandatory in the form, select <strong>Yes</strong>; if not, select <strong>No</strong>. All mandatory fields should be completed in a form. Without filling them in, the form cannot be submitted. |</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><strong>Field instructions</strong></td>
-<td><p>This relates to extra information you add to a field that can be used to complete it easily. This option is used to specify the exact input type you require. In Report manager, hover and click on the field label to view the field instructions. For example, you could add an instruction of “Please fill in block capitals” under the name of the reporting health facility:</p>
-<p><img src="../media/image129.png" style="width:4.85903in;height:0.54167in"> |</p>
-<p>In the reporting form, if you hover over the question, the specific instructions are displayed as below:</p>
-<p><img src="../media/image130.png" style="width:4.96875in;height:1.34167in"> |</p></td>
-</tr>
-<tr class="odd">
-<td><strong>Default value</strong></td>
-<td><p>This is a predefined value that is used by the field when a user has not specified the value. When reporting a new record in EWARS Mobile or previewing a form, the default value specified in the field is auto-populated.</p>
-<p>For example, imagine a selected field type “Treatment received” has four values:</p>
-<ul>
-<li><p>Oral rehydration solution</p></li>
-<li><p>Intravenous (IV) fluids</p></li>
-<li><p>Antibiotics</p></li>
-<li><p>Not applicable.</p></li>
-</ul>
-<p>The default value can be set as IV fluids, as shown below:</p>
-<p><img src="../media/image131.png" style="width:3.31597in;height:0.44167in"> |</p>
-<p>When reporting a new record in EWARS Mobile, assuming that the user has not selected any value in the “Treatment Received” field, since the default value is set as IV fluids, this is considered the value for the field “Treatment Received”.</p></td>
+<td>This relates to extra information you add to a field that can be used to complete it easily. This option is used to specify the exact input type you require. In Report manager, hover and click on the field label to view the field instructions. For example, you could add an instruction of “Please fill in block capitals” under the name of the reporting health facility: | | <img src="../media/image129.png" style="width:4.85903in;height:0.54167in"> | | In the reporting form, if you hover over the question, the specific instructions are displayed as below: | | <img src="../media/image130.png" style="width:4.96875in;height:1.34167in"> |</td>
 </tr>
 <tr class="even">
-<td><strong>Redacted</strong></td>
-<td><p><img src="../media/image132.png" style="width:1.83333in;height:0.375in"> |</p>
-<p>This helps to confirm which fields will be exported.</p>
-<p>If set as <strong>Yes</strong>, you won’t be able to see this field in the export file while performing the export. The field will not be exported.</p>
-<p>If set as <strong>No</strong>, you will be able to see this field in the export file.</p></td>
+<td><strong>Default value</strong></td>
+<td>This is a predefined value that is used by the field when a user has not specified the value. When reporting a new record in EWARS Mobile or previewing a form, the default value specified in the field is auto-populated. | | For example, imagine a selected field type “Treatment received” has four values: | | - Oral rehydration solution | | - Intravenous (IV) fluids | | - Antibiotics | | - Not applicable. | | The default value can be set as IV fluids, as shown below: | | <img src="../media/image131.png" style="width:3.31597in;height:0.44167in"> | | When reporting a new record in EWARS Mobile, assuming that the user has not selected any value in the “Treatment Received” field, since the default value is set as IV fluids, this is considered the value for the field “Treatment Received”. |</td>
 </tr>
 <tr class="odd">
+<td><strong>Redacted</strong></td>
+<td><img src="../media/image132.png" style="width:1.83333in;height:0.375in"> | | This helps to confirm which fields will be exported. | | If set as <strong>Yes</strong>, you won’t be able to see this field in the export file while performing the export. The field will not be exported. | | If set as <strong>No</strong>, you will be able to see this field in the export file. |</td>
+</tr>
+<tr class="even">
 <td><strong>Placeholder</strong></td>
-<td><p>This attribute specifies a short hint that describes the expected value of an input field. For example, “Enter your comments on the case” is the placeholder for the comments text area field:</p>
-<p><img src="../media/image133.png" style="width:3.84028in;height:0.45in"> |</p>
-<p>When reporting a record in the EWARS Web version or previewing a form, the placeholder is visible inside the input field in grey text, as shown below:</p>
-<p><img src="../media/image134.png" style="width:3.54167in;height:0.64861in"> |</p>
-<p>Once you enter the field value, the placeholder disappears.</p></td>
+<td>This attribute specifies a short hint that describes the expected value of an input field. For example, “Enter your comments on the case” is the placeholder for the comments text area field: | | <img src="../media/image133.png" style="width:3.84028in;height:0.45in"> | | When reporting a record in the EWARS Web version or previewing a form, the placeholder is visible inside the input field in grey text, as shown below: | | <img src="../media/image134.png" style="width:3.54167in;height:0.64861in"> | | Once you enter the field value, the placeholder disappears. |</td>
+</tr>
+<tr class="odd">
+<td><strong>restricted</strong></td>
+<td>This attribute specifies if the field data can be visible in report manager or can be exported. When restricted is enable, only account admin can see the value of the field. this is important for managing personnal data: |</td>
 </tr>
 </tbody>
 </table>
